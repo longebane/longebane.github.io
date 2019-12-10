@@ -237,10 +237,10 @@ hr:after {
   padding: 0 0.25em;
 }
 
-#soundcloud {
+.soundcloud {
   display: block;
   width: 100%;
-  margin: 0 17%;
+  margin: 10px 17%;
   height: 95px;
   border: 1px solid black;
   zoom: 1;
