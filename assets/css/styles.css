@@ -18,7 +18,7 @@ html {
 body {
   color: #bcd7ff;
   font: 14px/1.3 lato, 'segoe ui', Arial, sans-serif;
-  margin: 0 auto;
+  margin: 0 auto 100px;
   padding-bottom: 50px;
   width: 1000px;
   overflow: visible;
@@ -26,7 +26,7 @@ body {
   margin-top: 10px;
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
-  border-radius: 7px;
+  border-radius: 4px;
   box-shadow: 0 1px 4px #121212;
 }
 
