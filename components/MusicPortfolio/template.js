@@ -13,7 +13,7 @@ const music = [
         link: 'https://soundcloud.com/long-dao/obstacles',
         linkTitle: 'Obstacles',
         soundcloud:
-          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90655765&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=false'
+          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90655765&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=false&visual=true'
       }
     ]
   },
@@ -41,13 +41,13 @@ const music = [
         link: 'https://soundcloud.com/long-dao/vida-isla',
         linkTitle: 'Vida Isla - Exploration Theme',
         soundcloud:
-          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90697034&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=false'
+          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90697034&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=true&visual=true'
       },
       {
         link: 'https://soundcloud.com/long-dao/surface-of-monkeys',
         linkTitle: 'Surface of Monkeys - Chaos Theme',
         soundcloud:
-          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90831028&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=false'
+          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90831028&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=true&visual=true'
       }
     ]
   },
@@ -77,16 +77,16 @@ const music = [
     ],
     songs: [
       {
-        link: 'https://soundcloud.com/long-dao/vida-isla',
-        linkTitle: 'Vida Isla - Exploration Theme',
+        link: 'https://soundcloud.com/long-dao/deep-space',
+        linkTitle: 'Deep Space',
         soundcloud:
-          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90697034&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=false'
+          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/91172365&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
       },
       {
-        link: 'https://soundcloud.com/long-dao/surface-of-monkeys',
-        linkTitle: 'Surface of Monkeys - Chaos Theme',
+        link: 'https://soundcloud.com/long-dao/a-winter-journey',
+        linkTitle: 'A Winter Journey',
         soundcloud:
-          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90831028&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=false'
+          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90696725&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
       }
     ]
   }
@@ -143,7 +143,7 @@ class MusicList extends HTMLElement {
         ${images.map(
           image => html`
             <div class="image-wrap">
-              <img src="${image}" />
+              <img src="${image}" alt="Artwork" />
             </div>
           `
         )}
@@ -169,6 +169,7 @@ class MusicList extends HTMLElement {
               scrolling="no"
               frameborder="no"
               src="${song.soundcloud}"
+              title="${song.linkTitle}"
             ></iframe>
             ${songIndex === songs.length - 1 &&
             sectionIndex !== music.length - 1
