@@ -7,13 +7,13 @@ const music = [
         link: 'https://soundcloud.com/long-dao/world-of-zen',
         linkTitle: 'World of Zen',
         soundcloud:
-          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/634909659&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true'
+          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/634909659&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true&show_teaser=false'
       },
       {
         link: 'https://soundcloud.com/long-dao/space-is-cool-in-f-major',
         linkTitle: 'Space is Cool',
         soundcloud:
-          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322044999&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true'
+          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322044999&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true&show_teaser=false'
       }
     ]
   },
@@ -30,7 +30,7 @@ const music = [
         link: 'https://soundcloud.com/long-dao/obstacles',
         linkTitle: 'Obstacles',
         soundcloud:
-          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90655765&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=false&visual=true'
+          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90655765&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=false&visual=true&show_teaser=false'
       }
     ]
   },
@@ -58,13 +58,13 @@ const music = [
         link: 'https://soundcloud.com/long-dao/vida-isla',
         linkTitle: 'Vida Isla - Exploration Theme',
         soundcloud:
-          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90697034&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=true&visual=true'
+          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90697034&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=true&visual=true&show_teaser=false'
       },
       {
         link: 'https://soundcloud.com/long-dao/surface-of-monkeys',
         linkTitle: 'Surface of Monkeys - Chaos Theme',
         soundcloud:
-          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90831028&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=true&visual=true'
+          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90831028&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=true&visual=true&show_teaser=false'
       }
     ]
   },
@@ -97,13 +97,13 @@ const music = [
         link: 'https://soundcloud.com/long-dao/deep-space',
         linkTitle: 'Deep Space',
         soundcloud:
-          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/91172365&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
+          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/91172365&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true'
       },
       {
         link: 'https://soundcloud.com/long-dao/a-winter-journey',
         linkTitle: 'A Winter Journey',
         soundcloud:
-          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90696725&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
+          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90696725&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true'
       }
     ]
   }
@@ -154,50 +154,50 @@ class MusicList extends HTMLElement {
       const { title, images = [], descriptions = [], songs = [] } = section
 
       return html`
-      <li>
-        <h2>${title}</h2>
-
-        ${images.map(
-          image => html`
-            <div class="image-wrap">
-              <img src="${image}" alt="Artwork" />
-            </div>
+        <li>
+          <h2>${title}</h2>
+          <div class="image-container">
+            ${images.map(
+              image => html`
+                <div class="image-wrap">
+                  <img src="${image}" alt="Artwork" />
+                </div>
+              `
+            )}
+          </div>
+        </li>
+        <li>
+          ${descriptions.map(
+            description =>
+              html`
+                <p>${description}</p>
+              `
+          )}
+        </li>
+        ${songs.map(
+          (song, songIndex) => html`
+            <li>
+              Song Title:
+              <a href="${song.link}">${song.linkTitle}</a>
+              <iframe
+                class="soundcloud"
+                width="100%"
+                height="166"
+                scrolling="no"
+                frameborder="no"
+                src="${song.soundcloud}"
+                title="${song.linkTitle}"
+              ></iframe>
+              ${songIndex === songs.length - 1 &&
+              sectionIndex !== music.length - 1
+                ? html`
+                    <hr />
+                  `
+                : ''}
+            </li>
           `
         )}
-        </div>
-      </li>
-      <li>
-      ${descriptions.map(
-        description =>
-          html`
-            <p>${description}</p>
-          `
-      )}
-      </li>
-      ${songs.map(
-        (song, songIndex) => html`
-          <li>
-            Song Title:
-            <a href="${song.link}">${song.linkTitle}</a>
-            <iframe
-              class="soundcloud"
-              width="100%"
-              height="166"
-              scrolling="no"
-              frameborder="no"
-              src="${song.soundcloud}"
-              title="${song.linkTitle}"
-            ></iframe>
-            ${songIndex === songs.length - 1 &&
-            sectionIndex !== music.length - 1
-              ? html`
-                  <hr />
-                `
-              : ''}
-          </li>
-        `
-      )}
-    `
+      `
       // const instance = document.importNode(fragment.content, true)
 
       // const titleNode = instance.querySelector('.music-header')
@@ -310,13 +310,19 @@ ul li {
 .container p {
   margin: 0.6em 0 0.6em 0.6em;
 }
+.image-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  flex-basis: row;
+}
 .image-wrap {
-  margin-top: 20px;
+  display: flex;
+  flex: 1;
+  margin: 20px 2px;
   position: relative;
-  display: inline-block;
   max-width: 100%;
   vertical-align: bottom;
-  object-fit: cover;
 }
 
 /* image-wrap:after pseudo element (overlaying container) */
@@ -342,8 +348,9 @@ ul li {
 }
 
 .image-wrap img {
+    object-fit: cover;
   height: 140px;
-  width: 220px;
+  width: 100%;
   text-align: center;
   vertical-align: bottom;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
@@ -401,20 +408,20 @@ hr:after {
 .soundcloud {
   border-radius: 4px;
   display: block;
-  width: 100%;
-  margin: 10px 17%;
+  width: 80%;
+  margin: 10px auto;
   height: 95px;
   border: 1px solid black;
-  zoom: 1;
-  -moz-transform: scale(0.65);
-  -moz-transform-orgin: 0 0;
-  -o-transform: scale(0.65);
-  -o-transform-origin: 0 0;
-  -webkit-transform: scale(0.65);
-  -webkit-transform-origin: 0 0;
-  -moz-box-shadow: 0 3px 8px #121212;
-  -webkit-box-shadow: 0 3px 8px #121212;
   box-shadow: 0 3px 8px #121212;
+}
+
+@media screen and (max-width: 850px) {
+  .grid li {
+    padding: 0;
+  }
+  .soundcloud {
+    width: 100%;
+  }
 }
     `
 

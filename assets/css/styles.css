@@ -130,9 +130,9 @@ h1 {
 .about-container {
   min-height: 100px;
   overflow: hidden;
-  margin-top: 1.5em;
-  padding-left: 3em;
-  padding-right: 3em;
+  margin-top: 0.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
   color: #000;
 }
 
@@ -344,5 +344,11 @@ textarea {
   #filter li {
     display: block;
     list-style-type: none;
+  }
+
+  .container {
+    margin-top: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
