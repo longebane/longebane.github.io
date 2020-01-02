@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE >
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="description" content="StudioDao: The Works of Long Dao" />
@@ -16,7 +16,12 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/css/styles.css"
+      media="print"
+      onload="this.media='all'"
+    />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="Shortcut Icon" href="/favicon.ico" />
   </head>
@@ -26,13 +31,13 @@
   <body>
     <nav id="filter">
       <ul>
-        <li><span class="selected">Music Portfolio</span></li>
+        <li><span>Music Portfolio</span></li>
       </ul>
     </nav>
     <section class="container">
       <music-list />
     </section>
-    <script src="./utils/analytics.js"></script>
+    <script src="./utils/analytics.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.0/webcomponents-loader.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="./components/MusicPortfolio/template.js"></script>
