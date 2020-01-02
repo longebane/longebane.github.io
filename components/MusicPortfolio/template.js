@@ -1,6 +1,23 @@
 //import html from 'utils/templating'
 const music = [
   {
+    title: 'Original Music',
+    songs: [
+      {
+        link: 'https://soundcloud.com/long-dao/world-of-zen',
+        linkTitle: 'World of Zen',
+        soundcloud:
+          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/634909659&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true'
+      },
+      {
+        link: 'https://soundcloud.com/long-dao/space-is-cool-in-f-major',
+        linkTitle: 'Space is Cool',
+        soundcloud:
+          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322044999&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true'
+      }
+    ]
+  },
+  {
     title: 'Indie Rock - Mike and Long Music (MLM) - All We Have (2013)',
     images: [
       './assets/img/mlm1.png',
