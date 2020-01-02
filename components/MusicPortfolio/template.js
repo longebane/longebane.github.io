@@ -316,6 +316,7 @@ ul li {
   display: inline-block;
   max-width: 100%;
   vertical-align: bottom;
+  object-fit: cover;
 }
 
 /* image-wrap:after pseudo element (overlaying container) */
