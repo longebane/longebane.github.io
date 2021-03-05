@@ -77,7 +77,7 @@ const music = [
       './assets/img/id4.jpg'
     ],
     descriptions: [
-      html`
+      `
         Immortal Defense is a story-driven strategy-based game in which you give
         up life to traverse pathspace and defend your home world from
         destruction. Immortal Defense was acclaimed 2007 Strategy Game of the
@@ -88,9 +88,7 @@ const music = [
           >iimusic.net </a
         >. Adventure into outer space and beyond with this orchestral soundtrack
         with rhythmic percussion.
-      `,
-      `Saturated Dreamers features over 2 hours of ethnic-style music and
-          was one of the most anticipated Indie adventure games of 2013!`
+      `
     ],
     songs: [
       {
