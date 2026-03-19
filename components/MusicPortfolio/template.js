@@ -7,7 +7,7 @@ const music = [
         link: "https://soundcloud.com/long-dao/world-of-zen",
         linkTitle: "World of Zen",
         soundcloud:
-          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A634909659&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"',
+          "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/634909659&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true&show_teaser=false",
       },
       {
         link: "https://soundcloud.com/long-dao/space-is-cool-in-f-major",
