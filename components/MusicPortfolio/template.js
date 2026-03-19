@@ -15,6 +15,12 @@ const music = [
         soundcloud:
           "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322044999&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true&show_teaser=false",
       },
+      {
+        link: "https://soundcloud.com/long-dao/distorted-wonderland",
+        linkTitle: "Distorted Wonderland",
+        soundcloud:
+          "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A90696343&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true",
+      },
     ],
   },
   {
@@ -102,6 +108,18 @@ const music = [
         linkTitle: "A Winter Journey",
         soundcloud:
           "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90696725&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true",
+      },
+    ],
+  },
+  {
+    title: "Arrangements",
+    songs: [
+      {
+        link: "https://soundcloud.com/long-dao/lost-dark-world",
+        linkTitle:
+          "Lost Dark World (The Legend of Zelda: A Link to the Past and Jurassic Park Lost World)",
+        soundcloud:
+          "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A90697209&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=false",
       },
     ],
   },
