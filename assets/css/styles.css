@@ -48,8 +48,8 @@ a:visited {
 }
 a:hover,
 a:visited:hover {
-  color: var(--card-bg);
-  text-shadow: 0px 0px 5px #315218;
+  color: #57774c;
+  text-shadow: 0px 0px 5px #fff;
 }
 
 .grid {
