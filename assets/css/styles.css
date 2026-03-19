@@ -48,7 +48,7 @@ a:visited {
 }
 a:hover,
 a:visited:hover {
-  color: #c4ffb2;
+  color: var(--card-bg);
   text-shadow: 0px 0px 5px #315218;
 }
 
