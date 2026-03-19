@@ -1,46 +1,46 @@
 //import html from 'utils/templating'
 const music = [
   {
-    title: 'Original Music',
+    title: "Original Music",
     songs: [
       {
-        link: 'https://soundcloud.com/long-dao/world-of-zen',
-        linkTitle: 'World of Zen',
+        link: "https://soundcloud.com/long-dao/world-of-zen",
+        linkTitle: "World of Zen",
         soundcloud:
-          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/634909659&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true&show_teaser=false'
+          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A634909659&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"',
       },
       {
-        link: 'https://soundcloud.com/long-dao/space-is-cool-in-f-major',
-        linkTitle: 'Space is Cool',
+        link: "https://soundcloud.com/long-dao/space-is-cool-in-f-major",
+        linkTitle: "Space is Cool",
         soundcloud:
-          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322044999&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true&show_teaser=false'
-      }
-    ]
+          "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322044999&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true&show_teaser=false",
+      },
+    ],
   },
   {
-    title: 'Indie Rock - Mike and Long Music (MLM) - All We Have (2013)',
+    title: "Indie Rock - Mike and Long Music (MLM) - All We Have (2013)",
     images: [
-      './assets/img/mlm1.png',
-      './assets/img/mlm2.png',
-      './assets/img/incompletebooth.jpg'
+      "./assets/img/mlm1.png",
+      "./assets/img/mlm2.png",
+      "./assets/img/incompletebooth.jpg",
     ],
     descriptions: [`Debut song from the Album "All We Have"`],
     songs: [
       {
-        link: 'https://soundcloud.com/long-dao/obstacles',
-        linkTitle: 'Obstacles',
+        link: "https://soundcloud.com/long-dao/obstacles",
+        linkTitle: "Obstacles",
         soundcloud:
-          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90655765&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=false&visual=true&show_teaser=false'
-      }
-    ]
+          "https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90655765&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=false&visual=true&show_teaser=false",
+      },
+    ],
   },
   {
-    title: 'Original Game Soundtrack - Saturated Dreamers (2013)',
+    title: "Original Game Soundtrack - Saturated Dreamers (2013)",
     images: [
-      './assets/img/sd1.png',
-      './assets/img/sd2.png',
-      './assets/img/sd3.png',
-      './assets/img/sd4.png'
+      "./assets/img/sd1.png",
+      "./assets/img/sd2.png",
+      "./assets/img/sd3.png",
+      "./assets/img/sd4.png",
     ],
     descriptions: [
       `
@@ -51,30 +51,30 @@ const music = [
         purify Lake's waters.
       `,
       `Saturated Dreamers features over 2 hours of ethnic-style music and
-          was one of the most anticipated Indie adventure games of 2013!`
+          was one of the most anticipated Indie adventure games of 2013!`,
     ],
     songs: [
       {
-        link: 'https://soundcloud.com/long-dao/vida-isla',
-        linkTitle: 'Vida Isla - Exploration Theme',
+        link: "https://soundcloud.com/long-dao/vida-isla",
+        linkTitle: "Vida Isla - Exploration Theme",
         soundcloud:
-          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90697034&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=true&visual=true&show_teaser=false'
+          "https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90697034&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=true&visual=true&show_teaser=false",
       },
       {
-        link: 'https://soundcloud.com/long-dao/surface-of-monkeys',
-        linkTitle: 'Surface of Monkeys - Chaos Theme',
+        link: "https://soundcloud.com/long-dao/surface-of-monkeys",
+        linkTitle: "Surface of Monkeys - Chaos Theme",
         soundcloud:
-          'https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90831028&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=true&visual=true&show_teaser=false'
-      }
-    ]
+          "https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F90831028&amp;color=1373aa&amp;auto_play=false&amp;show_artwork=true&visual=true&show_teaser=false",
+      },
+    ],
   },
   {
-    title: 'Original Game Soundtrack - Immortal Defense (2007)',
+    title: "Original Game Soundtrack - Immortal Defense (2007)",
     images: [
-      './assets/img/id1.gif',
-      './assets/img/id2.jpg',
-      './assets/img/id3.jpg',
-      './assets/img/id4.jpg'
+      "./assets/img/id1.gif",
+      "./assets/img/id2.jpg",
+      "./assets/img/id3.jpg",
+      "./assets/img/id4.jpg",
     ],
     descriptions: [
       `
@@ -88,89 +88,84 @@ const music = [
           >iimusic.net </a
         >. Adventure into outer space and beyond with this orchestral soundtrack
         with rhythmic percussion.
-      `
+      `,
     ],
     songs: [
       {
-        link: 'https://soundcloud.com/long-dao/deep-space',
-        linkTitle: 'Deep Space',
+        link: "https://soundcloud.com/long-dao/deep-space",
+        linkTitle: "Deep Space",
         soundcloud:
-          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/91172365&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true'
+          "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/91172365&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true",
       },
       {
-        link: 'https://soundcloud.com/long-dao/a-winter-journey',
-        linkTitle: 'A Winter Journey',
+        link: "https://soundcloud.com/long-dao/a-winter-journey",
+        linkTitle: "A Winter Journey",
         soundcloud:
-          'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90696725&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true'
-      }
-    ]
-  }
-]
+          "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90696725&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true",
+      },
+    ],
+  },
+];
 
 function html(templateObject, ...substs) {
   // Use raw template strings: we don’t want
   // backslashes (\n etc.) to be interpreted
-  const raw = templateObject.raw
+  const raw = templateObject.raw;
 
-  let result = ''
+  let result = "";
 
   substs.forEach((subst, i) => {
     // Retrieve the template string preceding
     // the current substitution
-    let lit = raw[i]
+    let lit = raw[i];
 
     // In the example, map() returns an Array:
     // If `subst` is an Array (and not a string),
     // we turn it into a string
     if (Array.isArray(subst)) {
-      subst = subst.join('')
+      subst = subst.join("");
     }
 
     // If the substitution is preceded by an exclamation
     // mark, we escape special characters in it
-    if (lit.endsWith('!')) {
-      subst = htmlEscape(subst)
-      lit = lit.slice(0, -1)
+    if (lit.endsWith("!")) {
+      subst = htmlEscape(subst);
+      lit = lit.slice(0, -1);
     }
-    result += lit
-    result += subst
-  })
+    result += lit;
+    result += subst;
+  });
   // Take care of last template string
-  result += raw[raw.length - 1] // (A)
+  result += raw[raw.length - 1]; // (A)
 
-  return result
+  return result;
 }
 
 // export default html
 
 class MusicList extends HTMLElement {
   constructor() {
-    super()
+    super();
 
-    const shadow = this.attachShadow({ mode: 'open' })
+    const shadow = this.attachShadow({ mode: "open" });
     const template = music.map((section, sectionIndex) => {
-      const { title, images = [], descriptions = [], songs = [] } = section
+      const { title, images = [], descriptions = [], songs = [] } = section;
 
       return html`
         <li>
           <h2>${title}</h2>
           <div class="image-container">
             ${images.map(
-              image => html`
+              (image) => html`
                 <div class="image-wrap">
                   <img src="${image}" alt="Artwork" />
                 </div>
-              `
+              `,
             )}
           </div>
         </li>
         <li>
-          ${descriptions.map(
-            description =>
-              html`
-                <p>${description}</p>
-              `
-          )}
+          ${descriptions.map((description) => html` <p>${description}</p> `)}
         </li>
         ${songs.map(
           (song, songIndex) => html`
@@ -188,14 +183,12 @@ class MusicList extends HTMLElement {
               ></iframe>
               ${songIndex === songs.length - 1 &&
               sectionIndex !== music.length - 1
-                ? html`
-                    <hr />
-                  `
-                : ''}
+                ? html` <hr /> `
+                : ""}
             </li>
-          `
+          `,
         )}
-      `
+      `;
       // const instance = document.importNode(fragment.content, true)
 
       // const titleNode = instance.querySelector('.music-header')
@@ -236,15 +229,15 @@ class MusicList extends HTMLElement {
       //   songIndex && instance.appendChild(el) // clone element if not the first
       // })
       // musicList.appendChild(instance)
-    })
+    });
 
     shadow.innerHTML = html`
       <ul class="grid">
         ${template}
       </ul>
-    `
+    `;
 
-    const style = document.createElement('style')
+    const style = document.createElement("style");
     style.textContent = `
     a,
 a:visited {
@@ -421,13 +414,13 @@ hr:after {
     width: 100%;
   }
 }
-    `
+    `;
 
-    shadow.appendChild(style)
+    shadow.appendChild(style);
   }
 }
 
-customElements.define('music-list', MusicList)
+customElements.define("music-list", MusicList);
 
 // return html`
 //   <li>
