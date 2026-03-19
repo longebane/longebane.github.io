@@ -1,3 +1,11 @@
+:root {
+  --bg-color: #1a1f26;
+  --card-bg: #252b35;
+  --text-main: #ffffff;
+  --text-dim: #a0a6b1;
+  --accent: #4ebfff;
+}
+
 /*-------------------------
 	Simple reset that makes me feel so fresh and delicious
 --------------------------*/
@@ -10,19 +18,23 @@
 	General Styles
 --------------------------*/
 html {
-  background: url('../../assets/img/bg.png') right no-repeat #efefef;
+  background: url("../../assets/img/bg.png") right no-repeat #efefef;
   background-attachment: fixed;
   background-position: right bottom;
 }
 
 body {
   color: #fff;
-  font: 14px/1.3 lato, 'segoe ui', Arial, sans-serif;
+  font:
+    14px/1.3 lato,
+    "segoe ui",
+    Arial,
+    sans-serif;
   margin: 0 auto 100px;
   padding-bottom: 50px;
   width: 1000px;
   overflow: visible;
-  background: url('../../assets/img/tile.png');
+  background: url("../../assets/img/tile.png");
   margin-top: 10px;
   border-radius: 4px;
   box-shadow: 0 1px 4px #121212;
@@ -63,7 +75,7 @@ a:visited:hover {
 }
 
 h1 {
-  background: url('../../assets/img/logow.png') no-repeat center #aac8f6;
+  background: url("../../assets/img/logow.png") no-repeat center #aac8f6;
   background-size: cover;
   height: 100%;
   border-radius: 4px 4px 0 0;
@@ -91,7 +103,11 @@ h1 {
 #filter .selected {
   text-transform: uppercase;
   color: #999999;
-  font: 13px/1.3 lato, 'segoe ui', Arial, sans-serif;
+  font:
+    13px/1.3 lato,
+    "segoe ui",
+    Arial,
+    sans-serif;
   height: 31px;
   line-height: 22px;
   padding: 0 15px;
@@ -112,7 +128,12 @@ h1 {
 }
 
 .container {
-  font: 14px/1.3 lato, lato, 'segoe ui', Arial, sans-serif;
+  font:
+    14px/1.3 lato,
+    lato,
+    "segoe ui",
+    Arial,
+    sans-serif;
   text-shadow: 1px 1px 5px #d0d0d0;
   /*& li{
   	float: left;
@@ -146,7 +167,12 @@ h1 {
 }
 
 #about-container {
-  font: 20px/1.3 lato, lato, 'segoe ui', Arial, sans-serif;
+  font:
+    20px/1.3 lato,
+    lato,
+    "segoe ui",
+    Arial,
+    sans-serif;
   text-shadow: 1px 1px 5px #d0d0d0;
   margin-top: 20px;
   text-spacing: 2px;
@@ -202,11 +228,15 @@ footer .logo {
 }
 footer a.mail,
 footer a.mail:visited {
-  background: url('') no-repeat right top;
+  background: url("") no-repeat right top;
   border: none;
   text-decoration: none;
   color: #fcfcfc;
-  font-size: 12px/1.3 lato, 'segoe ui', Arial, sans-serif;
+  font-size:
+    12px/1.3 lato,
+    "segoe ui",
+    Arial,
+    sans-serif;
   height: 70px;
   left: 40%;
   line-height: 0px;
@@ -253,9 +283,15 @@ textarea {
   -webkit-transition: all 0.2s ease-in-out 0s;
   -moz-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s;
-  -moz-box-shadow: 0 1px rgba(34, 25, 25, 0.2) inset, 0 1px white;
-  -webkit-box-shadow: 0 1px rgba(34, 25, 25, 0.2) inset, 0 1px white;
-  box-shadow: 0 1px rgba(34, 25, 25, 0.2) inset, 0 1px white;
+  -moz-box-shadow:
+    0 1px rgba(34, 25, 25, 0.2) inset,
+    0 1px white;
+  -webkit-box-shadow:
+    0 1px rgba(34, 25, 25, 0.2) inset,
+    0 1px white;
+  box-shadow:
+    0 1px rgba(34, 25, 25, 0.2) inset,
+    0 1px white;
   width: 100%;
   height: 27px;
   background: #efefef;
@@ -271,17 +307,23 @@ input:focus,
 textarea:focus {
   border-color: #930;
   color: #5d5d5d;
-  box-shadow: inset 0 1px rgba(34, 25, 25, 0.2), 0 1px rgba(255, 255, 255, 0.6),
+  box-shadow:
+    inset 0 1px rgba(34, 25, 25, 0.2),
+    0 1px rgba(255, 255, 255, 0.6),
     0 0 7px rgba(235, 82, 82, 0.5);
-  -moz-box-shadow: inset 0 1px rgba(34, 25, 25, 0.2),
-    0 1px rgba(255, 255, 255, 0.6), 0 0 7px rgba(235, 82, 82, 0.5);
-  -webkit-box-shadow: inset 0 1px rgba(34, 25, 25, 0.2),
-    0 1px rgba(255, 255, 255, 0.6), 0 0 7px rgba(235, 82, 82, 0.5);
+  -moz-box-shadow:
+    inset 0 1px rgba(34, 25, 25, 0.2),
+    0 1px rgba(255, 255, 255, 0.6),
+    0 0 7px rgba(235, 82, 82, 0.5);
+  -webkit-box-shadow:
+    inset 0 1px rgba(34, 25, 25, 0.2),
+    0 1px rgba(255, 255, 255, 0.6),
+    0 0 7px rgba(235, 82, 82, 0.5);
 }
 
 textarea {
   height: 213px;
-  background: url('../../assets/img/textarea-bg.png') right no-repeat #efefef;
+  background: url("../../assets/img/textarea-bg.png") right no-repeat #efefef;
 }
 
 #submit {
@@ -296,12 +338,7 @@ textarea {
 #submit:hover {
   opacity: 0.9;
 }
-.web-portfolio {
-  overflow: hidden;
-}
-.portfolio-frame {
-width: 100%; height: 80vh; border: none; margin: 0; padding: 0; display: block;
-}
+
 /*----------------------------
 	Responsive
 -----------------------------*/
@@ -330,5 +367,76 @@ width: 100%; height: 80vh; border: none; margin: 0; padding: 0; display: block;
     margin-top: 0;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+}
+
+/*Web Porfolio*/
+.portfolio-container {
+  max-width: 1000px;
+  margin: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #343b47;
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.header-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background: #111; /* Fallback */
+}
+
+.content {
+  padding: 24px;
+}
+
+.header {
+  margin-bottom: 15px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.description {
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.description ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.description li {
+  margin-bottom: 5px;
+}
+
+/* Mobile responsive adjustment */
+@media (max-width: 600px) {
+  .portfolio-container {
+    grid-template-columns: 1fr;
   }
 }
