@@ -1,75 +1,53 @@
-:root {
-  --bg-color: #f6f6f0;
-  --text-color: #330;
-  --accent-color: #da1c5c;
-  --font-family: "bpreplay", sans-serif;
-  --font-size-h1: 42px;
-  --font-size-h2: 24px;
-  --line-height: 1.5;
-  --letter-spacing: 1px;
-  --margin-xs: 10px;
-  --margin-sm: 15px;
-  --margin-md: 20px;
-  --margin-lg: 30px;
-  --padding-sm: 10px;
-  --padding-md: 20px;
-}
-
 body {
   width: 480px;
   font-family: sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
-  line-height: var(--line-height);
+  background: #f6f6f0;
+  color: #330;
+  line-height: 1.5;
 }
-
 .header {
   display: block;
   background: url("./divider.png") bottom center no-repeat;
-  padding: var(--padding-sm) 0px;
-  margin: 0px 0px var(--margin-md);
+  padding: 10px 0px;
+  margin: 0px 0px 20px;
   text-align: center;
 }
-
 h1 {
   display: inline;
   position: relative;
   margin: 0ex 0ex 1ex 1.2ex;
-  font-family: var(--font-family);
+  font-family: "bpreplay", sans-serif;
   font-weight: normal;
-  font-size: var(--font-size-h1);
-  letter-spacing: var(--letter-spacing);
+  font-size: 42px;
+  letter-spacing: 1px;
 }
-
 h1:before {
   content: "♬ ";
   position: absolute;
   top: 16px;
   left: -3.1ex;
-  color: var(--accent-color);
+  color: #da1c5c;
   font-size: 0.4em;
 }
 
 .audiojs {
-  margin: var(--margin-sm) 0px var(--margin-md);
+  margin: 15px 0px 20px;
 }
-
 h2 {
-  font-family: var(--font-family);
+  font-family: "bpreplay", sans-serif;
   font-weight: normal;
-  font-size: var(--font-size-h2);
-  margin-bottom: var(--margin-sm);
-  line-height: var(--line-height);
+  font-size: 24px;
+  margin-bottom: 10px;
+  line-height: 1.6;
 }
 
 .download {
   background:
     url("./divider.png") top center no-repeat,
     url("./divider.png") bottom center no-repeat;
-  margin: var(--margin-lg) 0px;
-  padding: var(--padding-md) 0px;
+  margin: 30px 0px;
+  padding: 20px 0px;
   text-align: center;
-}
 }
 .download a em {
   color: rgba(255, 255, 255, 0.8);

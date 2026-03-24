@@ -1,99 +1,66 @@
-:root {
-  --bg-color: #18222b;
-  --bg-tile: url("../img/bg_tile.jpg");
-  --bg-center: url("../img/bg_center.jpg") center 240px no-repeat;
-  --text-color: #fcfcfc;
-  --link-color: #54a6de;
-  --input-bg: #efefef;
-  --input-border: #dedede;
-  --input-focus: #00aed3;
-  --submit-bg: url("/assets/img/submit.gif");
-  --font-family: 'Segoe UI', Arial, sans-serif;
-  --font-size: 14px;
-  --line-height: 1.3;
-  --min-height: 2000px;
-  --form-width: 459px;
-  --input-height: 27px;
-  --textarea-height: 213px;
-  --submit-width: 127px;
-  --submit-height: 38px;
-  --margin-top: 20px;
-  --padding: 10px;
-  --border-radius: 5px;
-  --transition: opacity 0.9s ease;
-}
-
 * {
   margin: 0;
   padding: 0;
 }
-
 html {
-  background: var(--bg-tile) var(--bg-color);
+  background: url("../img/bg_tile.jpg") #18222b;
 }
-
 body {
-  color: var(--text-color);
-  font: var(--font-size)/var(--line-height) var(--font-family);
-  min-height: var(--min-height);
-  background: var(--bg-center);
+  color: #fcfcfc;
+  font:
+    14px/1.3 "Segoe UI",
+    Arial,
+    sans-serif;
+  min-height: 2000px;
+  background: url("../img/bg_center.jpg") center 240px no-repeat;
 }
-
 a,
 a:visited {
   text-decoration: none;
   outline: none;
-  color: var(--link-color);
+  color: #54a6de;
 }
-
 a:hover {
   text-decoration: underline;
 }
-
 label {
   display: block;
-  margin-top: var(--margin-top);
+  margin-top: 20px;
   letter-spacing: 2px;
 }
-
 form {
   margin: 0 auto;
-  width: var(--form-width);
+  width: 459px;
 }
-
 input,
 textarea {
-  background: var(--input-bg);
-  border: 1px solid var(--input-border);
-  padding: var(--padding);
+  background: #efefef;
+  border: 1px solid #dedede;
+  padding: 10px;
   margin-top: 3px;
   font-size: 0.9em;
   color: #00728a;
-  border-radius: var(--border-radius);
-  -moz-border-radius: var(--border-radius);
-  -webkit-border-radius: var(--border-radius);
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
-
 textarea {
-  height: var(--textarea-height);
-  background: url(/assets/img/textarea-bg.jpg) right no-repeat var(--input-bg);
+  height: 213px;
+  background: url(/assets/img/textarea-bg.jpg) right no-repeat #efefef;
 }
-
 input:focus,
 textarea:focus {
-  border: 2px solid var(--input-focus);
+  border: 2px solid #00aed3;
 }
-
 #submit {
-  width: var(--submit-width);
-  height: var(--submit-height);
-  background: var(--submit-bg);
+  width: 127px;
+  height: 38px;
+  background: url(/assets/img/submit.gif);
   text-indent: -9999px;
   border: none;
-  margin-top: var(--margin-top);
+  margin-top: 20px;
   cursor: pointer;
 }
-
 #submit:hover {
   opacity: 0.9;
 }
