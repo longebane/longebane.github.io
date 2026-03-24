@@ -2,6 +2,5 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  base: '/',
-  outDir: 'docs',
+  site: "https://longebane.github.io",
 });
