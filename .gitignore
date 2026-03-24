@@ -5,9 +5,9 @@ node_modules/
 # Build outputs
 build/
 out/
-
-# Astro build output (docs/ is tracked for GitHub Pages)
 dist/
+
+# Astro
 .astro/
 
 # TypeScript
