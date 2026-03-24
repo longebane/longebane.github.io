@@ -1,0 +1,166 @@
+---
+// Contact Form Component (Formspree)
+---
+
+<div id="contact-modal" class="contact-modal" aria-hidden="true">
+  <div class="contact-modal-content">
+    <button class="close-button" id="close-modal" aria-label="Close contact form">&times;</button>
+    <h2>Get in Touch</h2>
+    <form action="https://formspree.io/f/mdapnerv" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<button id="contact-button" class="contact-button">Contact</button>
+
+<script>
+  const modal = document.getElementById('contact-modal');
+  const btn = document.getElementById('contact-button');
+  const closeBtn = document.getElementById('close-modal');
+
+  btn.addEventListener('click', () => {
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+  });
+
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+    }
+  });
+</script>
+
+<style>
+  .contact-button {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 480px;
+    background-color: #ff6f61;
+    color: #ffffff;
+    border: 1px solid #ff9c8d;
+    border-radius: 40px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    z-index: 1000;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+
+  .contact-button:hover {
+    background-color: #ff805f;
+    transform: translateX(-50%) translateY(-2px);
+  }
+
+  .contact-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 111, 97, 0.35);
+  }
+
+  .contact-modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  .contact-modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+  }
+
+  .close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+  .close-button:hover {
+    color: black;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  input,
+  textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  button[type="submit"] {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #0072ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #0056cc;
+  }
+
+  @media (max-width: 600px) {
+    .contact-modal-content {
+      margin: 5% auto;
+      padding: 15px;
+      width: 95%;
+    }
+
+    .contact-button {
+      bottom: 10px;
+      right: 10px;
+      padding: 12px 16px;
+      font-size: 14px;
+    }
+  }
+</style>
