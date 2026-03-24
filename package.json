@@ -1,0 +1,27 @@
+{
+  "name": "longebane.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/longebane/longebane.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/longebane/longebane.github.io/issues"
+  },
+  "homepage": "https://github.com/longebane/longebane.github.io#readme",
+  "dependencies": {
+    "astro": "^6.0.8"
+  }
+}

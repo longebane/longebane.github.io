@@ -1,0 +1,453 @@
+:root {
+  --bg-color: #1a1f26;
+  --card-bg: #252b35;
+  --text-main: #ffffff;
+  --text-dim: #a0a6b1;
+  --accent: #4ebfff;
+}
+
+/*-------------------------
+	Simple reset that makes me feel so fresh and delicious
+--------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*-------------------------
+	General Styles
+--------------------------*/
+html {
+  background: url("../../assets/img/bg.png") right no-repeat #efefef;
+  background-attachment: fixed;
+  background-position: right bottom;
+}
+
+body {
+  color: #fff;
+  font:
+    14px/1.3 lato,
+    "segoe ui",
+    Arial,
+    sans-serif;
+  margin: 0 auto 100px;
+  padding-bottom: 50px;
+  width: 1000px;
+  overflow: visible;
+  background: url("../../assets/img/tile.png");
+  margin-top: 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px #121212;
+}
+
+.grid {
+  max-width: 69em;
+  list-style: none;
+}
+
+.grid li {
+  display: block;
+  float: left;
+  padding: 7px;
+  width: 100%;
+  text-align: center;
+}
+
+/*----------------------------
+	Header
+-----------------------------*/
+.header {
+  display: block;
+  height: 79px;
+  border-radius: 4px;
+}
+
+h1 {
+  background: url("../../assets/img/logow.png") no-repeat center #aac8f6;
+  background-size: cover;
+  height: 100%;
+  border-radius: 4px 4px 0 0;
+  text-align: center;
+  text-indent: -9999px;
+}
+
+/*----------------------------
+	Navigation
+-----------------------------*/
+#filter {
+  padding: 10px;
+  background: #eee;
+  display: block;
+  height: 20px;
+  position: relative;
+  width: auto;
+  text-align: center;
+  letter-spacing: 3px;
+}
+#filter li {
+  display: inline;
+  list-style-type: none;
+}
+#filter .selected {
+  color: #000;
+  height: 31px;
+  line-height: 22px;
+  padding: 0 15px 5px;
+  text-shadow: 1px 1px 15px var(--accent);
+  border-bottom: 2px var(--accent) solid;
+}
+
+#filter a,
+#filter a:visited {
+  text-decoration: none;
+  outline: none;
+  color: #0072ff;
+}
+#filter a:hover,
+#filter a:visited:hover {
+  color: rgb(75, 75, 75);
+  text-shadow: 0px 0px 5px #fff;
+}
+
+/*----------------------------
+	Content area
+-----------------------------*/
+.container,
+.about-container {
+  min-height: 100px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  color: #000;
+}
+
+.container {
+  font:
+    14px/1.3 lato,
+    lato,
+    "segoe ui",
+    Arial,
+    sans-serif;
+  text-shadow: 1px 1px 5px #d0d0d0;
+  /*& li{
+  	float: left;
+  	height: 96px;
+  	list-style: none outside none;
+  	margin: 6px;
+  	position: relative;
+  	width: 125px;
+  	@include box-shadow(0 0 5px #000);
+  }
+  & ul{
+  	overflow:hidden;
+  	margin-top:20px;
+  	float: left;
+  }*/
+}
+.container h2 {
+  text-align: center;
+  letter-spacing: 1.3px;
+  font-size: 22px;
+  text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.2);
+}
+.container h3,
+.container p {
+  font-size: 16px;
+  color: #3b5677;
+  text-shadow: 1px 0 5px #eeeeee;
+}
+.container p {
+  margin: 0.6em 0 0.6em 0.6em;
+}
+
+#about-container {
+  font:
+    20px/1.3 lato,
+    lato,
+    "segoe ui",
+    Arial,
+    sans-serif;
+  text-shadow: 1px 1px 5px #d0d0d0;
+  margin-top: 20px;
+  text-spacing: 2px;
+}
+#about-container p {
+  text-indent: 50px;
+}
+#about-container .floaton {
+  float: left;
+  margin-right: 2em;
+}
+
+/*----------------------------
+	The Footer
+-----------------------------*/
+.clearall {
+  clear: both;
+  text-indent: -9999px;
+  margin-top: 9em;
+}
+
+footer {
+  display: inline;
+  background-color: #13181d;
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  bottom: 0;
+  left: 0;
+  z-index: 100000;
+  font-size: 11px;
+  color: #eee;
+  text-align: left;
+  text-indent: 20%;
+  -moz-box-shadow: 0 0 20px #121212;
+  -webkit-box-shadow: 0 0 20px #121212;
+  box-shadow: 0 0 20px #121212;
+}
+footer h2 {
+  font-size: 20px;
+  font-weight: normal;
+  text-indent: -9999px;
+}
+footer ul {
+  font-size: 10px;
+  font-weight: normal;
+}
+footer .logo {
+  margin: -40px 0 0 0px;
+  position: absolute;
+  top: 0;
+  width: 290px;
+}
+footer a.mail,
+footer a.mail:visited {
+  background: url("") no-repeat right top;
+  border: none;
+  text-decoration: none;
+  color: #fcfcfc;
+  font-size:
+    12px/1.3 lato,
+    "segoe ui",
+    Arial,
+    sans-serif;
+  height: 70px;
+  left: 40%;
+  line-height: 0px;
+  margin: 23px 0 0 110px;
+  position: absolute;
+  top: 0;
+  width: 290px;
+  text-shadow: 0 0 2px #000000;
+}
+footer a.mail:hover {
+  text-decoration: none;
+  color: #c4ffb2;
+  text-shadow: 3px 3px 1px #315218;
+}
+
+#social {
+  left: 30%;
+  margin: -6px 0 0 0px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/*----------------------------
+	Contact
+-----------------------------*/
+label {
+  color: #000;
+  font-size: 18px;
+  display: block;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 5px #bad6ff;
+}
+
+form {
+  margin: 0 auto;
+  width: 50%;
+}
+
+input,
+textarea {
+  position: relative;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+  -moz-box-shadow:
+    0 1px rgba(34, 25, 25, 0.2) inset,
+    0 1px white;
+  -webkit-box-shadow:
+    0 1px rgba(34, 25, 25, 0.2) inset,
+    0 1px white;
+  box-shadow:
+    0 1px rgba(34, 25, 25, 0.2) inset,
+    0 1px white;
+  width: 100%;
+  height: 27px;
+  background: #efefef;
+  border: 2px solid #dedede;
+  padding: 10px;
+  margin-top: 3px;
+  font-size: 0.9em;
+  color: #00728a;
+  border-radius: 4px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #930;
+  color: #5d5d5d;
+  box-shadow:
+    inset 0 1px rgba(34, 25, 25, 0.2),
+    0 1px rgba(255, 255, 255, 0.6),
+    0 0 7px rgba(235, 82, 82, 0.5);
+  -moz-box-shadow:
+    inset 0 1px rgba(34, 25, 25, 0.2),
+    0 1px rgba(255, 255, 255, 0.6),
+    0 0 7px rgba(235, 82, 82, 0.5);
+  -webkit-box-shadow:
+    inset 0 1px rgba(34, 25, 25, 0.2),
+    0 1px rgba(255, 255, 255, 0.6),
+    0 0 7px rgba(235, 82, 82, 0.5);
+}
+
+textarea {
+  height: 213px;
+  background: url("../../assets/img/textarea-bg.png") right no-repeat #efefef;
+}
+
+#submit {
+  width: 110px;
+  height: 32px;
+  background: url(../../assets/img/submit.gif);
+  text-indent: -9999px;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+}
+#submit:hover {
+  opacity: 0.9;
+}
+
+/*----------------------------
+	Responsive
+-----------------------------*/
+@media screen and (max-width: 1180px) {
+  #pagewrap {
+    width: 64%;
+  }
+
+  body {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 850px) {
+  #filter {
+    height: auto;
+  }
+  #filter ul {
+    width: 100%;
+  }
+  #filter li {
+    display: block;
+    list-style-type: none;
+  }
+
+  .container {
+    margin-top: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/*Web Porfolio*/
+.portfolio-container {
+  max-width: 1000px;
+  margin: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #343b47;
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.01);
+}
+
+.header-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background: #111; /* Fallback */
+}
+
+.content {
+  padding: 24px;
+}
+
+.header {
+  margin-bottom: 15px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.description {
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.description ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.description li {
+  margin-bottom: 5px;
+}
+
+/* Mobile responsive adjustment */
+@media (max-width: 600px) {
+  .portfolio-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.portfolio-container a,
+.portfolio-container a:visited {
+  text-decoration: none;
+  outline: none;
+  color: var(--accent);
+  margin: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.portfolio-container a:hover,
+.portfolio-container a:visited:hover {
+  color: #aff399;
+  text-shadow: 0px 0px 15px #fff;
+}
