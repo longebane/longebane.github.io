@@ -1,4 +1,6 @@
 ---
+import "../assets/css/styles.css";
+
 export interface Props {
   title: string;
   description: string;
@@ -24,12 +26,6 @@ const { title, description, bodyClass = "" } = Astro.props;
       href="https://fonts.googleapis.com/css?family=Lato:100,300,400"
       rel="stylesheet"
       type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="/assets/css/styles.css"
-      media="print"
-      onload="this.media = 'all'"
     />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="Shortcut Icon" href="/favicon.ico" />
