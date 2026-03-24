@@ -2,6 +2,6 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://longebane.github.io",
+  site: "https://studiodao.com",
   base: "/",
 });
