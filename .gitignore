@@ -7,6 +7,12 @@ dist/
 build/
 out/
 
+# Astro
+.astro/
+
+# TypeScript
+*.tsbuildinfo
+
 # Environment variables
 .env
 .env.local
@@ -30,8 +36,6 @@ pids
 # Coverage directory used by tools like istanbul
 coverage/
 *.lcov
-
-# nyc test coverage
 .nyc_output
 
 # Dependency directories
@@ -52,20 +56,14 @@ jspm_packages/
 # Yarn Integrity file
 .yarn-integrity
 
-# parcel-bundler cache (https://parceljs.org/)
+# Build tool caches
 .cache
 .parcel-cache
-
-# Next.js build output
 .next
-
-# Nuxt.js build / generate output
 .nuxt
-dist
-
-# Gatsby files
-.cache/
-public
+.vuepress/dist
+.fusebox/
+.serverless
 
 # Storybook build outputs
 .out
@@ -75,11 +73,14 @@ public
 tmp/
 temp/
 
-# Editor directories and files
+# IDE and Editor files
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
 .idea
-.DS_Store
+*.swp
+*.swo
+*~
 *.suo
 *.ntvs*
 *.njsproj
@@ -87,11 +88,19 @@ temp/
 *.sw?
 
 # OS generated files
-Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
 ehthumbs.db
+Thumbs.db
 Desktop.ini
 
-# Astro
+# Temporary files
+*.tmp
+*.temp
+*.bak
 .astro/
 
 # Vercel
