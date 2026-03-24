@@ -67,8 +67,8 @@ const { title, description, bodyClass = "" } = Astro.props;
         <li class={Astro.url.pathname === "/" ? "selected" : ""}>
           <a href="/"><span>Music Portfolio</span></a>
         </li>
-        <li class={Astro.url.pathname === "/portfolio" ? "selected" : ""}>
-          <a href="/portfolio"><span>Web Portfolio</span></a>
+        <li class={Astro.url.pathname === "/" ? "" : "selected"}>
+          <a href="/portfolio"><span>{Astro.url.pathname} | Web Portfolio</span></a>
         </li>
       </ul>
     </nav>
