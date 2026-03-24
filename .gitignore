@@ -3,11 +3,11 @@ node_modules/
 .pnpm-store/
 
 # Build outputs
-dist/
 build/
 out/
 
-# Astro
+# Astro build output (docs/ is tracked for GitHub Pages)
+dist/
 .astro/
 
 # TypeScript
