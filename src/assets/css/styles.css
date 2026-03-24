@@ -1,60 +1,9 @@
 :root {
-  /* Colors */
   --bg-color: #1a1f26;
   --card-bg: #252b35;
   --text-main: #ffffff;
   --text-dim: #a0a6b1;
   --accent: #4ebfff;
-  --accent-hover: #aff399;
-  --text-dark: #000;
-  --text-muted: #3b5677;
-  --shadow-dark: #121212;
-  --shadow-light: #d0d0d0;
-  --border-color: #343b47;
-  --input-bg: #efefef;
-  --input-border: #dedede;
-  --input-focus: #930;
-  --nav-bg: #eee;
-  --footer-bg: #13181d;
-  --footer-text: #eee;
-
-  /* Typography */
-  --font-family: lato, "segoe ui", Arial, sans-serif;
-  --font-size-base: 14px;
-  --line-height: 1.3;
-  --letter-spacing: 1.3px;
-  --text-shadow-light: 1px 1px 5px var(--shadow-light);
-  --text-shadow-dark: 0px 3px 0px rgba(0, 0, 0, 0.2);
-
-  /* Layout */
-  --container-width: 1000px;
-  --container-padding: 3rem;
-  --border-radius: 4px;
-  --box-shadow: 0 1px 4px var(--shadow-dark);
-  --transition: all 0.2s ease-in-out;
-
-  /* Spacing */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-
-  /* Header */
-  --header-height: 79px;
-
-  /* Navigation */
-  --nav-height: 20px;
-  --nav-padding: 10px;
-
-  /* Footer */
-  --footer-height: 40px;
-
-  /* Portfolio */
-  --portfolio-gap: 30px;
-  --portfolio-margin: 30px;
-  --card-padding: 24px;
-  --image-height: 250px;
 }
 
 /*-------------------------
@@ -75,16 +24,20 @@ html {
 }
 
 body {
-  color: var(--text-main);
-  font: var(--font-size-base)/var(--line-height) var(--font-family);
+  color: #fff;
+  font:
+    14px/1.3 lato,
+    "segoe ui",
+    Arial,
+    sans-serif;
   margin: 0 auto 100px;
   padding-bottom: 50px;
-  width: var(--container-width);
+  width: 1000px;
   overflow: visible;
   background: url("../../assets/img/tile.png");
   margin-top: 10px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  border-radius: 4px;
+  box-shadow: 0 1px 4px #121212;
 }
 
 .grid {
@@ -105,15 +58,15 @@ body {
 -----------------------------*/
 .header {
   display: block;
-  height: var(--header-height);
-  border-radius: var(--border-radius);
+  height: 79px;
+  border-radius: 4px;
 }
 
 h1 {
   background: url("../../assets/img/logow.png") no-repeat center #aac8f6;
   background-size: cover;
   height: 100%;
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  border-radius: 4px 4px 0 0;
   text-align: center;
   text-indent: -9999px;
 }
@@ -122,10 +75,10 @@ h1 {
 	Navigation
 -----------------------------*/
 #filter {
-  padding: var(--nav-padding);
-  background: var(--nav-bg);
+  padding: 10px;
+  background: #eee;
   display: block;
-  height: var(--nav-height);
+  height: 20px;
   position: relative;
   width: auto;
   text-align: center;
@@ -136,7 +89,7 @@ h1 {
   list-style-type: none;
 }
 #filter .selected {
-  color: var(--text-dark);
+  color: #000;
   height: 31px;
   line-height: 22px;
   padding: 0 15px 5px;
@@ -163,26 +116,45 @@ h1 {
 .about-container {
   min-height: 100px;
   overflow: hidden;
-  margin-top: var(--spacing-xs);
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
-  color: var(--text-dark);
+  margin-top: 0.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  color: #000;
 }
 
 .container {
-  font: var(--font-size-base)/var(--line-height) var(--font-family);
-  text-shadow: var(--text-shadow-light);
+  font:
+    14px/1.3 lato,
+    lato,
+    "segoe ui",
+    Arial,
+    sans-serif;
+  text-shadow: 1px 1px 5px #d0d0d0;
+  /*& li{
+  	float: left;
+  	height: 96px;
+  	list-style: none outside none;
+  	margin: 6px;
+  	position: relative;
+  	width: 125px;
+  	@include box-shadow(0 0 5px #000);
+  }
+  & ul{
+  	overflow:hidden;
+  	margin-top:20px;
+  	float: left;
+  }*/
 }
 .container h2 {
   text-align: center;
-  letter-spacing: var(--letter-spacing);
+  letter-spacing: 1.3px;
   font-size: 22px;
-  text-shadow: var(--text-shadow-dark);
+  text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.2);
 }
 .container h3,
 .container p {
   font-size: 16px;
-  color: var(--text-muted);
+  color: #3b5677;
   text-shadow: 1px 0 5px #eeeeee;
 }
 .container p {
@@ -217,31 +189,22 @@ h1 {
   margin-top: 9em;
 }
 
-/*----------------------------
-	The Footer
------------------------------*/
-.clearall {
-  clear: both;
-  text-indent: -9999px;
-  margin-top: 9em;
-}
-
 footer {
   display: inline;
-  background-color: var(--footer-bg);
+  background-color: #13181d;
   position: fixed;
   width: 100%;
-  height: var(--footer-height);
+  height: 40px;
   bottom: 0;
   left: 0;
   z-index: 100000;
   font-size: 11px;
-  color: var(--footer-text);
+  color: #eee;
   text-align: left;
   text-indent: 20%;
-  -moz-box-shadow: 0 0 20px var(--shadow-dark);
-  -webkit-box-shadow: 0 0 20px var(--shadow-dark);
-  box-shadow: 0 0 20px var(--shadow-dark);
+  -moz-box-shadow: 0 0 20px #121212;
+  -webkit-box-shadow: 0 0 20px #121212;
+  box-shadow: 0 0 20px #121212;
 }
 footer h2 {
   font-size: 20px;
@@ -296,7 +259,7 @@ footer a.mail:hover {
 	Contact
 -----------------------------*/
 label {
-  color: var(--text-dark);
+  color: #000;
   font-size: 18px;
   display: block;
   margin-top: 20px;
@@ -312,7 +275,9 @@ form {
 input,
 textarea {
   position: relative;
-  transition: var(--transition);
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
   -moz-box-shadow:
     0 1px rgba(34, 25, 25, 0.2) inset,
     0 1px white;
@@ -324,18 +289,18 @@ textarea {
     0 1px white;
   width: 100%;
   height: 27px;
-  background: var(--input-bg);
-  border: 2px solid var(--input-border);
+  background: #efefef;
+  border: 2px solid #dedede;
   padding: 10px;
   margin-top: 3px;
   font-size: 0.9em;
   color: #00728a;
-  border-radius: var(--border-radius);
+  border-radius: 4px;
 }
 
 input:focus,
 textarea:focus {
-  border-color: var(--input-focus);
+  border-color: #930;
   color: #5d5d5d;
   box-shadow:
     inset 0 1px rgba(34, 25, 25, 0.2),
@@ -400,20 +365,20 @@ textarea {
   }
 }
 
-/*Web Portfolio*/
+/*Web Porfolio*/
 .portfolio-container {
-  max-width: var(--container-width);
-  margin: var(--portfolio-margin);
+  max-width: 1000px;
+  margin: 30px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: var(--portfolio-gap);
+  gap: 30px;
 }
 
 .project-card {
   background: var(--card-bg);
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid var(--border-color);
+  border: 1px solid #343b47;
   transition: transform 0.2s ease;
 }
 
@@ -423,13 +388,13 @@ textarea {
 
 .header-image {
   width: 100%;
-  height: var(--image-height);
+  height: 250px;
   object-fit: cover;
   background: #111; /* Fallback */
 }
 
 .content {
-  padding: var(--card-padding);
+  padding: 24px;
 }
 
 .header {
@@ -448,7 +413,6 @@ textarea {
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
-}
 }
 
 .description {
