@@ -18,7 +18,7 @@
 	General Styles
 --------------------------*/
 html {
-  background: url("../../assets/img/bg.png") right no-repeat #efefef;
+  background: url("../img/bg.png") right no-repeat #efefef;
   background-attachment: fixed;
   background-position: right bottom;
 }
@@ -34,7 +34,7 @@ body {
   padding-bottom: 50px;
   width: 1000px;
   overflow: visible;
-  background: url("../../assets/img/tile.png");
+  background: url("../img/tile.png");
   margin-top: 10px;
   border-radius: 4px;
   box-shadow: 0 1px 4px #121212;
@@ -63,7 +63,7 @@ body {
 }
 
 h1 {
-  background: url("../../assets/img/logow.png") no-repeat center #aac8f6;
+  background: url("../img/logow.png") no-repeat center #aac8f6;
   background-size: cover;
   height: 100%;
   border-radius: 4px 4px 0 0;
