@@ -258,6 +258,9 @@ footer a.mail:hover {
 /*----------------------------
 	Contact
 -----------------------------*/
+div.email > span:nth-child(2) {
+  display: none;
+}
 label {
   color: #000;
   font-size: 18px;
