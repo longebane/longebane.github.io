@@ -43,14 +43,16 @@ body {
 .grid {
   max-width: 69em;
   list-style: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .grid li {
   display: block;
-  float: left;
   padding: 7px;
   width: 100%;
   text-align: center;
+  box-sizing: border-box;
 }
 
 /*----------------------------
@@ -115,7 +117,7 @@ h1 {
 .container,
 .about-container {
   min-height: 100px;
-  overflow: hidden;
+  overflow: visible;
   margin-top: 0.5rem;
   padding-left: 3rem;
   padding-right: 3rem;

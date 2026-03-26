@@ -1,9 +1,11 @@
 ---
 import LazyAudioEmbed from "./LazyAudioEmbed.astro";
+import TableOfContents from "./TableOfContents.astro";
 
 const music = [
   {
     title: "Original Music",
+    type: "original",
     songs: [
       {
         link: "https://soundcloud.com/long-dao/world-of-zen",
@@ -27,6 +29,7 @@ const music = [
   },
   {
     title: "Indie Rock - Mike and Long Music - All We Have (2013)",
+    type: "album",
     images: [
       "/assets/img/mlm1.png",
       "/assets/img/mlm2.png",
@@ -44,6 +47,7 @@ const music = [
   },
   {
     title: "Original Game Soundtrack - Saturated Dreamers (2013)",
+    type: "album",
     images: [
       "/assets/img/sd1.png",
       "/assets/img/sd2.png",
@@ -71,6 +75,7 @@ const music = [
   },
   {
     title: "Original Game Soundtrack - Immortal Defense (2007)",
+    type: "album",
     images: [
       "/assets/img/id1.gif",
       "/assets/img/id2.jpg",
@@ -97,6 +102,7 @@ const music = [
   },
   {
     title: "Arrangements",
+    type: "arrangement",
     songs: [
       {
         link: "https://soundcloud.com/long-dao/lost-dark-world",
@@ -108,17 +114,43 @@ const music = [
     ],
   },
 ];
+
+// Generate URL-safe IDs from titles
+const generateId = (title: string) => {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+};
+
+const getIcon = (type: string) => {
+  switch (type) {
+    case 'original':
+      return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-header-icon"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>`;
+    case 'album':
+      return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-header-icon"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg>`;
+    case 'arrangement':
+      return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-header-icon"><rect x="2" y="6" width="20" height="12" rx="2"></rect><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"></path></svg>`;
+    default:
+      return '';
+  }
+};
 ---
+
+<TableOfContents sections={music} />
 
 <ul class="grid">
   {
     music.map((section, sectionIndex) => {
-      const { title, images = [], descriptions = [], songs = [] } = section;
+      const { title, type, images = [], descriptions = [], songs = [] } = section;
 
       return (
         <>
           <li>
-            <h2>{title}</h2>
+            <div class="section-header">
+              <div class="icon-bg" set:html={getIcon(type)} />
+              <h2 id={generateId(title)}>{title}</h2>
+            </div>
             <div class="image-container">
               {images.map((image) => (
                 <div class="image-wrap">
@@ -178,25 +210,57 @@ const music = [
   .grid {
     max-width: 69em;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 
   .grid li {
     display: block;
-    float: left;
     padding: 7px;
     width: 100%;
     text-align: center;
+    box-sizing: border-box;
+    float: none;
+    clear: both;
   }
 
   :global(.container) {
     font: 14px/1.3 lato, lato, 'segoe ui', Arial, sans-serif;
     text-shadow: 1px 1px 5px #d0d0d0;
     min-height: 100px;
-    overflow: hidden;
+    overflow: visible;
     margin-top: 1.5em;
-    padding-left: 3em;
-    padding-right: 3em;
+    padding-left: 3rem;
+    padding-right: 3rem;
     color: #000;
+    display: block;
+    clear: both;
+  }
+
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+
+  .icon-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #1373aa, #0072ff);
+    border-radius: 16px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(19, 115, 170, 0.3);
+  }
+
+  :global(.section-header-icon) {
+    width: 32px;
+    height: 32px;
   }
 
   :global(.container) h2 {
