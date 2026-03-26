@@ -1,4 +1,6 @@
 ---
+import LazyAudioEmbed from "./LazyAudioEmbed.astro";
+
 const music = [
   {
     title: "Original Music",
@@ -134,14 +136,10 @@ const music = [
             <li>
               Song Title:
               <a href={song.link}>{song.linkTitle}</a>
-              <iframe
-                class="soundcloud"
-                width="100%"
-                height="166"
-                scrolling="no"
-                frameborder="no"
+              <LazyAudioEmbed
                 src={song.soundcloud}
                 title={song.linkTitle}
+                link={song.link}
               />
               {songIndex === songs.length - 1 &&
               sectionIndex !== music.length - 1 ? (

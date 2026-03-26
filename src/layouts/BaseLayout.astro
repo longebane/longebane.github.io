@@ -96,6 +96,9 @@ const { title, description, bodyClass = "", image = "/assets/img/logo.png", url 
       gtag("js", new Date());
       gtag("config", "G-X2V8J3Y466");
     </script>
+    <!-- Preload SoundCloud widget script for fast embed processing -->
+    <link rel="preload" as="script" href="https://platform.soundcloud.com/widgets.js" />
+    <script async defer src="https://platform.soundcloud.com/widgets.js"></script>
   </head>
 
   <body class={bodyClass}>
