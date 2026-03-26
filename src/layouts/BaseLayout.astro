@@ -35,8 +35,7 @@ const { title, description, bodyClass = "", image = "/assets/img/logo.png", url 
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.site)} />
     <!-- Structured Data -->
-    <script type="application/ld+json">
-      {
+    <script type="application/ld+json" set:html={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Long Dao",
@@ -53,7 +52,7 @@ const { title, description, bodyClass = "", image = "/assets/img/logo.png", url 
           "RPG Maker",
           "Arrangement"
         ]
-      }
+      })}>
     </script>
     <meta
       name="keywords"

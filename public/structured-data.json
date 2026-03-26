@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Long Dao",
+  "alternateName": "LongeBane",
+  "jobTitle": "Composer, Software Engineer",
+  "url": "https://www.studiodao.com",
+  "image": "https://www.studiodao.com/assets/img/self.jpg",
+  "sameAs": [
+    "https://twitter.com/longebane",
+    "https://github.com/longebane",
+    "https://www.linkedin.com/in/longdao/",
+    "https://soundcloud.com/long-dao"
+  ]
+}
