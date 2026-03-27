@@ -190,7 +190,8 @@ const getIcon = (type: string) => {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
-    .toc-link.active {
+    .toc-link.active,
+    .toc-link.active:visited {
         background-color: var(--accent-blue);
         color: white;
         border-color: var(--accent-blue);
@@ -230,13 +231,15 @@ const getIcon = (type: string) => {
     .toc-type {
         font-size: 9px;
         font-weight: 800;
-        opacity: 0.6;
+        color: var(--text-body);
+        opacity: 0.8;
         letter-spacing: 0.5px;
         margin-bottom: 2px;
     }
 
     .toc-link.active .toc-type {
-        opacity: 0.8;
+        color: white;
+        opacity: 0.9;
     }
 
     .toc-title {

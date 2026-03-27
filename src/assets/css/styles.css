@@ -13,14 +13,14 @@
   --text-muted: #b1aca0;
 
   /* --- Brand / Accents --- */
-  --accent: #4ebfff; /* primary blue highlight */
-  --accent-blue: #1373aa; /* deep blue (TOC, icon bg) */
-  --accent-link: #0072ff; /* inline link blue */
+  --accent: #4ebfff; /* primary blue highlight (visual only) */
+  --accent-blue: #1373aa; /* deep blue (TOC, icons, active state bg) */
+  --accent-link: #0059cc; /* standard link blue (high contrast) */
   --accent-warm: #ff6f61; /* contact button coral */
   --accent-warm-hover: #ff805f;
-  --accent-cta: #0072ff; /* form submit button */
-  --accent-cta-hover: #0056cc;
-  --accent-hover-green: #c4ffb2; /* link hover green */
+  --accent-cta: #0059cc; /* form submit button */
+  --accent-cta-hover: #004499;
+  --accent-hover-green: #2d5a27; /* link hover text (high contrast) */
 
   /* --- Borders & Radii --- */
   --radius-sm: 4px;
@@ -143,33 +143,35 @@ h1 {
   border-radius: 20px;
   font-size: 13px;
   font-weight: 500;
+  color: var(--text-body);
   transition:
-    background 0.2s ease,
-    color 0.2s ease;
+    background var(--transition-fast),
+    color var(--transition-fast);
   white-space: nowrap;
 }
-#filter .selected a {
-  background: var(--accent);
+#filter .selected a,
+#filter .selected a:visited {
+  background: var(--accent-blue);
   color: #fff;
   text-shadow: none;
-  box-shadow: 0 2px 8px rgba(78, 191, 255, 0.35);
+  box-shadow: var(--shadow-accent);
 }
 
 #filter a,
 #filter a:visited {
   text-decoration: none;
   outline: none;
-  color: #0072ff;
+  color: var(--accent-link);
 }
 #filter a:hover,
 #filter a:visited:hover {
-  color: rgb(75, 75, 75);
-  text-shadow: 0px 0px 5px #fff;
+  color: var(--accent-blue);
+  background: rgba(19, 115, 170, 0.1);
 }
 #filter .selected a:hover,
 #filter .selected a:visited:hover {
   color: #fff;
-  text-shadow: none;
+  background: var(--accent-blue);
 }
 
 /*----------------------------
