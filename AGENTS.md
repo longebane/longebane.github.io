@@ -4,6 +4,16 @@
 
 This project is using Vite+, a unified toolchain built on top of Vite, Rolldown, Vitest, tsdown, Oxlint, Oxfmt, and Vite Task. Vite+ wraps runtime management, package management, and frontend tooling in a single global CLI called `vp`. Vite+ is distinct from Vite, but it invokes Vite through `vp dev` and `vp build`.
 
+## Documentation & Source of Truth
+
+**CRITICAL RULE**: When you need context or command instructions for Vite+ (`vp`), you MUST prioritize these sources in the following order:
+
+1. Parse the local cache at `.agents/viteplus-guide.md`.
+2. Use the `vp help` / `vp <command> --help` commands in the terminal.
+3. As a backup reference for speed and accuracy, consult [https://viteplus.dev/guide/](https://viteplus.dev/guide/) which is the **latest and ONLY available documentation** for using Vite+.
+
+Do not rely heavily on knowledge of generic Vite unless it directly maps to `vp` actions.
+
 ## Vite+ Workflow
 
 `vp` is a global binary that handles the full development lifecycle. Run `vp help` to print a list of commands and `vp <command> --help` for information about a specific command.
