@@ -224,6 +224,7 @@ const getIcon = (type: string) => {
         display: flex;
         flex-direction: column;
         overflow: hidden;
+        min-width: 0; /* prevent flex child from overflowing its container */
     }
 
     .toc-type {
@@ -288,6 +289,11 @@ const getIcon = (type: string) => {
         .toc-list {
             grid-template-columns: 1fr;
             gap: 5px;
+        }
+
+        .toc-title {
+            white-space: normal;
+            text-overflow: clip;
         }
     }
 </style>
