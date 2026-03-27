@@ -1,9 +1,42 @@
 :root {
+  /* --- Backgrounds --- */
   --bg-color: #1a1f26;
   --card-bg: #252b35;
+  --surface: #fefefe;
+  --surface-dim: #efefef;
+
+  /* --- Text --- */
   --text-main: #ffffff;
   --text-dim: #a0a6b1;
-  --accent: #4ebfff;
+  --text-dark: #000000;
+  --text-body: #3b5677;
+  --text-muted: #b1aca0;
+
+  /* --- Brand / Accents --- */
+  --accent: #4ebfff; /* primary blue highlight */
+  --accent-blue: #1373aa; /* deep blue (TOC, icon bg) */
+  --accent-link: #0072ff; /* inline link blue */
+  --accent-warm: #ff6f61; /* contact button coral */
+  --accent-warm-hover: #ff805f;
+  --accent-cta: #0072ff; /* form submit button */
+  --accent-cta-hover: #0056cc;
+  --accent-hover-green: #c4ffb2; /* link hover green */
+
+  /* --- Borders & Radii --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 40px;
+  --border-muted: rgba(19, 115, 170, 0.3);
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 4px #121212;
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.18);
+  --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-accent: 0 4px 15px rgba(19, 115, 170, 0.3);
+
+  /* --- Transitions --- */
+  --transition-fast: 0.2s ease;
 }
 
 /*-------------------------
@@ -30,14 +63,15 @@ body {
     "segoe ui",
     Arial,
     sans-serif;
-  margin: 0 auto 100px;
+  margin: 10px auto 100px;
   padding-bottom: 50px;
-  width: 1000px;
-  overflow: visible;
+  width: 100%;
+  max-width: 1000px;
+  overflow-x: hidden;
   background: url("../img/tile.png");
-  margin-top: 10px;
   border-radius: 4px;
   box-shadow: 0 1px 4px #121212;
+  box-sizing: border-box;
 }
 
 .grid {
@@ -77,26 +111,48 @@ h1 {
 	Navigation
 -----------------------------*/
 #filter {
-  padding: 10px;
+  padding: 8px 16px;
   background: #eee;
-  display: block;
-  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  width: auto;
-  text-align: center;
-  letter-spacing: 3px;
+  width: 100%;
+  box-sizing: border-box;
+  letter-spacing: 2px;
+  gap: 8px;
+}
+#filter ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
 }
 #filter li {
-  display: inline;
+  display: flex;
   list-style-type: none;
 }
-#filter .selected {
-  color: #000;
-  height: 31px;
-  line-height: 22px;
-  padding: 0 15px 5px;
-  text-shadow: 1px 1px 15px var(--accent);
-  border-bottom: 2px var(--accent) solid;
+#filter li a {
+  display: flex;
+  align-items: center;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+  white-space: nowrap;
+}
+#filter .selected a {
+  background: var(--accent);
+  color: #fff;
+  text-shadow: none;
+  box-shadow: 0 2px 8px rgba(78, 191, 255, 0.35);
 }
 
 #filter a,
@@ -109,6 +165,11 @@ h1 {
 #filter a:visited:hover {
   color: rgb(75, 75, 75);
   text-shadow: 0px 0px 5px #fff;
+}
+#filter .selected a:hover,
+#filter .selected a:visited:hover {
+  color: #fff;
+  text-shadow: none;
 }
 
 /*----------------------------
@@ -172,7 +233,7 @@ h1 {
     sans-serif;
   text-shadow: 1px 1px 5px #d0d0d0;
   margin-top: 20px;
-  text-spacing: 2px;
+  letter-spacing: 0.5px;
 }
 #about-container p {
   text-indent: 50px;
@@ -258,115 +319,47 @@ footer a.mail:hover {
 }
 
 /*----------------------------
-	Contact
+	Contact (legacy page - rules removed, see ContactForm.astro)
 -----------------------------*/
 div.email > span:nth-child(2) {
   display: none;
-}
-label {
-  color: #000;
-  font-size: 18px;
-  display: block;
-  margin-top: 20px;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 5px #bad6ff;
-}
-
-form {
-  margin: 0 auto;
-  width: 50%;
-}
-
-input,
-textarea {
-  position: relative;
-  -webkit-transition: all 0.2s ease-in-out 0s;
-  -moz-transition: all 0.2s ease-in-out 0s;
-  transition: all 0.2s ease-in-out 0s;
-  -moz-box-shadow:
-    0 1px rgba(34, 25, 25, 0.2) inset,
-    0 1px white;
-  -webkit-box-shadow:
-    0 1px rgba(34, 25, 25, 0.2) inset,
-    0 1px white;
-  box-shadow:
-    0 1px rgba(34, 25, 25, 0.2) inset,
-    0 1px white;
-  width: 100%;
-  height: 27px;
-  background: #efefef;
-  border: 2px solid #dedede;
-  padding: 10px;
-  margin-top: 3px;
-  font-size: 0.9em;
-  color: #00728a;
-  border-radius: 4px;
-}
-
-input:focus,
-textarea:focus {
-  border-color: #930;
-  color: #5d5d5d;
-  box-shadow:
-    inset 0 1px rgba(34, 25, 25, 0.2),
-    0 1px rgba(255, 255, 255, 0.6),
-    0 0 7px rgba(235, 82, 82, 0.5);
-  -moz-box-shadow:
-    inset 0 1px rgba(34, 25, 25, 0.2),
-    0 1px rgba(255, 255, 255, 0.6),
-    0 0 7px rgba(235, 82, 82, 0.5);
-  -webkit-box-shadow:
-    inset 0 1px rgba(34, 25, 25, 0.2),
-    0 1px rgba(255, 255, 255, 0.6),
-    0 0 7px rgba(235, 82, 82, 0.5);
-}
-
-textarea {
-  height: 213px;
-  background: url("../../assets/img/textarea-bg.png") right no-repeat #efefef;
-}
-
-#submit {
-  width: 110px;
-  height: 32px;
-  background: url(../../assets/img/submit.gif);
-  text-indent: -9999px;
-  border: none;
-  margin-top: 20px;
-  cursor: pointer;
-}
-#submit:hover {
-  opacity: 0.9;
 }
 
 /*----------------------------
 	Responsive
 -----------------------------*/
-@media screen and (max-width: 1180px) {
-  #pagewrap {
-    width: 64%;
-  }
-
+@media screen and (max-width: 1024px) {
   body {
-    width: 85%;
+    border-radius: 0;
+    margin-top: 0;
+    box-shadow: none;
   }
 }
-@media screen and (max-width: 850px) {
-  #filter {
-    height: auto;
-  }
-  #filter ul {
+
+@media screen and (max-width: 600px) {
+  body {
     width: 100%;
-  }
-  #filter li {
-    display: block;
-    list-style-type: none;
+    border-radius: 0;
   }
 
-  .container {
+  .container,
+  .about-container {
     margin-top: 0;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  #filter {
+    padding: 10px 12px;
+  }
+
+  #filter ul {
+    gap: 4px;
+  }
+
+  #filter li a {
+    padding: 6px 14px;
+    font-size: 13px;
   }
 }
 
