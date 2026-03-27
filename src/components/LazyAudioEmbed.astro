@@ -6,152 +6,21 @@ export interface Props {
 }
 
 const { src, title, link } = Astro.props
-const embedId = `embed-${Math.random().toString(36).substr(2, 9)}`
 ---
 
-<div class='lazy-embed-wrapper' data-embed-id={embedId}>
-    <div class='embed-facade'>
-        <div class='embed-content'>
-            <svg
-                class='play-icon'
-                viewBox='0 0 24 24'
-                fill='currentColor'
-                xmlns='http://www.w3.org/2000/svg'
-            >
-                <path d='M8 5v14l11-7z'></path>
-            </svg>
-            <p class='embed-title'>{title}</p>
-            <p class='embed-hint'>Click to load</p>
-        </div>
-    </div>
-    <iframe
-        class='soundcloud'
-        width='100%'
-        height='166'
-        scrolling='no'
-        frameborder='no'
-        src={src}
-        title={title}
-        style='display: none;'
-        data-embed-id={embedId}></iframe>
-</div>
-
-<script define:vars={{ embedId, src, title }}>
-    const wrapper = document.querySelector(`[data-embed-id="${embedId}"]`)
-    const facade = wrapper.querySelector('.embed-facade')
-    const iframe = wrapper.querySelector(`iframe[data-embed-id="${embedId}"]`)
-    let loaded = false
-
-    const showEmbed = () => {
-        if (!loaded) {
-            loaded = true
-            iframe.style.display = 'block'
-            facade.style.display = 'none'
-
-            // Tell SoundCloud to process this embed if the widget API is ready
-            if (window.SC && window.SC.Widget) {
-                window.SC.Widget.load()
-            }
-        }
-    }
-
-    // Load the embed when it comes into view (with small margin for speed)
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting && !loaded) {
-                    showEmbed()
-                    observer.unobserve(entry.target)
-                }
-            })
-        },
-        { rootMargin: '10px' },
-    )
-
-    observer.observe(wrapper)
-
-    // Also load on click (for users who want to see it immediately)
-    facade.addEventListener('click', showEmbed)
-
-    // Cleanup observer when component is removed
-    window.addEventListener('beforeunload', () => {
-        observer.disconnect()
-    })
-</script>
+<iframe
+    class='soundcloud'
+    width='100%'
+    height='166'
+    scrolling='no'
+    frameborder='no'
+    loading='lazy'
+    src={src}
+    title={title}
+>
+</iframe>
 
 <style>
-    .lazy-embed-wrapper {
-        position: relative;
-        width: 100%;
-    }
-
-    .embed-facade {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 166px;
-        background: linear-gradient(
-            135deg,
-            rgba(19, 115, 170, 0.1),
-            rgba(19, 115, 170, 0.05)
-        );
-        border: 2px solid rgba(19, 115, 170, 0.3);
-        border-radius: 6px;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        user-select: none;
-    }
-
-    .embed-facade:hover {
-        background: linear-gradient(
-            135deg,
-            rgba(19, 115, 170, 0.2),
-            rgba(19, 115, 170, 0.1)
-        );
-        border-color: rgba(19, 115, 170, 0.6);
-    }
-
-    .embed-facade:active {
-        transform: scale(0.99);
-    }
-
-    .embed-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        text-align: center;
-        pointer-events: none;
-    }
-
-    .play-icon {
-        width: 48px;
-        height: 48px;
-        color: #1373aa;
-        opacity: 0.7;
-        transition: opacity 0.2s ease;
-    }
-
-    .embed-facade:hover .play-icon {
-        opacity: 1;
-    }
-
-    .embed-title {
-        margin: 0;
-        font-size: 14px;
-        font-weight: 500;
-        color: #1373aa;
-        max-width: 85%;
-    }
-
-    .embed-hint {
-        margin: 0;
-        font-size: 11px;
-        color: #999;
-        font-style: italic;
-    }
-
     iframe.soundcloud {
         border-radius: 6px;
     }
