@@ -1,389 +1,408 @@
 ---
-import LazyAudioEmbed from "./LazyAudioEmbed.astro";
-import TableOfContents from "./TableOfContents.astro";
+import LazyAudioEmbed from './LazyAudioEmbed.astro'
+import TableOfContents from './TableOfContents.astro'
 
 const music = [
-  {
-    title: "Original Music",
-    type: "original",
-    songs: [
-      {
-        link: "https://soundcloud.com/long-dao/world-of-zen",
-        linkTitle: "World of Zen",
-        soundcloud:
-          "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/634909659&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true&show_teaser=false",
-      },
-      {
-        link: "https://soundcloud.com/long-dao/space-is-cool-in-f-major",
-        linkTitle: "Space is Cool",
-        soundcloud:
-          "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322044999&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true&show_teaser=false",
-      },
-      {
-        link: "https://soundcloud.com/long-dao/distorted-wonderland",
-        linkTitle: "Distorted Wonderland",
-        soundcloud:
-          "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90696343&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true",
-      },
-    ],
-  },
-  {
-    title: "Indie Rock - Mike and Long Music - All We Have (2013)",
-    type: "album",
-    images: [
-      "/assets/img/mlm1.png",
-      "/assets/img/mlm2.png",
-      "/assets/img/incompletebooth.jpg",
-    ],
-    descriptions: [`Debut song from the Album "All We Have"`],
-    songs: [
-      {
-        link: "https://soundcloud.com/long-dao/obstacles",
-        linkTitle: "Obstacles",
-        soundcloud:
-          "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90655765&color=1373aa&auto_play=false&show_artwork=false&visual=true&show_teaser=false",
-      },
-    ],
-  },
-  {
-    title: "Original Game Soundtrack - Saturated Dreamers (2013)",
-    type: "album",
-    images: [
-      "/assets/img/sd1.png",
-      "/assets/img/sd2.png",
-      "/assets/img/sd3.png",
-      "/assets/img/sd4.png",
-    ],
-    descriptions: [
-      `Saturated Dreamers is an open-world adventure game set on Lake, a sentient ice planet that holds many secrets from expeditionists Mercedes and co. Players assume control of the Leda, a ship equipped with unique gadgets that can be used to solve puzzles, befriend creatures, and purify Lake's waters.`,
-      `Saturated Dreamers features over 2 hours of ethnic-style music and was one of the most anticipated Indie adventure games of 2013!`,
-    ],
-    songs: [
-      {
-        link: "https://soundcloud.com/long-dao/vida-isla",
-        linkTitle: "Vida Isla - Exploration Theme",
-        soundcloud:
-          "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90697034&color=1373aa&auto_play=false&show_artwork=true&visual=true&show_teaser=false",
-      },
-      {
-        link: "https://soundcloud.com/long-dao/surface-of-monkeys",
-        linkTitle: "Surface of Monkeys - Chaos Theme",
-        soundcloud:
-          "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90831028&color=1373aa&auto_play=false&show_artwork=true&visual=true&show_teaser=false",
-      },
-    ],
-  },
-  {
-    title: "Original Game Soundtrack - Immortal Defense (2007)",
-    type: "album",
-    images: [
-      "/assets/img/id1.gif",
-      "/assets/img/id2.jpg",
-      "/assets/img/id3.jpg",
-      "/assets/img/id4.jpg",
-    ],
-    descriptions: [
-      `Immortal Defense is a story-driven strategy-based game in which you give up life to traverse pathspace and defend your home world from destruction. Immortal Defense was acclaimed 2007 Strategy Game of the Year by <a href="gametunnel.com">GameTunnel.com</a>, and praised by many others for its storytelling and unique twist on the strategy genre. Immortal Defense's OST is the most downloaded album on <a href="https://www.iimusic.net/plus/2008/11/immortal-defense">iimusic.net</a>. Adventure into outer space and beyond with this orchestral soundtrack with rhythmic percussion.`,
-    ],
-    songs: [
-      {
-        link: "https://soundcloud.com/long-dao/deep-space",
-        linkTitle: "Deep Space",
-        soundcloud:
-          "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/91172365&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true",
-      },
-      {
-        link: "https://soundcloud.com/long-dao/a-winter-journey",
-        linkTitle: "A Winter Journey",
-        soundcloud:
-          "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90696725&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true",
-      },
-    ],
-  },
-  {
-    title: "Arrangements",
-    type: "arrangement",
-    songs: [
-      {
-        link: "https://soundcloud.com/long-dao/lost-dark-world",
-        linkTitle:
-          "Lost Dark World (The Legend of Zelda: A Link to the Past and Jurassic Park Lost World)",
-        soundcloud:
-          "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90697209&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=false",
-      },
-    ],
-  },
-];
+    {
+        title: 'Original Music',
+        type: 'original',
+        songs: [
+            {
+                link: 'https://soundcloud.com/long-dao/world-of-zen',
+                linkTitle: 'World of Zen',
+                soundcloud:
+                    'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/634909659&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true&show_teaser=false',
+            },
+            {
+                link: 'https://soundcloud.com/long-dao/space-is-cool-in-f-major',
+                linkTitle: 'Space is Cool',
+                soundcloud:
+                    'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322044999&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true&show_teaser=false',
+            },
+            {
+                link: 'https://soundcloud.com/long-dao/distorted-wonderland',
+                linkTitle: 'Distorted Wonderland',
+                soundcloud:
+                    'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90696343&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true',
+            },
+        ],
+    },
+    {
+        title: 'Indie Rock - Mike and Long Music - All We Have (2013)',
+        type: 'album',
+        images: [
+            '/assets/img/mlm1.png',
+            '/assets/img/mlm2.png',
+            '/assets/img/incompletebooth.jpg',
+        ],
+        descriptions: [`Debut song from the Album "All We Have"`],
+        songs: [
+            {
+                link: 'https://soundcloud.com/long-dao/obstacles',
+                linkTitle: 'Obstacles',
+                soundcloud:
+                    'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90655765&color=1373aa&auto_play=false&show_artwork=false&visual=true&show_teaser=false',
+            },
+        ],
+    },
+    {
+        title: 'Original Game Soundtrack - Saturated Dreamers (2013)',
+        type: 'album',
+        images: [
+            '/assets/img/sd1.png',
+            '/assets/img/sd2.png',
+            '/assets/img/sd3.png',
+            '/assets/img/sd4.png',
+        ],
+        descriptions: [
+            `Saturated Dreamers is an open-world adventure game set on Lake, a sentient ice planet that holds many secrets from expeditionists Mercedes and co. Players assume control of the Leda, a ship equipped with unique gadgets that can be used to solve puzzles, befriend creatures, and purify Lake's waters.`,
+            `Saturated Dreamers features over 2 hours of ethnic-style music and was one of the most anticipated Indie adventure games of 2013!`,
+        ],
+        songs: [
+            {
+                link: 'https://soundcloud.com/long-dao/vida-isla',
+                linkTitle: 'Vida Isla - Exploration Theme',
+                soundcloud:
+                    'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90697034&color=1373aa&auto_play=false&show_artwork=true&visual=true&show_teaser=false',
+            },
+            {
+                link: 'https://soundcloud.com/long-dao/surface-of-monkeys',
+                linkTitle: 'Surface of Monkeys - Chaos Theme',
+                soundcloud:
+                    'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90831028&color=1373aa&auto_play=false&show_artwork=true&visual=true&show_teaser=false',
+            },
+        ],
+    },
+    {
+        title: 'Original Game Soundtrack - Immortal Defense (2007)',
+        type: 'album',
+        images: [
+            '/assets/img/id1.gif',
+            '/assets/img/id2.jpg',
+            '/assets/img/id3.jpg',
+            '/assets/img/id4.jpg',
+        ],
+        descriptions: [
+            `Immortal Defense is a story-driven strategy-based game in which you give up life to traverse pathspace and defend your home world from destruction. Immortal Defense was acclaimed 2007 Strategy Game of the Year by <a href="gametunnel.com">GameTunnel.com</a>, and praised by many others for its storytelling and unique twist on the strategy genre. Immortal Defense's OST is the most downloaded album on <a href="https://www.iimusic.net/plus/2008/11/immortal-defense">iimusic.net</a>. Adventure into outer space and beyond with this orchestral soundtrack with rhythmic percussion.`,
+        ],
+        songs: [
+            {
+                link: 'https://soundcloud.com/long-dao/deep-space',
+                linkTitle: 'Deep Space',
+                soundcloud:
+                    'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/91172365&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true',
+            },
+            {
+                link: 'https://soundcloud.com/long-dao/a-winter-journey',
+                linkTitle: 'A Winter Journey',
+                soundcloud:
+                    'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90696725&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true',
+            },
+        ],
+    },
+    {
+        title: 'Arrangements',
+        type: 'arrangement',
+        songs: [
+            {
+                link: 'https://soundcloud.com/long-dao/lost-dark-world',
+                linkTitle:
+                    'Lost Dark World (The Legend of Zelda: A Link to the Past and Jurassic Park Lost World)',
+                soundcloud:
+                    'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90697209&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=false',
+            },
+        ],
+    },
+]
 
 // Generate URL-safe IDs from titles
 const generateId = (title: string) => {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-};
+    return title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+}
 
 const getIcon = (type: string) => {
-  switch (type) {
-    case 'original':
-      return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-header-icon"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>`;
-    case 'album':
-      return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-header-icon"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg>`;
-    case 'arrangement':
-      return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-header-icon"><rect x="2" y="6" width="20" height="12" rx="2"></rect><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"></path></svg>`;
-    default:
-      return '';
-  }
-};
+    switch (type) {
+        case 'original':
+            return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-header-icon"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>`
+        case 'album':
+            return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-header-icon"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg>`
+        case 'arrangement':
+            return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-header-icon"><rect x="2" y="6" width="20" height="12" rx="2"></rect><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"></path></svg>`
+        default:
+            return ''
+    }
+}
 ---
 
 <TableOfContents sections={music} />
 
-<ul class="grid">
-  {
-    music.map((section, sectionIndex) => {
-      const { title, type, images = [], descriptions = [], songs = [] } = section;
+<ul class='grid'>
+    {
+        music.map((section, sectionIndex) => {
+            const {
+                title,
+                type,
+                images = [],
+                descriptions = [],
+                songs = [],
+            } = section
 
-      return (
-        <>
-          <li>
-            <div class="section-header">
-              <div class="icon-bg" set:html={getIcon(type)} />
-              <h2 id={generateId(title)}>{title}</h2>
-            </div>
-            <div class="image-container">
-              {images.map((image) => (
-                <div class="image-wrap">
-                  <img src={image} alt="Artwork" />
-                </div>
-              ))}
-            </div>
-          </li>
-          <li>
-            {descriptions.map((description) => (
-              <p set:html={description} />
-            ))}
-          </li>
-          {songs.map((song, songIndex) => (
-            <li>
-              Song Title:
-              <a href={song.link}>{song.linkTitle}</a>
-              <LazyAudioEmbed
-                src={song.soundcloud}
-                title={song.linkTitle}
-                link={song.link}
-              />
-              {songIndex === songs.length - 1 &&
-              sectionIndex !== music.length - 1 ? (
-                <hr />
-              ) : null}
-            </li>
-          ))}
-        </>
-      );
-    })
-  }
+            return (
+                <>
+                    <li>
+                        <div class='section-header'>
+                            <div class='icon-bg' set:html={getIcon(type)} />
+                            <h2 id={generateId(title)}>{title}</h2>
+                        </div>
+                        <div class='image-container'>
+                            {images.map((image) => (
+                                <div class='image-wrap'>
+                                    <img src={image} alt='Artwork' />
+                                </div>
+                            ))}
+                        </div>
+                    </li>
+                    <li>
+                        {descriptions.map((description) => (
+                            <p set:html={description} />
+                        ))}
+                    </li>
+                    {songs.map((song, songIndex) => (
+                        <li>
+                            Song Title:
+                            <a href={song.link}>{song.linkTitle}</a>
+                            <LazyAudioEmbed
+                                src={song.soundcloud}
+                                title={song.linkTitle}
+                                link={song.link}
+                            />
+                            {songIndex === songs.length - 1 &&
+                            sectionIndex !== music.length - 1 ? (
+                                <hr />
+                            ) : null}
+                        </li>
+                    ))}
+                </>
+            )
+        })
+    }
 </ul>
 
 <style>
-  a,
-  a:visited {
-    text-decoration: none;
-    outline: none;
-    color: #0072ff;
-  }
-  a:hover,
-  a:visited:hover {
-    color: #c4ffb2;
-    text-shadow: 0px 0px 5px #315218;
-  }
+    a,
+    a:visited {
+        text-decoration: none;
+        outline: none;
+        color: #0072ff;
+    }
+    a:hover,
+    a:visited:hover {
+        color: #c4ffb2;
+        text-shadow: 0px 0px 5px #315218;
+    }
 
-  ul {
-    font-size: 13px;
-    margin: 6px 0px;
-    padding: 0px;
-    list-style: none;
-  }
-  ul li {
-    position: relative;
-  }
-  .grid {
-    max-width: 69em;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
+    ul {
+        font-size: 13px;
+        margin: 6px 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    ul li {
+        position: relative;
+    }
+    .grid {
+        max-width: 69em;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 
-  .grid li {
-    display: block;
-    padding: 7px;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-    float: none;
-    clear: both;
-  }
-
-  :global(.container) {
-    font: 14px/1.3 lato, lato, 'segoe ui', Arial, sans-serif;
-    text-shadow: 1px 1px 5px #d0d0d0;
-    min-height: 100px;
-    overflow: visible;
-    margin-top: 1.5em;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    color: #000;
-    display: block;
-    clear: both;
-  }
-
-  .section-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 10px;
-  }
-
-  .icon-bg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #1373aa, #0072ff);
-    border-radius: 16px;
-    color: white;
-    box-shadow: 0 4px 15px rgba(19, 115, 170, 0.3);
-  }
-
-  :global(.section-header-icon) {
-    width: 32px;
-    height: 32px;
-  }
-
-  :global(.container) h2 {
-    text-align: center;
-    letter-spacing: 1.3px;
-    font-size: 22px;
-    text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.2);
-  }
-
-  :global(.container) h3,
-  :global(.container) p {
-    font-size: 16px;
-    color: #3b5677;
-    text-shadow: 1px 0 5px #eeeeee;
-  }
-
-  :global(.container) p {
-    margin: 0.6em 0 0.6em 0.6em;
-  }
-
-  .image-container {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    flex-basis: row;
-  }
-
-  .image-wrap {
-    display: flex;
-    flex: 1;
-    margin: 20px 2px;
-    position: relative;
-    max-width: 100%;
-    vertical-align: bottom;
-  }
-
-  .image-wrap:after {
-    content: ' ';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    border: solid 1px #1b1b1b;
-    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4),
-      inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4),
-      inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4),
-      inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
-  }
-
-  .image-wrap {
-    text-align: center;
-  }
-
-  .image-wrap img {
-    object-fit: cover;
-    height: 140px;
-    width: 100%;
-    text-align: center;
-    vertical-align: bottom;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-    border-radius: 4px;
-  }
-
-  .image-wrap:after {
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 4px 5px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(0, 0, 0, 0.6);
-  }
-
-  hr {
-    border: 0;
-    height: 1px;
-    background-image: -webkit-linear-gradient(
-      left,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0)
-    );
-    background-image: -moz-linear-gradient(
-      left,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0)
-    );
-    background-image: -ms-linear-gradient(
-      left,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0)
-    );
-    background-image: -o-linear-gradient(
-      left,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0)
-    );
-    padding: 0;
-    border: none;
-    color: #d2d2d2;
-    text-align: center;
-    margin-top: 0px;
-    margin-bottom: 20px;
-  }
-
-  .soundcloud {
-    border-radius: 4px;
-    display: block;
-    width: 80%;
-    margin: 10px auto;
-    height: 95px;
-    border: 1px solid black;
-    box-shadow: 0 3px 8px #121212;
-  }
-
-  @media screen and (max-width: 850px) {
     .grid li {
-      padding: 0;
+        display: block;
+        padding: 7px;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        float: none;
+        clear: both;
     }
+
+    :global(.container) {
+        font:
+            14px/1.3 lato,
+            lato,
+            'segoe ui',
+            Arial,
+            sans-serif;
+        text-shadow: 1px 1px 5px #d0d0d0;
+        min-height: 100px;
+        overflow: visible;
+        margin-top: 1.5em;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        color: #000;
+        display: block;
+        clear: both;
+    }
+
+    .section-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+    .icon-bg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #1373aa, #0072ff);
+        border-radius: 16px;
+        color: white;
+        box-shadow: 0 4px 15px rgba(19, 115, 170, 0.3);
+    }
+
+    :global(.section-header-icon) {
+        width: 32px;
+        height: 32px;
+    }
+
+    :global(.container) h2 {
+        text-align: center;
+        letter-spacing: 1.3px;
+        font-size: 22px;
+        text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    :global(.container) h3,
+    :global(.container) p {
+        font-size: 16px;
+        color: #3b5677;
+        text-shadow: 1px 0 5px #eeeeee;
+    }
+
+    :global(.container) p {
+        margin: 0.6em 0 0.6em 0.6em;
+    }
+
+    .image-container {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        flex-basis: row;
+    }
+
+    .image-wrap {
+        display: flex;
+        flex: 1;
+        margin: 20px 2px;
+        position: relative;
+        max-width: 100%;
+        vertical-align: bottom;
+    }
+
+    .image-wrap:after {
+        content: ' ';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        border: solid 1px #1b1b1b;
+        -webkit-box-shadow:
+            inset 0 0 1px rgba(255, 255, 255, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4),
+            0 1px 2px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow:
+            inset 0 0 1px rgba(255, 255, 255, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4),
+            0 1px 2px rgba(0, 0, 0, 0.3);
+        box-shadow:
+            inset 0 0 1px rgba(255, 255, 255, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4),
+            0 1px 2px rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+    }
+
+    .image-wrap {
+        text-align: center;
+    }
+
+    .image-wrap img {
+        object-fit: cover;
+        height: 140px;
+        width: 100%;
+        text-align: center;
+        vertical-align: bottom;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        border-radius: 4px;
+    }
+
+    .image-wrap:after {
+        box-shadow:
+            0 1px 0 rgba(255, 255, 255, 0.2),
+            inset 0 4px 5px rgba(0, 0, 0, 0.6),
+            inset 0 1px 2px rgba(0, 0, 0, 0.6);
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background-image: -webkit-linear-gradient(
+            left,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0)
+        );
+        background-image: -moz-linear-gradient(
+            left,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0)
+        );
+        background-image: -ms-linear-gradient(
+            left,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0)
+        );
+        background-image: -o-linear-gradient(
+            left,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0)
+        );
+        padding: 0;
+        border: none;
+        color: #d2d2d2;
+        text-align: center;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+
     .soundcloud {
-      width: 100%;
+        border-radius: 4px;
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+        height: 95px;
+        border: 1px solid black;
+        box-shadow: 0 3px 8px #121212;
     }
-  }
+
+    @media screen and (max-width: 850px) {
+        .grid li {
+            padding: 0;
+        }
+        .soundcloud {
+            width: 100%;
+        }
+    }
 </style>
