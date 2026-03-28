@@ -139,7 +139,7 @@ const getIcon = (type: string) => {
 
 <TableOfContents sections={music} />
 
-<ul class='grid'>
+<div class='grid music-portfolio-grid'>
     {
         music.map((section, sectionIndex) => {
             const {
@@ -151,45 +151,45 @@ const getIcon = (type: string) => {
             } = section
 
             return (
-                <>
-                    <li>
-                        <div class='section-header'>
-                            <div class='icon-bg' set:html={getIcon(type)} />
-                            <h2 id={generateId(title)}>{title}</h2>
-                        </div>
-                        <div class='image-container'>
-                            {images.map((image) => (
-                                <div class='image-wrap'>
-                                    <img src={image} alt='Artwork' />
-                                </div>
-                            ))}
-                        </div>
-                    </li>
-                    <li>
+                <article class="music-section">
+                    <div class='section-header'>
+                        <div class='icon-bg' set:html={getIcon(type)} />
+                        <h2 id={generateId(title)}>{title}</h2>
+                    </div>
+                    <div class='image-container'>
+                        {images.map((image) => (
+                            <div class='image-wrap'>
+                                <img src={image} alt='Artwork' />
+                            </div>
+                        ))}
+                    </div>
+                    <div class="section-description">
                         {descriptions.map((description) => (
                             <p set:html={description} />
                         ))}
-                    </li>
-                    {songs.map((song, songIndex) => (
-                        <li>
-                            Song Title:
-                            <a href={song.link}>{song.linkTitle}</a>
-                            <LazyAudioEmbed
-                                src={song.soundcloud}
-                                title={song.linkTitle}
-                                link={song.link}
-                            />
-                            {songIndex === songs.length - 1 &&
-                            sectionIndex !== music.length - 1 ? (
-                                <hr />
-                            ) : null}
-                        </li>
-                    ))}
-                </>
+                    </div>
+                    <div class="songs-list">
+                        {songs.map((song, songIndex) => (
+                            <div class="song-item">
+                                <span class="song-label">Song Title:</span>
+                                <a href={song.link}>{song.linkTitle}</a>
+                                <LazyAudioEmbed
+                                    src={song.soundcloud}
+                                    title={song.linkTitle}
+                                    link={song.link}
+                                />
+                                {songIndex === songs.length - 1 &&
+                                sectionIndex !== music.length - 1 ? (
+                                    <hr />
+                                ) : null}
+                            </div>
+                        ))}
+                    </div>
+                </article>
             )
         })
     }
-</ul>
+</div>
 
 <style>
     a,
@@ -205,31 +205,30 @@ const getIcon = (type: string) => {
         text-decoration: underline;
     }
 
-    ul {
-        font-size: 13px;
-        margin: 6px 0px;
-        padding: 0px;
-        list-style: none;
-    }
-    ul li {
-        position: relative;
-    }
     .grid {
         max-width: 69em;
-        list-style: none;
         display: flex;
         flex-direction: column;
         width: 100%;
+        margin: 6px auto;
     }
 
-    .grid li {
+    .music-section {
         display: block;
         padding: 7px;
         width: 100%;
         text-align: center;
         box-sizing: border-box;
-        float: none;
-        clear: both;
+        margin-bottom: 3rem;
+    }
+
+    .song-item {
+        margin-bottom: 20px;
+    }
+
+    .song-label {
+        font-weight: 300;
+        margin-right: 5px;
     }
 
     :global(.container) {

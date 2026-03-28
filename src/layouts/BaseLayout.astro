@@ -101,21 +101,25 @@ const { title, description, bodyClass = "", image = "/assets/img/logo.png", url 
   </head>
 
   <body class={bodyClass}>
-    <div class="header">
-      <h1>Studio Dao: The Works of Long Dao</h1>
-    </div>
-    <nav id="filter">
-      <ul>
-        <li class={Astro.url.pathname === "/" ? "selected" : ""}>
-          <a href="/"><span>Music Portfolio</span></a>
-        </li>
-        <li class={Astro.url.pathname === "/" ? "" : "selected"}>
-          <a href="/portfolio"><span>Web Portfolio</span></a>
-        </li>
-      </ul>
-    </nav>
+    <header class="site-header">
+      <div class="header-content">
+        <h1>Studio Dao: The Works of Long Dao</h1>
+      </div>
+      <nav id="filter" aria-label="Main Navigation">
+        <ul>
+          <li class={Astro.url.pathname === "/" ? "selected" : ""}>
+            <a href="/"><span>Music Portfolio</span></a>
+          </li>
+          <li class={Astro.url.pathname === "/" ? "" : "selected"}>
+            <a href="/portfolio"><span>Web Portfolio</span></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-    <slot />
+    <main id="main-content">
+      <slot />
+    </main>
 
     <ContactForm />
   </body>

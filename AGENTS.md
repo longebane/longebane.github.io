@@ -14,6 +14,7 @@ This agent operates under the logic defined in `.agents/rules/`:
 - `02-design-system.md`: "Rich Aesthetics" and CSS standards.
 - `03-tech-stack.md`: Astro/Vite+/Vanilla CSS.
 - `04-environment.md`: Terminal stability and `vp` protocols.
+- `05-routing.md`: No changes to navigation logic (Quirky production URL handling).
 
 ## Active Phase
 
