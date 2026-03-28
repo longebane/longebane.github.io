@@ -423,29 +423,34 @@ div.email > span:nth-child(2) {
   display: block; /* Ensures Reader Mode recognizes it clearly */
 }
 
-.content {
-  padding: 20px 24px;
-}
-
-.content:first-of-type {
-  padding-bottom: 5px;
+.project-link-wrapper {
+  display: block;
+  text-decoration: none;
   background: rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid #343b47;
+  padding: 15px 24px;
 }
 
-.content:last-of-type {
-  padding-top: 15px;
+.project-link-wrapper:hover {
+  background: rgba(0, 0, 0, 0.3);
 }
 
-.header {
-  margin-bottom: 5px;
+.content-header {
+  padding: 10px 24px;
 }
 
-.header h2 {
+.category {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.header h2,
+.project-title {
   margin: 0;
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: var(--accent);
 }
 
 .link {
