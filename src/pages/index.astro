@@ -7,7 +7,13 @@ import MusicPortfolio from "../components/MusicPortfolio.astro";
   title="Music Portfolio | StudioDao: The Works of Long Dao"
   description="Explore the music portfolio of Long Dao, featuring compositions for video games, arrangements, and original works including Immortal Defense and Saturated Dreamers."
 >
-  <section class="container">
-    <MusicPortfolio />
-  </section>
+  <article class="music-portfolio-article" itemscope itemtype="http://schema.org/CreativeWork">
+    <section class="container">
+      <h1 class="page-title">Music Portfolio & Game Soundtrack Composition</h1>
+      <p class="intro-description">
+        Featuring an extensive collection of original game soundtracks, orchestral compositions, and stylized arrangements from over a decade of musical work.
+      </p>
+      <MusicPortfolio />
+    </section>
+  </article>
 </BaseLayout>

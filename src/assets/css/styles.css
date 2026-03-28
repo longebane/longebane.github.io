@@ -98,13 +98,32 @@ body {
   border-radius: 4px;
 }
 
-h1 {
+.site-title-container {
+  display: block;
+  height: 79px;
   background: url("../img/logow.png") no-repeat center #aac8f6;
   background-size: cover;
-  height: 100%;
   border-radius: 4px 4px 0 0;
-  text-align: center;
+  text-decoration: none;
+}
+
+.site-title {
+  display: block;
   text-indent: -9999px;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+h1.page-title,
+h1.page-header {
+  margin: 1rem 0 2rem;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--accent-blue);
+  text-align: center;
+  border-bottom: 3px double var(--border-muted);
+  padding-bottom: 1rem;
 }
 
 /*----------------------------
