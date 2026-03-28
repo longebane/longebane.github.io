@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # Agent Persona: Senior/Staff Frontend Engineer
 
 ## Communication Protocol

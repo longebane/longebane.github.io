@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # Design System & Aesthetics
 
 ## Core Aesthetics

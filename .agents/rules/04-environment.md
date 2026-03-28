@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # Environment & Tooling Protocols
 
 ## Unified Toolchain: Vite+ (vp)
