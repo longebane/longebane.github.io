@@ -18,5 +18,7 @@ trigger: always_on
 
 ## UX Guardrails
 
-- **Performance:** Be mindful of large assets in `public/assets/img/`. Use optimized images and lazy-loading.
-- **Aesthetic Integrity:** Do not introduce "generic" UI components that clash with the established visual language.
+- **Accessibility & Contrast (Critical)**: Always verify WCAG contrast ratios for text on backgrounds. Never assume a token's brightness based on its name (e.g., "accent-link" might be dark blue). Use `--text-main` (white) or high-contrast highlights for text on dark surfaces.
+- **Responsive Integrity**: When using `justify-content: space-between` in headers, always implement a mobile breakpoint (e.g., `flex-direction: column`) to prevent title/category collisions or truncation.
+- **Performance**: Be mindful of large assets in `public/assets/img/`. Use optimized images and lazy-loading.
+- **Aesthetic Integrity**: Do not introduce "generic" UI components that clash with the established visual language.

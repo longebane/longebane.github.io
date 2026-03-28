@@ -1,5 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import { Image } from 'astro:assets'
+
+// Import portfolio images
+import leoImage from '../assets/img/webporfolio/leo2.webp'
+import filesImage from '../assets/img/webporfolio/files.avif'
+import ddImage from '../assets/img/webporfolio/dd.png'
+import loopnetImage from '../assets/img/webporfolio/loopnet_orig.png'
+import iehpImage from '../assets/img/webporfolio/iehp-orig_orig.jpg'
+import esriImage from '../assets/img/webporfolio/esri.png'
+import iherbImage from '../assets/img/webporfolio/iherb.png'
+import lomaImage from '../assets/img/webporfolio/loma.jpeg'
+import pbhImage from '../assets/img/webporfolio/pbh.png'
+import bermuImage from '../assets/img/webporfolio/bermu.jpg'
+import galleryImage from '../assets/img/webporfolio/gallery.jpg'
+import adventImage from '../assets/img/webporfolio/advent.jpeg'
+import mtrImage from '../assets/img/webporfolio/mtr.jpg'
+import kineticImage from '../assets/img/webporfolio/kinetic.jpeg'
+import seaImage from '../assets/img/webporfolio/sea.png'
+import asImage from '../assets/img/webporfolio/as.jpg'
+import centerImage from '../assets/img/webporfolio/center.jpg'
+import bermyImage from '../assets/img/webporfolio/bermy.jpg'
 ---
 
 <BaseLayout
@@ -22,8 +43,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     <h2 class='project-title'>Leo Technologies</h2>
                     <span class='category'>GovTech</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/leo2.webp'
+                <Image
+                    src={leoImage}
                     alt='LeoTech'
                     class='header-image'
                 />
@@ -69,8 +90,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     <h2 class='project-title'>Files.com</h2>
                     <span class='category'>Cloud Storage Platform</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/files.avif'
+                <Image
+                    src={filesImage}
                     alt='Files.com'
                     class='header-image'
                 />
@@ -121,8 +142,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     <h2 class='project-title'>DoubleDoor.io</h2>
                     <span class='category'>International Real Estate</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/dd.png'
+                <Image
+                    src={ddImage}
                     alt='DoubleDoor.io'
                     class='header-image'
                 />
@@ -155,8 +176,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     <h2 class='project-title'>Costar Group</h2>
                     <span class='category'>Commercial Real Estate Data</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/loopnet_orig.png'
+                <Image
+                    src={loopnetImage}
                     alt='CoStar Group'
                     class='header-image'
                 />
@@ -195,8 +216,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     </h2>
                     <span class='category'>Health Care</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/iehp-orig_orig.jpg'
+                <Image
+                    src={iehpImage}
                     alt='IEHP'
                     class='header-image'
                 />
@@ -225,8 +246,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     </h2>
                     <span class='category'>Enterprise GIS</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/esri.png'
+                <Image
+                    src={esriImage}
                     alt='ESRI'
                     class='header-image'
                 />
@@ -257,8 +278,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     <h2 class='project-title'>iHerb</h2>
                     <span class='category'>E-Commerce</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/iherb.png'
+                <Image
+                    src={iherbImage}
                     alt='iHerb'
                     class='header-image'
                 />
@@ -282,8 +303,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     </h2>
                     <span class='category'>Healthcare</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/loma.jpeg'
+                <Image
+                    src={lomaImage}
                     alt='Loma Linda University Medical Center'
                     class='header-image'
                 />
@@ -308,8 +329,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     </h2>
                     <span class='category'>Non-profit</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/pbh.png'
+                <Image
+                    src={pbhImage}
                     alt='Partners for Better Health'
                     class='header-image'
                 />
@@ -335,8 +356,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     </h2>
                     <span class='category'>Government</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/bermu.jpg'
+                <Image
+                    src={bermuImage}
                     alt='Bermuda- Department of Community and Culture'
                     class='header-image'
                 />
@@ -356,8 +377,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     </h2>
                     <span class='category'>Government</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/gallery.jpg'
+                <Image
+                    src={galleryImage}
                     alt='Bermuda National Gallery'
                     class='header-image'
                 />
@@ -378,8 +399,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     <h2 class='project-title'>Advent Hope</h2>
                     <span class='category'>Non-profit</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/advent.jpeg'
+                <Image
+                    src={adventImage}
                     alt='Advent Hope'
                     class='header-image'
                 />
@@ -402,9 +423,9 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     </h2>
                     <span class='category'>Non-profit</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/mtr.jpg'
-                    alt='Mt. Rubidoux SDA Churc'
+                <Image
+                    src={mtrImage}
+                    alt='Mt. Rubidoux SDA Church'
                     class='header-image'
                 />
                 <div class='content'>
@@ -431,8 +452,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     </h2>
                     <span class='category'>Agency</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/kinetic.jpeg'
+                <Image
+                    src={kineticImage}
                     alt='Kinetic Personnel Group'
                     class='header-image'
                 />
@@ -456,8 +477,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     <h2 class='project-title'>SeaExpress App</h2>
                     <span class='category'>Government</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/sea.png'
+                <Image
+                    src={seaImage}
                     alt='SeaExpress App'
                     class='header-image'
                 />
@@ -475,8 +496,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     <h2 class='project-title'>A.S. Cooper</h2>
                     <span class='category'>E-Commerce</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/as.jpg'
+                <Image
+                    src={asImage}
                     alt='A.S. Cooper'
                     class='header-image'
                 />
@@ -500,8 +521,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     </h2>
                     <span class='category'>Non-profit</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/center.jpg'
+                <Image
+                    src={centerImage}
                     alt='Center on Philanthropy'
                     class='header-image'
                 />
@@ -523,8 +544,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                     <h2 class='project-title'>BermyArtist.com</h2>
                     <span class='category'>Social Networking</span>
                 </a>
-                <img
-                    src='/assets/img/webporfolio/bermy.jpg'
+                <Image
+                    src={bermyImage}
                     alt='BermyArtist.com'
                     class='header-image'
                 />

@@ -1,6 +1,20 @@
 ---
 import LazyAudioEmbed from './LazyAudioEmbed.astro'
 import TableOfContents from './TableOfContents.astro'
+import { Image } from 'astro:assets'
+
+// Import album artwork
+import mlm1 from '../assets/img/mlm1.png'
+import mlm2 from '../assets/img/mlm2.png'
+import incompletebooth from '../assets/img/incompletebooth.jpg'
+import sd1 from '../assets/img/sd1.png'
+import sd2 from '../assets/img/sd2.png'
+import sd3 from '../assets/img/sd3.png'
+import sd4 from '../assets/img/sd4.png'
+import id1 from '../assets/img/id1.gif'
+import id2 from '../assets/img/id2.jpg'
+import id3 from '../assets/img/id3.jpg'
+import id4 from '../assets/img/id4.jpg'
 
 const music = [
     {
@@ -30,11 +44,7 @@ const music = [
     {
         title: 'Indie Rock - Mike and Long Music - All We Have (2013)',
         type: 'album',
-        images: [
-            '/assets/img/mlm1.png',
-            '/assets/img/mlm2.png',
-            '/assets/img/incompletebooth.jpg',
-        ],
+        images: [mlm1, mlm2, incompletebooth],
         descriptions: [`Debut song from the Album "All We Have"`],
         songs: [
             {
@@ -48,12 +58,7 @@ const music = [
     {
         title: 'Original Game Soundtrack - Saturated Dreamers (2013)',
         type: 'album',
-        images: [
-            '/assets/img/sd1.png',
-            '/assets/img/sd2.png',
-            '/assets/img/sd3.png',
-            '/assets/img/sd4.png',
-        ],
+        images: [sd1, sd2, sd3, sd4],
         descriptions: [
             `Saturated Dreamers is an open-world adventure game set on Lake, a sentient ice planet that holds many secrets from expeditionists Mercedes and co. Players assume control of the Leda, a ship equipped with unique gadgets that can be used to solve puzzles, befriend creatures, and purify Lake's waters.`,
             `Saturated Dreamers features over 2 hours of ethnic-style music and was one of the most anticipated Indie adventure games of 2013!`,
@@ -76,12 +81,7 @@ const music = [
     {
         title: 'Original Game Soundtrack - Immortal Defense (2007)',
         type: 'album',
-        images: [
-            '/assets/img/id1.gif',
-            '/assets/img/id2.jpg',
-            '/assets/img/id3.jpg',
-            '/assets/img/id4.jpg',
-        ],
+        images: [id1, id2, id3, id4],
         descriptions: [
             `Immortal Defense is a story-driven strategy-based game in which you give up life to traverse pathspace and defend your home world from destruction. Immortal Defense was acclaimed 2007 Strategy Game of the Year by <a href="gametunnel.com">GameTunnel.com</a>, and praised by many others for its storytelling and unique twist on the strategy genre. Immortal Defense's OST is the most downloaded album on <a href="https://www.iimusic.net/plus/2008/11/immortal-defense">iimusic.net</a>. Adventure into outer space and beyond with this orchestral soundtrack with rhythmic percussion.`,
         ],
@@ -159,7 +159,7 @@ const getIcon = (type: string) => {
                     <div class='image-container'>
                         {images.map((image) => (
                             <div class='image-wrap'>
-                                <img src={image} alt='Artwork' />
+                                <Image src={image} alt='Artwork' />
                             </div>
                         ))}
                     </div>

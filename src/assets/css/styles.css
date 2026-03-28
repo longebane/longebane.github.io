@@ -439,6 +439,14 @@ div.email > span:nth-child(2) {
   gap: 15px;
 }
 
+@media (max-width: 600px) {
+  .project-link-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
 .project-link-wrapper:hover {
   background: rgba(0, 0, 0, 0.35);
 }
@@ -458,11 +466,12 @@ div.email > span:nth-child(2) {
 
 .project-title {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--accent-link);
-  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: var(--text-main);
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .link {
