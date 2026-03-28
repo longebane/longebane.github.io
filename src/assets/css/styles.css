@@ -117,13 +117,23 @@ body {
 
 h1.page-title,
 h1.page-header {
-  margin: 1rem 0 2rem;
-  font-size: 2.5rem;
+  margin: 2rem 0 1rem;
+  font-size: 2.2rem;
   font-weight: 300;
-  color: var(--accent-blue);
+  color: var(--accent-link);
   text-align: center;
-  border-bottom: 3px double var(--border-muted);
-  padding-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.intro-description {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  color: var(--text-body);
+  text-align: center;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 /*----------------------------
@@ -410,19 +420,30 @@ div.email > span:nth-child(2) {
   height: 250px;
   object-fit: cover;
   background: #111; /* Fallback */
+  display: block; /* Ensures Reader Mode recognizes it clearly */
 }
 
 .content {
-  padding: 24px;
+  padding: 20px 24px;
+}
+
+.content:first-of-type {
+  padding-bottom: 5px;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #343b47;
+}
+
+.content:last-of-type {
+  padding-top: 15px;
 }
 
 .header {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .header h2 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
