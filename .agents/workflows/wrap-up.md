@@ -1,16 +1,12 @@
 ---
-description: Finalizing the session and pushing state
+description: Finalizing the session and archiving state.
 ---
 
-# Session Wrap-up Protocol
+# Session Wrap-up Workflow
 
-Use this skill at the end of every major development session or task completion.
+Post-session rituals for repo health.
 
-// turbo
-
-1. **Commit Changes**
-   - Use `git add .` to stage all changes (including rules and metadata).
-   - Use a descriptive commit message (e.g., "Refactor agentic context for efficiency").
-     // turbo
-2. **Sync Remote**
-   - Run `git push` to preserve the current state on the remote repository.
+1. **Verify State**: Record current progress in `AGENTS.md`.
+2. **Move Outputs**: If outputs (artifacts) were generated, move them to `/outputs`.
+3. **Archive**: Move outdated research or temp files to `/archive`.
+4. **Final Sync**: Run `vp check` if code changes were made.

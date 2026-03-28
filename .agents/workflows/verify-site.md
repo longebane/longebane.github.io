@@ -2,24 +2,11 @@
 description: Site Verification & Deployment Readiness
 ---
 
-# Verify Site Protocol
+# Site Verification Workflow
 
-Use this skill to ensure the codebase is stable and ready for deployment.
+Use this workflow to ensure the site is ready for deployment.
 
-1. **Clean Workspace**
-   - Ensure all changes are committed if not currently in a development session.
-     // turbo
-2. **Re-install Dependencies**
-   - Run `vp install` to sync with the current lockfile.
-     // turbo
-3. **Static Analysis & Linting**
-   - Run `vp check` to verify formatting, types, and logic.
-     // turbo
-4. **Execution Test**
-   - Run `vp test` to confirm all unit and integration tests pass.
-     // turbo
-5. **Production Build**
-   - Run `vp build` to generate the static site and verify the build process.
-     // turbo
-6. **Local Preview**
-   - (Optional) Run `vp preview` if manual visual inspection is required.
+1. **Self-check**: Run `vp check` to verify linting and formatting.
+2. **Build**: Run `vp build` to check for build-time errors.
+3. **Audit**: Review large assets in `public/` for optimization.
+4. **Deploy**: Confirm all CI checks pass on GitHub Actions.
