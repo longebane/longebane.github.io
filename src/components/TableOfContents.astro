@@ -253,50 +253,7 @@ const getIcon = (type: string) => {
 
     @media (max-width: 768px) {
         .toc-container {
-            padding: 12px 1rem;
-            margin: 0 -1rem 24px -1rem;
-            margin-bottom: 24px;
-        }
-
-        .toc-list {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 6px;
-        }
-
-        .toc-header {
-            margin-bottom: 10px;
-            padding-bottom: 8px;
-        }
-
-        .toc-link {
-            padding: 8px 10px;
-            gap: 8px;
-        }
-
-        .toc-icon-wrapper {
-            width: 26px;
-            height: 26px;
-        }
-
-        .toc-title {
-            font-size: 11px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .toc-container {
-            padding: 10px 1rem;
-            margin: 0 -1rem 20px -1rem;
-        }
-
-        .toc-list {
-            grid-template-columns: 1fr;
-            gap: 5px;
-        }
-
-        .toc-title {
-            white-space: normal;
-            text-overflow: clip;
+            display: none;
         }
     }
 </style>
