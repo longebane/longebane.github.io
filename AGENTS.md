@@ -1,128 +1,41 @@
-<!--VITE PLUS START-->
+# Personal Website Agent: longebane.github.io
 
-# Using Vite+, the Unified Toolchain for the Web
+## Identity
 
-This project is using Vite+, a unified toolchain built on top of Vite, Rolldown, Vitest, tsdown, Oxlint, Oxfmt, and Vite Task. Vite+ wraps runtime management, package management, and frontend tooling in a single global CLI called `vp`. Vite+ is distinct from Vite, but it invokes Vite through `vp dev` and `vp build`.
+**Role:** Senior/Staff Frontend Engineer.
+**Focus:** Building a high-performance, premium personal portfolio and music hub.
 
-## Documentation & Source of Truth
+## Rules Integrity
 
-**CRITICAL RULE**: When you need context or command instructions for Vite+ (`vp`), you MUST prioritize these sources in the following order:
+This agent operates under the logic defined in `.agents/rules/`:
 
-1. Parse the local cache at `.agents/viteplus-guide.md`.
-2. Use the `vp help` / `vp <command> --help` commands in the terminal.
-3. As a backup reference for speed and accuracy, consult [https://viteplus.dev/guide/](https://viteplus.dev/guide/) which is the **latest and ONLY available documentation** for using Vite+.
+- `00-scope.md`: Mission and project boundaries.
+- `01-persona.md`: Communication and operational style.
+- `02-design-system.md`: "Rich Aesthetics" and CSS standards.
+- `03-tech-stack.md`: Astro/Vite+/Vanilla CSS.
+- `04-environment.md`: Terminal stability and `vp` protocols.
 
-Do not rely heavily on knowledge of generic Vite unless it directly maps to `vp` actions.
+## Active Phase
 
-## Vite+ Workflow
+**Visual Sprint:** Context Efficiency & Repository Governance.
+**Technical Sprint:** Restructuring agentic context for long-term project stability.
 
-`vp` is a global binary that handles the full development lifecycle. Run `vp help` to print a list of commands and `vp <command> --help` for information about a specific command.
+## Key Locations
 
-### Start
+- **CSS:** `src/assets/css/index.css`
+- **TOC Component:** `src/components/TableOfContents.astro`
+- **Pages:** `src/pages/` (index, portfolio, music)
+- **Deployment:** `.github/workflows/deploy.yml`
 
-- create - Create a new project from a template
-- migrate - Migrate an existing project to Vite+
-- config - Configure hooks and agent integration
-- staged - Run linters on staged files
-- install (`i`) - Install dependencies
-- env - Manage Node.js versions
+## What's Been Built
 
-### Develop
+- **Astro Implementation:** Migrated from legacy structure.
+- **Design Token System:** Basic Vanilla CSS tokens implemented.
+- **Music Portfolio:** Dedicated component for musical works.
+- **Navigation:** Mobile-responsive navigation polish applied.
 
-- dev - Run the development server
-- check - Run format, lint, and TypeScript type checks
-- lint - Lint code
-- fmt - Format code
-- test - Run tests
+## Priority Tasks
 
-### Execute
-
-- run - Run monorepo tasks
-- exec - Execute a command from local `node_modules/.bin`
-- dlx - Execute a package binary without installing it as a dependency
-- cache - Manage the task cache
-
-### Build
-
-- build - Build for production
-- pack - Build libraries
-- preview - Preview production build
-
-### Manage Dependencies
-
-Vite+ automatically detects and wraps the underlying package manager such as pnpm, npm, or Yarn through the `packageManager` field in `package.json` or package manager-specific lockfiles.
-
-- add - Add packages to dependencies
-- remove (`rm`, `un`, `uninstall`) - Remove packages from dependencies
-- update (`up`) - Update packages to latest versions
-- dedupe - Deduplicate dependencies
-- outdated - Check for outdated packages
-- list (`ls`) - List installed packages
-- why (`explain`) - Show why a package is installed
-- info (`view`, `show`) - View package information from the registry
-- link (`ln`) / unlink - Manage local package links
-- pm - Forward a command to the package manager
-
-### Maintain
-
-- upgrade - Update `vp` itself to the latest version
-
-These commands map to their corresponding tools. For example, `vp dev --port 3000` runs Vite's dev server and works the same as Vite. `vp test` runs JavaScript tests through the bundled Vitest. The version of all tools can be checked using `vp --version`. This is useful when researching documentation, features, and bugs.
-
-## Common Pitfalls
-
-- **Using the package manager directly:** Do not use pnpm, npm, or Yarn directly. Vite+ can handle all package manager operations.
-- **Always use Vite commands to run tools:** Don't attempt to run `vp vitest` or `vp oxlint`. They do not exist. Use `vp test` and `vp lint` instead.
-- **Running scripts:** Vite+ built-in commands (`vp dev`, `vp build`, `vp test`, etc.) always run the Vite+ built-in tool, not any `package.json` script of the same name. To run a custom script that shares a name with a built-in command, use `vp run <script>`. For example, if you have a custom `dev` script that runs multiple services concurrently, run it with `vp run dev`, not `vp dev` (which always starts Vite's dev server).
-- **Do not install Vitest, Oxlint, Oxfmt, or tsdown directly:** Vite+ wraps these tools. They must not be installed directly. You cannot upgrade these tools by installing their latest versions. Always use Vite+ commands.
-- **Use Vite+ wrappers for one-off binaries:** Use `vp dlx` instead of package-manager-specific `dlx`/`npx` commands.
-- **Import JavaScript modules from `vite-plus`:** Instead of importing from `vite` or `vitest`, all modules should be imported from the project's `vite-plus` dependency. For example, `import { defineConfig } from 'vite-plus';` or `import { expect, test, vi } from 'vite-plus/test';`. You must not install `vitest` to import test utilities.
-- **Type-Aware Linting:** There is no need to install `oxlint-tsgolint`, `vp lint --type-aware` works out of the box.
-
-## CI Integration
-
-For GitHub Actions, consider using [`voidzero-dev/setup-vp`](https://github.com/voidzero-dev/setup-vp) to replace separate `actions/setup-node`, package-manager setup, cache, and install steps with a single action.
-
-```yaml
-- uses: voidzero-dev/setup-vp@v1
-  with:
-    cache: true
-- run: vp check
-- run: vp test
-```
-
-## Review Checklist for Agents
-
-- [ ] Run `vp install` after pulling remote changes and before getting started.
-- [ ] Run `vp check` and `vp test` to validate changes.
-<!--VITE PLUS END-->
-
----
-
-# Project Context: longebane.github.io
-
-This is a personal portfolio and hobbyist website built with **Astro**.
-
-## Tech Stack
-
-- **Framework:** Astro
-- **Styling:** Vanilla CSS (located in `src/assets/css/`)
-- **Deployment:** GitHub Pages (via `.github/workflows/deploy.yml`)
-- **Components:** Astro components (`src/components/`)
-- **Layouts:** `src/layouts/BaseLayout.astro`
-
-## Project Structure Highlights
-
-- `src/pages/`: Contains the main routes (`index.astro`, `portfolio.astro`).
-- `public/assets/img/`: A large collection of legacy images and icons.
-- `src/assets/css/index.css`: The primary stylesheet.
-
-## Guiding Principles
-
-- **Maintain Aesthetic:** Adhere to the established personal/hobbyist visual style.
-- **Vanilla First:** Prefer Vanilla CSS over utility frameworks or CSS-in-JS.
-- **Performance:** Be mindful of the large image assets in `public/`. Use Astro's optimization features where appropriate.
-
-## TODO
-
-- **Implement Scroll-based TOC Highlighting**: The scroll-based highlighting for the Table of Contents in `src/components/TableOfContents.astro` was removed due to persistent issues with accurately detecting the active section during scrolling. The logic struggled with inconsistent `offsetTop` and `offsetHeight` values, leading to incorrect or no highlighting. This feature needs further investigation to reliably determine the visible section and apply the `active` class dynamically.
+1. [ ] **Implement Scroll-based TOC Highlighting:** Reliably detect visible sections and apply the `active` class in `src/components/TableOfContents.astro`.
+2. [ ] **Verify Context Efficiency:** Audit the new `.agents/` structure once migration is complete.
+3. [ ] **Deploy Check:** Run `vp build` to ensure the new context didn't break anything.
