@@ -396,11 +396,20 @@ div.email > span:nth-child(2) {
 
 /*Web Porfolio*/
 .portfolio-container {
-  max-width: 1000px;
-  margin: 30px;
+  max-width: 1200px;
+  margin: 30px auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 30px;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .portfolio-container {
+    grid-template-columns: 1fr;
+    margin: 20px auto;
+    gap: 20px;
+  }
 }
 
 .project-card {
@@ -456,7 +465,6 @@ div.email > span:nth-child(2) {
   color: var(--text-dim);
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  white-space: nowrap;
   font-weight: 600;
   background: rgba(255, 255, 255, 0.05);
   padding: 4px 10px;
