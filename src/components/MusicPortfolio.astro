@@ -58,7 +58,7 @@ const music = [
     {
         title: 'Saturated Dreamers (2013)',
         type: 'album',
-        images: [sd1, sd2, sd3, sd4],
+        //  images: [sd1, sd2, sd3, sd4],
         descriptions: [
             `Saturated Dreamers is an open-world adventure game set on Lake, a sentient ice planet that holds many secrets from expeditionists Mercedes and co. Players assume control of the Leda, a ship equipped with unique gadgets that can be used to solve puzzles, befriend creatures, and purify Lake's waters.`,
             `Saturated Dreamers features over 2 hours of ethnic-style music and was one of the most anticipated Indie adventure games of 2013!`,
@@ -81,7 +81,7 @@ const music = [
     {
         title: 'Immortal Defense (2007)',
         type: 'album',
-        images: [id1, id2, id3, id4],
+        //   images: [id1, id2, id3, id4],
         descriptions: [
             `Immortal Defense is a story-driven strategy-based game in which you give up life to traverse pathspace and defend your home world from destruction. Immortal Defense was acclaimed 2007 Strategy Game of the Year by <a href="gametunnel.com">GameTunnel.com</a>, and praised by many others for its storytelling and unique twist on the strategy genre. Immortal Defense's OST is the most downloaded album on <a href="https://www.iimusic.net/plus/2008/11/immortal-defense">iimusic.net</a>. Adventure into outer space and beyond with this orchestral soundtrack with rhythmic percussion.`,
         ],
@@ -170,6 +170,16 @@ const getIcon = (type: string) => {
                             />
                         ))}
                     </div>
+
+                    {images.length > 0 && (
+                        <div class='archival-gallery'>
+                            {images.map((image) => (
+                                <div class='gallery-item'>
+                                    <Image src={image} alt='Artwork' />
+                                </div>
+                            ))}
+                        </div>
+                    )}
 
                     <div class='multimedia-grid'>
                         {songs.map((song) => (
