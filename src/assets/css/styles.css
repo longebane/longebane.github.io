@@ -522,10 +522,19 @@ div.email > span:nth-child(2) {
 }
 
 .description li {
-  padding: 6px 0;
+  position: relative;
+  padding: 8px 0 8px 18px;
   font-size: 0.85rem;
   font-family: var(--font-sans);
-  border-top: 1px dotted #000;
+  border-top: 1px dotted #121212; /* Ink-Black Dark Rule */
   line-height: 1.5;
-  color: #333;
+  color: #121212;
+}
+
+.description li::before {
+  content: "–"; /* Classic NYT En-Dash */
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+  font-weight: 700;
 }
