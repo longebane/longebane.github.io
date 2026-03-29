@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { Image } from 'astro:assets'
+
+// Use a placeholder or the intended path for the editorial photo
+// User should save their provided photo to this location
+import longPhoto from '../assets/img/long_dao_editorial.jpg'
+---
+
+<BaseLayout
+    title='About | Long Dao'
+    description='Senior/Staff Software Engineer and Multimedia Composer. Specializing in high-performance frontend architecture and indie game scores.'
+    bodyClass='about-page'
+>
+    <article class='about-article'>
+        <header class='page-masthead'>
+            <h1 class='page-title'>Long Dao</h1>
+            <p class='intro-description'>Staff Engineer. Treble Staff.</p>
+        </header>
+
+        <div class='editorial-grid'>
+            <div class='portrait-column'>
+                <div class='image-frame'>
+                    <Image
+                        src={longPhoto}
+                        alt='Long Dao'
+                        class='editorial-photo'
+                        width={160}
+                        height={200}
+                    />
+                    <span class='photo-caption'>Very smallll picture of me</span
+                    >
+                </div>
+            </div>
+
+            <div class='narrative-column'>
+                <section class='narrative-section'>
+                    <p>
+                        I lead technical strategies and architect
+                        high-performance systems for React and React Native.
+                        Currently, I spend most of my time making computers
+                        smarter than they probably should be for startups and
+                        enterprise clusters. It’s mostly just moving blocks
+                        around until they stop falling over, but people seem to
+                        appreciate it.
+                    </p>
+                    <p>
+                        Between deployments, I make peculiar tracks for
+                        independent games and orchestral collections. But mostly
+                        for myself. I've also made indie music with Mike Gumm
+                        and our songs were reviewed by the American Idol Head of
+                        Sound Engineering, who loved them! We were even going to
+                        perform live on Jimmel Kimmel and over KROQ radio...But
+                        some tragedies and... life sure took a different turn!
+                    </p>
+                    <p>
+                        Also I did design this site to look like a NYT
+                        newspaper.
+                    </p>
+                </section>
+            </div>
+        </div>
+    </article>
+</BaseLayout>
+
+<style>
+    .about-article {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .editorial-grid {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 60px;
+        margin-top: 50px;
+        padding: 0 40px;
+    }
+
+    .image-frame {
+        position: sticky;
+        top: 120px;
+        border: 1px solid #dcdcdc; /* Softer archival edge */
+        padding: 8px 8px 24px 8px; /* Photograph-style framing */
+        background: #fff;
+        max-width: 90px; /* Minimalist 'Slide' scale */
+        margin-left: auto;
+        box-shadow:
+            0 1px 3px rgba(0, 0, 0, 0.05),
+            0 10px 25px rgba(0, 0, 0, 0.08); /* High-fidelity layered shadow */
+        transform: rotate(-1.5deg); /* Tangible archival placement */
+    }
+
+    .editorial-photo {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: grayscale(10%) contrast(1.1); /* Editorial high-contrast feel */
+    }
+
+    .photo-caption {
+        display: block;
+        font-family: var(--font-serif);
+        font-size: 0.75rem;
+        font-style: italic;
+        margin-top: 10px;
+        text-align: right;
+        color: var(--text-muted);
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-shadow: 0.3px 0.3px 0px rgba(0, 0, 0, 0.25); /* Tangible 'Ink' Depth */
+        letter-spacing: 0.03em;
+    }
+
+    .subheadline {
+        font-family: var(--font-serif);
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        color: var(--text-main);
+        border-bottom: 1px solid #121212;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    .narrative-section p {
+        font-family: var(--font-sans);
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #333;
+        margin-bottom: 25px;
+        text-align: justify;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .editorial-divider {
+        height: 1px;
+        background: #121212;
+        margin: 40px 0;
+        width: 100%;
+    }
+
+    @media (max-width: 900px) {
+        .editorial-grid {
+            grid-template-columns: 1fr;
+            gap: 0; /* Gap handled by card margins */
+            padding: 0 15px;
+        }
+
+        .image-frame {
+            position: relative;
+            top: 0;
+            max-width: 100px;
+            margin: 20px auto 30px;
+        }
+
+        .narrative-column {
+            background: #ffffff;
+            border: 1px solid #121212;
+            padding: 30px 20px;
+            margin-bottom: 50px;
+        }
+
+        .subheadline {
+            font-size: 1.5rem;
+        }
+
+        .narrative-section p {
+            font-size: 1rem;
+            text-align: left;
+        }
+    }
+</style>
