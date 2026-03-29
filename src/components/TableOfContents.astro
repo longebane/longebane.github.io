@@ -46,7 +46,7 @@ const getIcon = (type: string) => {
             <line x1='3' y1='12' x2='3.01' y2='12'></line>
             <line x1='3' y1='18' x2='3.01' y2='18'></line>
         </svg>
-        <h3>Music Portfolio Sections</h3>
+        <h3>Index</h3>
     </div>
     <ul class='toc-list'>
         {
@@ -74,31 +74,58 @@ const getIcon = (type: string) => {
 </nav>
 
 <script>
-    // Handle click for smooth scroll
-    const links = document.querySelectorAll('.toc-link')
-    links.forEach((link) => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault()
-            const href = link.getAttribute('href')
-            if (!href?.startsWith('#')) return
+    /**
+     * Precision Anchor Tracking
+     * IntersectionObserver synchronizes navigation state with the masonry layout.
+     */
+    const initTOC = () => {
+        const sections = document.querySelectorAll('.music-section');
+        const links = document.querySelectorAll('.toc-link');
+        
+        if (!sections.length || !links.length) return;
 
-            const targetId = href.substring(1)
-            const target = document.getElementById(targetId)
+        // Sync active state based on scroll position
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.querySelector('.section-title')?.id;
+                    if (sectionId) {
+                        links.forEach(link => {
+                            const isActive = link.getAttribute('href') === `#${sectionId}`;
+                            link.classList.toggle('active', isActive);
+                        });
+                    }
+                }
+            });
+        }, {
+            rootMargin: '-120px 0px -70% 0px',
+            threshold: 0
+        });
 
-            if (target) {
-                const tocContainer = document.querySelector('.toc-container') as HTMLElement | null
-                const tocHeight = tocContainer ? tocContainer.offsetHeight : 0
-                const targetPosition = target.getBoundingClientRect().top + window.scrollY
-                
-                window.scrollTo({
-                    top: targetPosition - tocHeight - 20,
-                    behavior: 'smooth'
-                })
-                
-                window.history.pushState(null, '', href)
-            }
-        })
-    })
+        sections.forEach(section => observer.observe(section));
+
+        // Smooth scroll handling
+        links.forEach((link) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                if (!href?.startsWith('#')) return;
+
+                const target = document.getElementById(href.substring(1));
+                if (target) {
+                    const toc = document.querySelector('.toc-container') as HTMLElement;
+                    const offset = toc ? toc.offsetHeight + 40 : 100;
+                    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                    
+                    window.scrollTo({ top, behavior: 'smooth' });
+                    window.history.pushState(null, '', href);
+                }
+            });
+        });
+    };
+
+    initTOC();
+    document.addEventListener('astro:after-swap', initTOC);
 </script>
 
 <style>
