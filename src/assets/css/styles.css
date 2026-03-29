@@ -386,7 +386,8 @@ div.email > span:nth-child(2) {
   }
 
   body.music-portfolio {
-    background: transparent; /* Specific highlight for music page on mobile */
+    background: transparent url(../img/bg.png) bottom right no-repeat fixed;
+    background-size: auto;
   }
 
   body.web-portfolio {
