@@ -23,169 +23,186 @@ import centerImage from '../assets/img/webporfolio/center.jpg'
 import bermyImage from '../assets/img/webporfolio/bermy.jpg'
 
 const featuredProjects = [
-  {
-    title: 'Leo Technologies',
-    category: 'GovTech',
-    href: 'https://leotechnologies.com/',
-    image: leoImage,
-    descriptionSnippet: 'AI investigative platform for high-volume audio and intelligence audit records.',
-    bullets: [
-      'Frontend Architect, migrated Ember platform to React with Typescript',
-      'Engineered interactive Node-Link and Tree charts with D3.js for visualizing complex relationships across disparate case files.',
-      'Designed a custom audio scrobbler engine with sub-100ms latency for instant interactions synchronized with real-time AI transcripts.',
-      'Engineered a dynamic form engine to streamline complex investigative workflows.'
-    ]
-  },
-  {
-    title: 'Files.com',
-    category: 'Cloud Storage Platform',
-    href: 'https://www.files.com/',
-    image: filesImage,
-    bullets: [
-      'Led mobile development of a secure B2B file transfer and automation platform.',
-      'Implemented a \'Hybrid First\' strategy, sharing 90% of business logic between Web and Mobile.',
-      'Developed a global TypeScript component library for design consistency.',
-      'Optimized large-scale file lists (10k+ items) using virtualization.'
-    ]
-  },
-  {
-    title: 'Costar Group',
-    category: 'Real Estate',
-    href: 'https://www.costargroup.com/',
-    image: loopnetImage,
-    descriptionSnippet: 'Global leader in commercial real estate information, analytics, and online marketplaces.',
-    bullets: [
-      'Built high-traffic features in React and Angular for LoopNet and Apartments.com, serving over 100 million monthly active users.',
-      'Created real-time listings management with React and D3.'
-    ]
-  },
-  {
-    title: 'Environmental Systems Research Institute (ESRI)',
-    category: 'Enterprise GIS',
-    href: 'https://www.esri.com',
-    image: esriImage,
-    descriptionSnippet: 'Global market leader in GIS software, location intelligence, and mapping.',
-    bullets: [
-      'Front-end and Web Application development with HTML5, CSS3, Javascript, Angular, KnockoutJS, jQuery',
-      'Created design library that features reusable web components, and icons.'
-    ]
-  },
-  {
-    title: 'DoubleDoor.io',
-    category: 'Real Estate',
-    href: 'https://doubledoor.io/',
-    image: ddImage,
-    bullets: [
-      'Directed the frontend technical strategy, aligning engineering decisions directly with business revenue goals.',
-      'Established Cl/CD workflows, TDD practices, and rigorous code reviews.',
-      'Unified architecture patterns across frontend, backend, and design teams.'
-    ]
-  },
-  {
-    title: 'Inland Empire Health Plan (IEHP)',
-    category: 'Health Care',
-    href: 'https://iehp.org',
-    image: iehpImage,
-    descriptionSnippet: 'Public healthcare plan serving over 1.2 million members.',
-    bullets: [
-      'Migrated legacy Provider Portal to Angular',
-      'Applied WCAG 2.0 standards to member portals, ensuring product accessibility.'
-    ]
-  },
-  {
-    title: 'iHerb',
-    category: 'E-Commerce',
-    href: 'https://www.iherp.com',
-    image: iherbImage,
-    bullets: [
-      'Developed for Desktop, Tablet, iOS, and Android views, jQuery and AJAX, ASP.NET MVC Framework (C#).'
-    ]
-  },
-  {
-    title: 'Loma Linda University Medical Center',
-    category: 'Healthcare',
-    href: 'https://murrieta.lluh.org/',
-    image: lomaImage,
-    bullets: [
-      'Responsive and Pageless Design with Bootstrap and SASS, Wireframes with Bolsamiq, Coffeescript, Expression Engine.'
-    ]
-  }
-];
+    {
+        title: 'Leo Technologies',
+        category: 'GovTech',
+        href: 'https://leotechnologies.com/',
+        image: leoImage,
+        descriptionSnippet:
+            'AI investigative platform for high-volume audio and intelligence audit records.',
+        bullets: [
+            'Frontend Architect, migrated Ember platform to React with Typescript',
+            'Architected interactive D3.js Node-Link and Tree visualizations to map complex intelligence relationships across disparate case files.',
+            'Engineered a custom low-latency (sub-100ms) audio scrobbler engine synchronized with real-time AI transcription.',
+            'Designed a scalable React Query dynamic form engine to streamline complex investigative workflows .',
+        ],
+    },
+    {
+        title: 'Files.com',
+        category: 'Cloud Storage Platform',
+        href: 'https://www.files.com/',
+        image: filesImage,
+        descriptionSnippet:
+            'High-security B2B file transfer and automation ecosystem.',
+        bullets: [
+            'Directed mobile engineering for a high-security B2B file transfer and automation ecosystem.',
+            'Architected a "Hybrid-First" shared-logic strategy, achieving 90% business logic reuse between Web and Mobile platforms.',
+            'Developed a global TypeScript component system to enforce design consistency at scale.',
+            'Optimized large-scale list performance for 10k+ items via aggressive virtualization and memory management.',
+        ],
+    },
+    {
+        title: 'Costar Group',
+        category: 'Real Estate',
+        href: 'https://www.costargroup.com/',
+        image: loopnetImage,
+        descriptionSnippet:
+            'Global leader in commercial real estate information, analytics, and online marketplaces.',
+        bullets: [
+            'Engineered high-performance features for LoopNet and Apartments.com, scaling to 100M+ monthly active users.',
+            'Architected real-time listings management systems utilizing React and D3 data visualizations.',
+        ],
+    },
+    {
+        title: 'Environmental Systems Research Institute (ESRI)',
+        category: 'Enterprise GIS',
+        href: 'https://www.esri.com',
+        image: esriImage,
+        descriptionSnippet:
+            'Global market leader in GIS software, location intelligence, and mapping.',
+        bullets: [
+            'Led frontend development across the ArcGIS ecosystem using Angular, TypeScript, and jQuery.',
+            'Architected a cross-functional design library featuring reusable web components and specialized spatial icons.',
+        ],
+    },
+    {
+        title: 'DoubleDoor.io',
+        category: 'Real Estate',
+        href: 'https://doubledoor.io/',
+        image: ddImage,
+        descriptionSnippet: 'Real estate technology platform.',
+        bullets: [
+            'Directed frontend technical strategy, aligning engineering architecture with business revenue goals.',
+            'Established core CI/CD workflows, TDD standards, and rigorous code review protocols.',
+            'Unified architecture patterns across frontend, backend, and design systems.',
+        ],
+    },
+    {
+        title: 'Inland Empire Health Plan (IEHP)',
+        category: 'Health Care',
+        href: 'https://iehp.org',
+        image: iehpImage,
+        descriptionSnippet:
+            'Public healthcare plan serving over 1.2 million members.',
+        bullets: [
+            'Migrated heritage Provider Portals to Angular, modernizing regional health infrastructure.',
+            'Applied WCAG 2.0 standards to critical member portals to ensure universal access.',
+        ],
+    },
+    {
+        title: 'iHerb',
+        category: 'E-Commerce',
+        href: 'https://www.iherp.com',
+        image: iherbImage,
+        bullets: [
+            'Developed for Desktop, Tablet, iOS, and Android views, jQuery and AJAX, ASP.NET MVC Framework (C#).',
+        ],
+    },
+    {
+        title: 'Loma Linda University Medical Center',
+        category: 'Healthcare',
+        href: 'https://murrieta.lluh.org/',
+        image: lomaImage,
+        bullets: [
+            'Responsive and Pageless Design with Bootstrap and SASS, Wireframes with Bolsamiq, Coffeescript, Expression Engine.',
+        ],
+    },
+]
 
 const secondaryProjects = [
-  {
-    title: 'Partners for Better Health',
-    category: 'Non-profit',
-    href: 'https://p4bhealth.org/',
-    image: pbhImage,
-    bullets: ['Responsive and Pageless Design, Bootstrap and SASS, Expression Engine, Coffeescript.']
-  },
-  {
-    title: 'Bermuda- Dept of Community & Culture',
-    category: 'Government',
-    href: 'https://culture.bm/',
-    image: bermuImage,
-    bullets: ['Full Calendar and Events management platform.']
-  },
-  {
-    title: 'Bermuda National Gallery',
-    category: 'Government',
-    href: 'https://bng.bm/',
-    image: galleryImage,
-    bullets: ['UI Design, Logo Design, HTML5, CSS3, jQuery, Content Management System.']
-  },
-  {
-    title: 'Advent Hope',
-    category: 'Non-profit',
-    href: 'https://advent-hope.org/',
-    image: adventImage,
-    bullets: ['Responsive and Pageless Design, SASS, Copy Writing, HTML5, CSS3, jQuery.']
-  },
-  {
-    title: 'Mt. Rubidoux SDA Church',
-    category: 'Non-profit',
-    href: 'https://www.mtrubidouxsda.org/',
-    image: mtrImage,
-    bullets: ['Responsive Design with Bootstrap, Expression Engine, Calendar and Events.']
-  },
-  {
-    title: 'Kinetic Personnel Group',
-    category: 'Agency',
-    href: 'https://www.kineticpersonnelgroup.com/',
-    image: kineticImage,
-    descriptionSnippet: 'Full service staffing firm specializing in professional staffing solutions.',
-    bullets: ['MojoMotor Engine integration.']
-  },
-  {
-    title: 'SeaExpress App',
-    category: 'Government',
-    href: '#',
-    image: seaImage,
-    bullets: ['Mobile, IU, Project Management.']
-  },
-  {
-    title: 'A.S. Cooper',
-    category: 'E-Commerce',
-    href: '#',
-    image: asImage,
-    bullets: ['User Interface Design, Logo Design, HTML5, CSS3, CMS.']
-  },
-  {
-    title: 'Center on Philanthropy',
-    category: 'Non-profit',
-    href: '#',
-    image: centerImage,
-    bullets: ['UI Design, Logo Design, HTML5, CSS3, jQuery, CMS.']
-  },
-  {
-    title: 'BermyArtist.com',
-    category: 'Social Networking',
-    href: '#',
-    image: bermyImage,
-    descriptionSnippet: 'Social networking platform for Bermuda\'s Artists to showcase portfolios.',
-    bullets: ['UI Design, HTML5, CSS3, jQuery, CMS.']
-  }
-];
+    {
+        title: 'Partners for Better Health',
+        category: 'Non-profit',
+        href: 'https://p4bhealth.org/',
+        image: pbhImage,
+        bullets: [
+            'Responsive and Pageless Design, Bootstrap and SASS, Expression Engine, Coffeescript.',
+        ],
+    },
+    {
+        title: 'Bermuda- Dept of Community & Culture',
+        category: 'Government',
+        href: 'https://culture.bm/',
+        image: bermuImage,
+        bullets: ['Full Calendar and Events management platform.'],
+    },
+    {
+        title: 'Bermuda National Gallery',
+        category: 'Government',
+        href: 'https://bng.bm/',
+        image: galleryImage,
+        bullets: [
+            'UI Design, Logo Design, HTML5, CSS3, jQuery, Content Management System.',
+        ],
+    },
+    {
+        title: 'Advent Hope',
+        category: 'Non-profit',
+        href: 'https://advent-hope.org/',
+        image: adventImage,
+        bullets: [
+            'Responsive and Pageless Design, SASS, Copy Writing, HTML5, CSS3, jQuery.',
+        ],
+    },
+    {
+        title: 'Mt. Rubidoux SDA Church',
+        category: 'Non-profit',
+        href: 'https://www.mtrubidouxsda.org/',
+        image: mtrImage,
+        bullets: [
+            'Responsive Design with Bootstrap, Expression Engine, Calendar and Events.',
+        ],
+    },
+    {
+        title: 'Kinetic Personnel Group',
+        category: 'Agency',
+        href: 'https://www.kineticpersonnelgroup.com/',
+        image: kineticImage,
+        descriptionSnippet:
+            'Full service staffing firm specializing in professional staffing solutions.',
+        bullets: ['MojoMotor Engine integration.'],
+    },
+    {
+        title: 'SeaExpress App',
+        category: 'Government',
+        href: '#',
+        image: seaImage,
+        bullets: ['Mobile, IU, Project Management.'],
+    },
+    {
+        title: 'A.S. Cooper',
+        category: 'E-Commerce',
+        href: '#',
+        image: asImage,
+        bullets: ['User Interface Design, Logo Design, HTML5, CSS3, CMS.'],
+    },
+    {
+        title: 'Center on Philanthropy',
+        category: 'Non-profit',
+        href: '#',
+        image: centerImage,
+        bullets: ['UI Design, Logo Design, HTML5, CSS3, jQuery, CMS.'],
+    },
+    {
+        title: 'BermyArtist.com',
+        category: 'Social Networking',
+        href: '#',
+        image: bermyImage,
+        descriptionSnippet:
+            "Social networking platform for Bermuda's Artists to showcase portfolios.",
+        bullets: ['UI Design, HTML5, CSS3, jQuery, CMS.'],
+    },
+]
 ---
 
 <BaseLayout
@@ -200,19 +217,23 @@ const secondaryProjects = [
     >
         <h1 class='page-header'>Engineering</h1>
         <p class='intro-description'>
-            A chronological showcase of technical leadership and frontend
-            architecture — from AI platforms for state agencies to cloud storage
-            systems for enterprise scale.
+            Technical leadership and frontend architecture — delivering AI
+            investigative platforms for state agencies and high-security cloud
+            storage at enterprise scale.
         </p>
         <div class='portfolio-container'>
-            {featuredProjects.map((project) => (
-                <ProjectCard {...project} isCondensed={false} />
-            ))}
-            
-            <div class="secondary-grid">
-              {secondaryProjects.map((project) => (
-                  <ProjectCard {...project} isCondensed={true} />
-              ))}
+            {
+                featuredProjects.map((project) => (
+                    <ProjectCard {...project} isCondensed={false} />
+                ))
+            }
+
+            <div class='secondary-grid'>
+                {
+                    secondaryProjects.map((project) => (
+                        <ProjectCard {...project} isCondensed={true} />
+                    ))
+                }
             </div>
         </div>
     </article>
