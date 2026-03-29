@@ -101,7 +101,7 @@ const music = [
         ],
     },
     {
-        title: 'Interpretations',
+        title: 'OCRemix',
         type: 'arrangement',
         songs: [
             {
@@ -109,7 +109,7 @@ const music = [
                 linkTitle:
                     'Lost Dark World (The Legend of Zelda: A Link to the Past and Jurassic Park Lost World)',
                 soundcloud:
-                    'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90697209&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=false',
+                    'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90697209&color=1373aa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true',
             },
         ],
     },
@@ -137,9 +137,7 @@ const getIcon = (type: string) => {
 }
 ---
 
-<TableOfContents sections={music} />
-
-<div class='grid music-portfolio-grid'>
+<div class='multimedia-sections'>
     {
         music.map((section, sectionIndex) => {
             const {
@@ -151,41 +149,47 @@ const getIcon = (type: string) => {
             } = section
 
             return (
-                <article class="music-section">
-                    <div class='section-header'>
-                        <div class='icon-bg' set:html={getIcon(type)} />
-                        <h2 id={generateId(title)}>{title}</h2>
-                    </div>
-                    <div class='image-container'>
-                        {images.map((image) => (
-                            <div class='image-wrap'>
-                                <Image src={image} alt='Artwork' />
-                            </div>
-                        ))}
-                    </div>
-                    <div class="section-description">
+                <section class='music-section'>
+                    <header class='section-masthead'>
+                        <div class='masthead-meta'>
+                            <div class='icon-stamp' set:html={getIcon(type)} />
+                            <span class='category-marker'>
+                                {type.toUpperCase()}
+                            </span>
+                        </div>
+                        <h2 id={generateId(title)} class='section-title'>
+                            {title}
+                        </h2>
+                    </header>
+
+                    <div class='section-narrative'>
                         {descriptions.map((description) => (
-                            <p set:html={description} />
+                            <p
+                                class='description-text'
+                                set:html={description}
+                            />
                         ))}
                     </div>
-                    <div class="songs-list">
-                        {songs.map((song, songIndex) => (
-                            <div class="song-item">
-                                <span class="song-label">Song Title:</span>
-                                <a href={song.link}>{song.linkTitle}</a>
-                                <LazyAudioEmbed
-                                    src={song.soundcloud}
-                                    title={song.linkTitle}
-                                    link={song.link}
-                                />
-                                {songIndex === songs.length - 1 &&
-                                sectionIndex !== music.length - 1 ? (
-                                    <hr />
-                                ) : null}
-                            </div>
+
+                    <div class='multimedia-grid'>
+                        {songs.map((song) => (
+                            <article class='track-card'>
+                                <div class='card-metadata'>
+                                    <h3 class='track-title'>
+                                        {song.linkTitle}
+                                    </h3>
+                                </div>
+                                <div class='card-media'>
+                                    <LazyAudioEmbed
+                                        src={song.soundcloud}
+                                        title={song.linkTitle}
+                                        link={song.link}
+                                    />
+                                </div>
+                            </article>
                         ))}
                     </div>
-                </article>
+                </section>
             )
         })
     }
@@ -205,71 +209,124 @@ const getIcon = (type: string) => {
         text-decoration: underline;
     }
 
-    .grid {
-        max-width: 69em;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin: 6px auto;
+    .multimedia-sections {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+        column-count: 2; /* Editorial Project Masonry */
+        column-gap: 30px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        .multimedia-sections {
+            column-count: 3;
+        }
     }
 
     .music-section {
-        display: block;
-        padding: 0;
+        display: inline-block; /* Essential for Masonry */
         width: 100%;
-        text-align: center; /* Personality restored */
+        break-inside: avoid;
+        margin-bottom: 40px;
+        background: #ffffff;
+        border: 1px solid #121212;
+        padding: 30px;
         box-sizing: border-box;
-        margin-bottom: 5rem;
+        box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.05);
     }
 
-    .song-item {
-        margin-bottom: 20px;
-    }
-
-    .song-label {
-        font-weight: 300;
-        margin-right: 5px;
-    }
-
-    :global(.container) {
-        font-family: var(--font-sans); /* Approachable Sans-Serif */
-        font-size: 15px;
-        line-height: 1.7;
-        min-height: 100px;
-        overflow: visible;
-        margin-top: 2rem;
-        padding: 0;
-        color: var(--text-main);
-        display: block;
-        clear: both;
-    }
-
-    .section-header {
-        display: flex;
-        flex-direction: column; /* Centered Creative Spotlight */
-        align-items: center;
-        gap: 15px;
+    .section-masthead {
+        border-bottom: 2px solid #121212;
+        padding-bottom: 12px;
         margin-bottom: 25px;
-        border-bottom: 3px double #1373aa; /* Personality Blue Rule */
-        padding-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
     }
 
-    .icon-bg {
+    .masthead-meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .category-marker {
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        color: var(--accent-blue);
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 1.8rem;
+        margin: 0;
+        line-height: 1.1;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .section-narrative {
+        margin-bottom: 25px;
+    }
+
+    .description-text {
+        font-family: var(--font-sans);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #444;
+    }
+
+    .multimedia-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .track-card {
+        border-top: 1px solid #eee;
+        padding-top: 15px;
+    }
+
+    .card-metadata {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-bottom: 10px;
+    }
+
+    .status-badge {
+        font-family: var(--font-sans);
+        font-size: 0.65rem;
+        font-weight: 800;
+        color: #888;
+        letter-spacing: 1.5px;
+    }
+
+    .track-title {
+        font-family: var(--font-sans);
+        font-size: 0.9rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0;
+        color: #121212;
+    }
+
+    .icon-stamp {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 52px;
-        height: 52px;
-        background: linear-gradient(135deg, #1373aa, #2b7fff);
-        border-radius: 0;
+        width: 32px;
+        height: 32px;
+        background: #121212;
         color: white;
-        box-shadow: 3px 3px 0px rgba(19, 115, 170, 0.2);
-        margin-bottom: 5px;
     }
 
     :global(.section-header-icon) {
-        width: 26px;
-        height: 26px;
+        width: 18px;
+        height: 18px;
         stroke: white;
         stroke-width: 2;
     }
@@ -291,70 +348,36 @@ const getIcon = (type: string) => {
         color: var(--text-main);
     }
 
-    :global(.container) p {
-        margin: 0 0 1.5rem 0;
-        line-height: 1.7;
+    .archival-gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 30px;
     }
 
-    .image-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-        margin-bottom: 25px;
-    }
-
-    .image-wrap {
-        display: flex;
-        position: relative;
-        max-width: 100%;
-        border: 1px solid #121212; /* Clean archival frame */
+    .gallery-item {
+        border: 1px solid #121212;
         padding: 4px;
         background: #ffffff;
     }
 
+    .gallery-item:first-child {
+        grid-column: 1 / -1; /* Lead Artwork / Featured Image */
+    }
 
-    .image-wrap img {
+    .gallery-item img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
         object-fit: cover;
-        height: 160px;
-        width: 100%;
-        display: block;
-        border-radius: 0;
-    }
-
-    hr {
-        border: 0;
-        height: 1px;
-        background: #e0e0e0;
-        margin: 30px 0;
-    }
-
-    .soundcloud {
-        border-radius: 0;
-        display: block;
-        width: 100%;
-        margin: 15px 0;
-        height: 120px;
-        border: 1px solid #121212;
     }
 
     @media screen and (max-width: 850px) {
-        .grid li {
-            padding: 0;
-        }
-        .soundcloud {
-            width: 100%;
-        }
-    }
-
-    @media screen and (max-width: 600px) {
-        :global(.container) {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-
-        .image-wrap {
-            min-width: 120px;
+        .multimedia-sections {
+            column-count: 1; /* Sequential mobile flow */
+            column-gap: 0;
+            padding: 0 15px;
         }
     }
 </style>
