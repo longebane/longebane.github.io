@@ -33,21 +33,23 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
         itemscope
         itemtype='http://schema.org/CreativeWork'
     >
-        <h1 class='page-header'>My Web Portfolio</h1>
+        <h1 class='page-header'>Engineering</h1>
         <p class='intro-description'>
-            These are some of the technical highlights from the last decade of my career—from building AI investigative platforms for state agencies to architecting global file transfer systems for enterprise clients.
+            A chronological showcase of technical leadership and frontend
+            architecture — from AI platforms for state agencies to cloud storage
+            systems for enterprise scale.
         </p>
         <div class='portfolio-container'>
-            <section class='project-card'>
-                <a href='https://leotechnologies.com/' target='_blank' class='project-link-wrapper'>
+            <section class='project-card important-project'>
+                <a
+                    href='https://leotechnologies.com/'
+                    target='_blank'
+                    class='project-link-wrapper'
+                >
                     <h2 class='project-title'>Leo Technologies</h2>
                     <span class='category'>GovTech</span>
                 </a>
-                <Image
-                    src={leoImage}
-                    alt='LeoTech'
-                    class='header-image'
-                />
+                <Image src={leoImage} alt='LeoTech' class='header-image' />
                 <div class='content'>
                     <div class='description'>
                         <p>
@@ -85,16 +87,16 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
                 </div>
             </section>
 
-            <section class='project-card'>
-                <a href='https://www.files.com/' target='_blank' class='project-link-wrapper'>
+            <section class='project-card important-project'>
+                <a
+                    href='https://www.files.com/'
+                    target='_blank'
+                    class='project-link-wrapper'
+                >
                     <h2 class='project-title'>Files.com</h2>
                     <span class='category'>Cloud Storage Platform</span>
                 </a>
-                <Image
-                    src={filesImage}
-                    alt='Files.com'
-                    class='header-image'
-                />
+                <Image src={filesImage} alt='Files.com' class='header-image' />
                 <div class='content'>
                     <div class='description'>
                         <ul>
@@ -137,42 +139,12 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
                 </div>
             </section>
 
-            <section class='project-card'>
-                <a href='https://doubledoor.io/' target='_blank' class='project-link-wrapper'>
-                    <h2 class='project-title'>DoubleDoor.io</h2>
-                    <span class='category'>Real Estate</span>
-                </a>
-                <Image
-                    src={ddImage}
-                    alt='DoubleDoor.io'
-                    class='header-image'
-                />
-                <div class='content'>
-                    <div class='description'>
-                        <ul>
-                            <li>
-                                Directed the frontend technical strategy,
-                                aligning engineering decisions directly with
-                                business revenue goals in a fast-paced
-                                environment.
-                            </li>
-                            <li>
-                                Established Cl/CD workflows, TDD practices, and
-                                rigorous code reviews, which doubled release
-                                velocity and reduced production regressions.
-                            </li>
-                            <li>
-                                Unified architecture patterns across frontend,
-                                backend, and design teams to streamline the
-                                development of complex transaction features.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card'>
-                <a href='https://www.costargroup.com/' target='_blank' class='project-link-wrapper'>
+            <section class='project-card important-project'>
+                <a
+                    href='https://www.costargroup.com/'
+                    target='_blank'
+                    class='project-link-wrapper'
+                >
                     <h2 class='project-title'>Costar Group</h2>
                     <span class='category'>Real Estate</span>
                 </a>
@@ -205,52 +177,18 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
                 </div>
             </section>
 
-            <section class='project-card'>
+            <section class='project-card important-project'>
                 <a
-                    href='https://iehp.org'
+                    href='https://www.esri.com'
                     target='_blank'
                     class='project-link-wrapper'
                 >
-                    <h2 class='project-title'>
-                        Inland Empire Health Plan (IEHP)
-                    </h2>
-                    <span class='category'>Health Care</span>
-                </a>
-                <Image
-                    src={iehpImage}
-                    alt='IEHP'
-                    class='header-image'
-                />
-                <div class='content'>
-                    <div class='description'>
-                        <p>
-                            Public healthcare plan serving over 1.2 million
-                            members.
-                        </p>
-                        <ul>
-                            <li>Migrated legacy Provider Portal to Angular</li>
-                            <li>
-                                Applied WCAG 2.0 standards to member portals,
-                                ensuring product accessibility and compliance
-                                for a massive user base.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card'>
-                <a href='https://www.esri.com' target='_blank' class='project-link-wrapper'>
                     <h2 class='project-title'>
                         Environmental Systems Research Institute (ESRI)
                     </h2>
                     <span class='category'>Enterprise GIS</span>
                 </a>
-                <Image
-                    src={esriImage}
-                    alt='ESRI'
-                    class='header-image'
-                />
+                <Image src={esriImage} alt='ESRI' class='header-image' />
                 <div class='content'>
                     <div class='description'>
                         <p>
@@ -273,16 +211,80 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
                 </div>
             </section>
 
-            <section class='project-card'>
-                <a href='https://www.iherp.com' target='_blank' class='project-link-wrapper'>
+            <section class='project-card important-project'>
+                <a
+                    href='https://doubledoor.io/'
+                    target='_blank'
+                    class='project-link-wrapper'
+                >
+                    <h2 class='project-title'>DoubleDoor.io</h2>
+                    <span class='category'>Real Estate</span>
+                </a>
+                <Image src={ddImage} alt='DoubleDoor.io' class='header-image' />
+                <div class='content'>
+                    <div class='description'>
+                        <ul>
+                            <li>
+                                Directed the frontend technical strategy,
+                                aligning engineering decisions directly with
+                                business revenue goals in a fast-paced
+                                environment.
+                            </li>
+                            <li>
+                                Established Cl/CD workflows, TDD practices, and
+                                rigorous code reviews, which doubled release
+                                velocity and reduced production regressions.
+                            </li>
+                            <li>
+                                Unified architecture patterns across frontend,
+                                backend, and design teams to streamline the
+                                development of complex transaction features.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class='project-card important-project'>
+                <a
+                    href='https://iehp.org'
+                    target='_blank'
+                    class='project-link-wrapper'
+                >
+                    <h2 class='project-title'>
+                        Inland Empire Health Plan (IEHP)
+                    </h2>
+                    <span class='category'>Health Care</span>
+                </a>
+                <Image src={iehpImage} alt='IEHP' class='header-image' />
+                <div class='content'>
+                    <div class='description'>
+                        <p>
+                            Public healthcare plan serving over 1.2 million
+                            members.
+                        </p>
+                        <ul>
+                            <li>Migrated legacy Provider Portal to Angular</li>
+                            <li>
+                                Applied WCAG 2.0 standards to member portals,
+                                ensuring product accessibility and compliance
+                                for a massive user base.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class='project-card desktop-only'>
+                <a
+                    href='https://www.iherp.com'
+                    target='_blank'
+                    class='project-link-wrapper'
+                >
                     <h2 class='project-title'>iHerb</h2>
                     <span class='category'>E-Commerce</span>
                 </a>
-                <Image
-                    src={iherbImage}
-                    alt='iHerb'
-                    class='header-image'
-                />
+                <Image src={iherbImage} alt='iHerb' class='header-image' />
                 <div class='content'>
                     <div class='description'>
                         <ul>
@@ -297,7 +299,11 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
             </section>
 
             <section class='project-card'>
-                <a href='https://murrieta.lluh.org/' target='_blank' class='project-link-wrapper'>
+                <a
+                    href='https://murrieta.lluh.org/'
+                    target='_blank'
+                    class='project-link-wrapper'
+                >
                     <h2 class='project-title'>
                         Loma Linda University Medical Center
                     </h2>
@@ -322,11 +328,13 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
                 </div>
             </section>
 
-            <section class='project-card'>
-                <a href='https://p4bhealth.org/' target='_blank' class='project-link-wrapper'>
-                    <h2 class='project-title'>
-                        Partners for Better Health
-                    </h2>
+            <section class='project-card desktop-only'>
+                <a
+                    href='https://p4bhealth.org/'
+                    target='_blank'
+                    class='project-link-wrapper'
+                >
+                    <h2 class='project-title'>Partners for Better Health</h2>
                     <span class='category'>Non-profit</span>
                 </a>
                 <Image
@@ -349,8 +357,12 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
                 </div>
             </section>
 
-            <section class='project-card'>
-                <a href='https://culture.bm/' target='_blank' class='project-link-wrapper'>
+            <section class='project-card desktop-only'>
+                <a
+                    href='https://culture.bm/'
+                    target='_blank'
+                    class='project-link-wrapper'
+                >
                     <h2 class='project-title'>
                         Bermuda- Department of Community and Culture
                     </h2>
@@ -370,11 +382,13 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
                 </div>
             </section>
 
-            <section class='project-card'>
-                <a href='https://bng.bm/' target='_blank' class='project-link-wrapper'>
-                    <h2 class='project-title'>
-                        Bermuda National Gallery
-                    </h2>
+            <section class='project-card desktop-only'>
+                <a
+                    href='https://bng.bm/'
+                    target='_blank'
+                    class='project-link-wrapper'
+                >
+                    <h2 class='project-title'>Bermuda National Gallery</h2>
                     <span class='category'>Government</span>
                 </a>
                 <Image
@@ -394,8 +408,12 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
                 </div>
             </section>
 
-            <section class='project-card'>
-                <a href='https://advent-hope.org/' target='_blank' class='project-link-wrapper'>
+            <section class='project-card desktop-only'>
+                <a
+                    href='https://advent-hope.org/'
+                    target='_blank'
+                    class='project-link-wrapper'
+                >
                     <h2 class='project-title'>Advent Hope</h2>
                     <span class='category'>Non-profit</span>
                 </a>
@@ -416,11 +434,13 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
                 </div>
             </section>
 
-            <section class='project-card'>
-                <a href='https://www.mtrubidouxsda.org/' target='_blank' class='project-link-wrapper'>
-                    <h2 class='project-title'>
-                                Mt. Rubidoux SDA Church
-                    </h2>
+            <section class='project-card desktop-only'>
+                <a
+                    href='https://www.mtrubidouxsda.org/'
+                    target='_blank'
+                    class='project-link-wrapper'
+                >
+                    <h2 class='project-title'>Mt. Rubidoux SDA Church</h2>
                     <span class='category'>Non-profit</span>
                 </a>
                 <Image
@@ -441,15 +461,13 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
                 </div>
             </section>
 
-            <section class='project-card'>
+            <section class='project-card desktop-only'>
                 <a
                     href='https://www.kineticpersonnelgroup.com/'
                     target='_blank'
                     class='project-link-wrapper'
                 >
-                    <h2 class='project-title'>
-                                Kinetic Personnel Group
-                    </h2>
+                    <h2 class='project-title'>Kinetic Personnel Group</h2>
                     <span class='category'>Agency</span>
                 </a>
                 <Image
@@ -472,7 +490,7 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
                 </div>
             </section>
 
-            <section class='project-card'>
+            <section class='project-card desktop-only'>
                 <a href='#' target='_blank' class='project-link-wrapper'>
                     <h2 class='project-title'>SeaExpress App</h2>
                     <span class='category'>Government</span>
@@ -491,16 +509,12 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
                 </div>
             </section>
 
-            <section class='project-card'>
+            <section class='project-card desktop-only'>
                 <a href='#' target='_blank' class='project-link-wrapper'>
                     <h2 class='project-title'>A.S. Cooper</h2>
                     <span class='category'>E-Commerce</span>
                 </a>
-                <Image
-                    src={asImage}
-                    alt='A.S. Cooper'
-                    class='header-image'
-                />
+                <Image src={asImage} alt='A.S. Cooper' class='header-image' />
                 <div class='content'>
                     <div class='description'>
                         <ul>
@@ -514,11 +528,9 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
                 </div>
             </section>
 
-            <section class='project-card'>
+            <section class='project-card desktop-only'>
                 <a href='#' target='_blank' class='project-link-wrapper'>
-                    <h2 class='project-title'>
-                                Center on Philanthropy
-                    </h2>
+                    <h2 class='project-title'>Center on Philanthropy</h2>
                     <span class='category'>Non-profit</span>
                 </a>
                 <Image
@@ -539,7 +551,7 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
                 </div>
             </section>
 
-            <section class='project-card'>
+            <section class='project-card desktop-only'>
                 <a href='#' target='_blank' class='project-link-wrapper'>
                     <h2 class='project-title'>BermyArtist.com</h2>
                     <span class='category'>Social Networking</span>
