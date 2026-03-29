@@ -18,7 +18,7 @@ import id4 from '../assets/img/id4.jpg'
 
 const music = [
     {
-        title: 'Original Music',
+        title: 'Anthology',
         type: 'original',
         songs: [
             {
@@ -42,7 +42,7 @@ const music = [
         ],
     },
     {
-        title: 'Indie Rock - Mike and Long Music - All We Have (2013)',
+        title: 'All We Have (2013)',
         type: 'album',
         images: [mlm1, mlm2, incompletebooth],
         descriptions: [`Debut song from the Album "All We Have"`],
@@ -56,7 +56,7 @@ const music = [
         ],
     },
     {
-        title: 'Original Game Soundtrack - Saturated Dreamers (2013)',
+        title: 'Saturated Dreamers (2013)',
         type: 'album',
         images: [sd1, sd2, sd3, sd4],
         descriptions: [
@@ -79,7 +79,7 @@ const music = [
         ],
     },
     {
-        title: 'Original Game Soundtrack - Immortal Defense (2007)',
+        title: 'Immortal Defense (2007)',
         type: 'album',
         images: [id1, id2, id3, id4],
         descriptions: [
@@ -101,7 +101,7 @@ const music = [
         ],
     },
     {
-        title: 'Arrangements',
+        title: 'Interpretations',
         type: 'arrangement',
         songs: [
             {
@@ -261,17 +261,21 @@ const getIcon = (type: string) => {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, var(--accent-blue), var(--accent-link));
-        border-radius: var(--radius-lg);
-        color: white;
-        box-shadow: var(--shadow-accent);
+        width: 48px; /* Slightly more compact editorial stamp */
+        height: 48px;
+        background: #fcfcfc;
+        border: 1px solid #121212;
+        border-radius: 0; /* Mandatory Square Corners */
+        color: #121212;
+        box-shadow: 2px 2px 0px #eeeeee; /* Minimalist stationery depth */
+        margin-bottom: 5px;
     }
 
     :global(.section-header-icon) {
-        width: 32px;
-        height: 32px;
+        width: 24px;
+        height: 24px;
+        stroke: #121212;
+        stroke-width: 1.5; /* Lighter editorial line weight */
     }
 
     :global(.container) h2 {

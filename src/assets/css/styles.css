@@ -7,13 +7,23 @@
   --border-rule: #000000;
   --border-subtle: #dcdcdc;
 
+  /* --- Tech-Editorial Accents --- */
+  --accent-blue: #1373aa; /* NY Midnight Blue */
+  --accent-link: #2b7fff; /* Electric Blue */
+  --accent-primary: #1373aa;
+  --accent-vibrant: #2b7fff;
+
   /* --- Typography --- */
   --font-serif: "Playfair Display", serif;
   --font-body: "Lora", serif;
   --font-sans: "Inter", sans-serif;
 
   /* --- Spacing --- */
+  /* --- Design Tokens --- */
   --radius-sm: 0px;
+  --radius-lg: 8px;
+  --shadow-accent: 0 4px 15px rgba(19, 115, 170, 0.3);
+  --transition-fast: 0.2s ease;
 }
 
 /*-------------------------
