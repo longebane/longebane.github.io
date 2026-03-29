@@ -5,18 +5,31 @@
 <div id="contact-modal" class="contact-modal" aria-hidden="true">
   <div class="contact-modal-content">
     <button class="close-button" id="close-modal" aria-label="Close contact form">&times;</button>
-    <h2>Get in Touch</h2>
-    <form action="https://formspree.io/f/mdapnerv" method="POST">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required />
+    <div class="modal-masthead">
+      <h2 class="editorial-title">Reach Out</h2>
+      <p class="category-marker">Inquiries & Notes</p>
+    </div>
+    
+    <form action="https://formspree.io/f/mdapnerv" method="POST" class="editorial-form">
+      <div class="input-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Who are you?" />
+      </div>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required />
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="Where can I find you?" />
+      </div>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+      <div class="input-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Say hello..."></textarea>
+      </div>
 
-      <button type="submit">Send Message</button>
+      <button type="submit" class="submit-button">
+        Send Message
+        <span class="button-arrow">→</span>
+      </button>
     </form>
   </div>
 </div>
@@ -28,22 +41,39 @@
   const btn = document.getElementById('contact-button');
   const closeBtn = document.getElementById('close-modal');
 
-  btn.addEventListener('click', () => {
-    modal.style.display = 'block';
-    modal.setAttribute('aria-hidden', 'false');
-  });
+  if (modal && btn && closeBtn) {
+    const openModal = () => {
+      modal.style.display = 'block';
+      modal.setAttribute('aria-hidden', 'false');
+      void modal.offsetWidth;
+      modal.classList.add('is-visible');
+    };
 
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    modal.setAttribute('aria-hidden', 'true');
-  });
+    const closeModal = () => {
+      modal.classList.remove('is-visible');
+      setTimeout(() => {
+        if (!modal.classList.contains('is-visible')) {
+          modal.style.display = 'none';
+          modal.setAttribute('aria-hidden', 'true');
+        }
+      }, 400);
+    };
 
-  window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden', 'true');
-    }
-  });
+    btn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+
+    window.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal.style.display === 'block') {
+        closeModal();
+      }
+    });
+  }
 </script>
 
 <style>
@@ -56,7 +86,7 @@
     min-width: 220px;
     background-color: #1373aa; /* Midnight Blue Accent */
     color: #fff;
-    border: 2px solid #000;
+    border: 1px solid #000;
     border-radius: 0;
     padding: 16px 40px;
     font-family: var(--font-serif);
@@ -77,106 +107,180 @@
   }
 
   .contact-button:hover {
-    background-color: #2b7fff; /* Vibrant Electric Blue Hover */
+    background-color: #2b7fff;
     transform: translateX(-50%) translateY(-10px);
     box-shadow: 8px 18px 0 #000;
     letter-spacing: 5px;
   }
 
-  .contact-button:active {
-    transform: translateX(-50%) translateY(-2px);
-    box-shadow: 4px 4px 0 var(--accent-blue);
-    transition: all 0.1s ease;
-  }
-
-  .contact-button:focus {
-    box-shadow: 0 0 0 2px var(--bg-color), 0 0 0 4px var(--accent-blue);
-  }
-
   .contact-modal {
     display: none;
     position: fixed;
-    z-index: 1001;
+    z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(252, 252, 252, 0.55); /* Elite high-transparency ivory vellum */
+    backdrop-filter: blur(2px); /* Minimalist archival glass effect */
+    transition: opacity 0.4s ease;
+    opacity: 0;
+  }
+
+  .contact-modal.is-visible {
+    opacity: 1;
   }
 
   .contact-modal-content {
     background-color: #ffffff;
     margin: 5% auto;
-    padding: 30px;
-    border: 3px solid #000;
+    padding: 40px;
+    border: 12px double #121212; /* Signature editorial rule */
     width: 90%;
-    max-width: 500px;
+    max-width: 550px;
     border-radius: 0;
     position: relative;
-    box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15);
+    transform: translateY(30px) scale(0.98);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .is-visible .contact-modal-content {
+    transform: translateY(0) scale(1);
+  }
+
+  .modal-masthead {
+    text-align: center;
+    border-bottom: 3px double #121212;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+  }
+
+  .editorial-title {
+    font-family: "Chomsky", serif;
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+
+  .category-marker {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-primary);
   }
 
   .close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #121212;
+    font-size: 32px;
+    font-weight: 300;
     cursor: pointer;
     border: none;
     background: none;
+    transition: transform 0.3s ease;
   }
 
   .close-button:hover {
-    color: var(--text-dark);
+    transform: rotate(90deg);
   }
 
-  form {
+  .editorial-form {
     display: flex;
     flex-direction: column;
+    gap: 20px;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   label {
-    margin-top: 10px;
-    font-weight: bold;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #121212;
   }
 
   input,
   textarea {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: var(--radius-sm);
-    font-size: 16px;
+    padding: 12px;
+    border: 1px solid #121212;
+    border-radius: 0;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    background: #fcfcfc;
+    transition: background 0.3s ease;
   }
 
-  button[type="submit"] {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: var(--accent-cta);
+  input:focus,
+  textarea:focus {
+    outline: none;
+    background: #fff;
+    border-color: var(--accent-primary);
+    box-shadow: inset 0 0 0 1px var(--accent-primary);
+  }
+
+  .submit-button {
+    margin-top: 10px;
+    padding: 18px;
+    background-color: #121212;
     color: white;
-    border: none;
-    border-radius: var(--radius-sm);
+    border: 1px solid #121212;
+    border-radius: 0;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color var(--transition-fast);
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
-  button[type="submit"]:hover {
-    background-color: var(--accent-cta-hover);
+  .submit-button:hover {
+    background-color: var(--accent-primary);
+    border-color: var(--accent-primary);
+    gap: 25px;
+  }
+
+  .button-arrow {
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+  }
+
+  .submit-button:hover .button-arrow {
+    transform: translateX(5px);
   }
 
   @media (max-width: 600px) {
     .contact-modal-content {
-      margin: 5% auto;
-      padding: 15px;
-      width: 95%;
+      margin: 10% 15px;
+      padding: 25px 20px;
+      border-width: 8px;
+    }
+
+    .editorial-title {
+      font-size: 2.2rem;
     }
 
     .contact-button {
-      bottom: 10px;
-      right: 10px;
-      padding: 12px 16px;
+      bottom: 20px;
+      padding: 14px 25px;
+      min-width: 160px;
       font-size: 14px;
     }
   }
+</style>
 </style>
