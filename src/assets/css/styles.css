@@ -28,7 +28,7 @@
 	General Styles
 --------------------------*/
 html {
-  background: var(--bg-color);
+  background: #efefef url(../img/bg.png) 100% 100% no-repeat fixed;
   color: var(--text-main);
   scroll-behavior: smooth;
 }
@@ -41,7 +41,7 @@ body {
   line-height: 1.5;
   margin: 0 auto;
   max-width: 1300px;
-  padding: 0 20px 100px;
+  padding: 0 0 100px; /* Removed horizontal padding */
   box-sizing: border-box;
 }
 
@@ -69,6 +69,14 @@ body {
   border-radius: 0;
 }
 
+.site-header {
+  width: 100%;
+}
+
+.header-content {
+  width: 100%;
+}
+
 .site-title-container {
   display: block;
   height: 79px;
@@ -76,6 +84,7 @@ body {
   background-size: cover;
   border-radius: 0;
   text-decoration: none;
+  width: 100%;
 }
 
 .site-title {
@@ -125,7 +134,7 @@ h1.page-header {
 	Navigation
 -----------------------------*/
 #filter {
-  padding: 10px 0;
+  padding: 10px 20px; /* Added 20px horizontal padding back */
   background: transparent;
   display: flex;
   align-items: center;
@@ -190,12 +199,13 @@ h1.page-header {
 	Content area
 -----------------------------*/
 .container,
-.about-container {
+.about-container,
+#main-content {
   min-height: 100px;
   overflow: visible;
   margin-top: 0.5rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 20px;
+  padding-right: 20px;
   color: #000;
 }
 
