@@ -266,20 +266,22 @@
 
   @media (max-width: 600px) {
     .contact-modal-content {
-      margin: 10% 15px;
-      padding: 25px 20px;
-      border-width: 8px;
+      margin: 10% auto;
+      padding: 25px 15px;
+      border-width: 6px;
+      width: calc(100% - 30px); /* Prevent cutoff on small screens */
+      box-sizing: border-box;
     }
 
     .editorial-title {
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
 
     .contact-button {
       bottom: 20px;
-      padding: 14px 25px;
-      min-width: 160px;
-      font-size: 14px;
+      padding: 14px 20px;
+      min-width: 140px;
+      font-size: 13px;
     }
   }
 </style>

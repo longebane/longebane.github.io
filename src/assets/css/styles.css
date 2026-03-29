@@ -130,15 +130,23 @@ h1.page-header {
   display: block;
   max-width: 800px;
   margin: 10px auto 40px !important;
-  font-size: 0.9rem;
-  font-family: var(--font-serif);
-  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-dim);
   text-align: center;
-  line-height: 1.4;
   border-bottom: 1px solid black;
   padding-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .intro-description {
+    font-size: 0.85rem !important;
+    padding: 0 15px;
+    margin-bottom: 30px !important;
+  }
 }
 
 /*----------------------------
@@ -498,16 +506,6 @@ div.email > span:nth-child(2) {
   text-align: left;
   padding: 0;
   font-weight: 400;
-}
-
-.intro-description {
-  font-family: var(--font-sans);
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--text-dim);
-  max-width: 800px;
-  margin: 10px auto 40px;
-  text-align: center;
 }
 
 .description p {
