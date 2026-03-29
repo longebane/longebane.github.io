@@ -179,7 +179,7 @@ h1.page-header {
 /* Editorial Slash Indicator (left) */
 #filter li a::before {
   content: "//";
-  color: #6b2d5c;
+  color: #1373aa; /* NY Midnight Blue */
   font-style: normal;
   font-weight: 700;
   opacity: 0;
@@ -190,7 +190,7 @@ h1.page-header {
 /* Editorial Slash Indicator (right) */
 #filter li a::after {
   content: "//";
-  color: #6b2d5c;
+  color: #1373aa; /* NY Midnight Blue */
   font-style: normal;
   font-weight: 700;
   opacity: 0;
@@ -200,7 +200,7 @@ h1.page-header {
 
 #filter li a:hover,
 #filter .selected a {
-  color: #6b2d5c;
+  color: #1373aa;
   letter-spacing: 4px;
 }
 
@@ -454,8 +454,8 @@ div.email > span:nth-child(2) {
   color: var(--text-main);
   text-decoration: none;
   display: block;
-  margin-bottom: 8px;
-  border-bottom: 1px solid black;
+  margin-bottom: 12px;
+  border-bottom: none; /* Removed redundant line */
 }
 
 .project-title {
@@ -473,12 +473,12 @@ div.email > span:nth-child(2) {
   font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--text-dim);
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  padding: 2px 0;
-  margin: 8px 0;
+  letter-spacing: 3px;
+  color: var(--text-muted); /* Softer elite tone */
+  border-top: none;
+  border-bottom: none;
+  padding: 0;
+  margin: 4px 0 12px;
   border-radius: 0 !important;
 }
 
