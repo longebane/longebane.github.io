@@ -37,6 +37,6 @@ This agent operates under the logic defined in `.agents/rules/`:
 
 ## Priority Tasks
 
-1. [ ] **Implement Scroll-based TOC Highlighting:** Reliably detect visible sections and apply the `active` class in `src/components/TableOfContents.astro`.
+1. [x] **Implement Scroll-based TOC Highlighting:** Reliably detect visible sections and apply the `active` class in `src/components/TableOfContents.astro`.
 2. [ ] **Verify Context Efficiency:** Audit the new `.agents/` structure once migration is complete.
-3. [ ] **Deploy Check:** Run `vp build` to ensure the new context didn't break anything.
+3. [x] **Deploy Check:** Run `vp build` to ensure the new context didn't break anything.

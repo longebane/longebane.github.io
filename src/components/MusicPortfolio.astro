@@ -1,6 +1,5 @@
 ---
 import LazyAudioEmbed from './LazyAudioEmbed.astro'
-import TableOfContents from './TableOfContents.astro'
 import { Image } from 'astro:assets'
 
 // Import album artwork
@@ -137,9 +136,9 @@ const getIcon = (type: string) => {
 }
 ---
 
-<div class='multimedia-sections'>
-    {
-        music.map((section, sectionIndex) => {
+    <div class='multimedia-sections'>
+        {
+            music.map((section, sectionIndex) => {
             const {
                 title,
                 type,
