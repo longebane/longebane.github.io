@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import { Image } from 'astro:assets'
+import ProjectCard from '../components/ProjectCard.astro'
 
 // Import portfolio images
 import leoImage from '../assets/img/webporfolio/leo2.webp'
@@ -21,6 +21,171 @@ import seaImage from '../assets/img/webporfolio/sea.png'
 import asImage from '../assets/img/webporfolio/as.jpg'
 import centerImage from '../assets/img/webporfolio/center.jpg'
 import bermyImage from '../assets/img/webporfolio/bermy.jpg'
+
+const featuredProjects = [
+  {
+    title: 'Leo Technologies',
+    category: 'GovTech',
+    href: 'https://leotechnologies.com/',
+    image: leoImage,
+    descriptionSnippet: 'AI investigative platform for high-volume audio and intelligence audit records.',
+    bullets: [
+      'Frontend Architect, migrated Ember platform to React with Typescript',
+      'Engineered interactive Node-Link and Tree charts with D3.js for visualizing complex relationships across disparate case files.',
+      'Designed a custom audio scrobbler engine with sub-100ms latency for instant interactions synchronized with real-time AI transcripts.',
+      'Engineered a dynamic form engine to streamline complex investigative workflows.'
+    ]
+  },
+  {
+    title: 'Files.com',
+    category: 'Cloud Storage Platform',
+    href: 'https://www.files.com/',
+    image: filesImage,
+    bullets: [
+      'Led mobile development of a secure B2B file transfer and automation platform.',
+      'Implemented a \'Hybrid First\' strategy, sharing 90% of business logic between Web and Mobile.',
+      'Developed a global TypeScript component library for design consistency.',
+      'Optimized large-scale file lists (10k+ items) using virtualization.'
+    ]
+  },
+  {
+    title: 'Costar Group',
+    category: 'Real Estate',
+    href: 'https://www.costargroup.com/',
+    image: loopnetImage,
+    descriptionSnippet: 'Global leader in commercial real estate information, analytics, and online marketplaces.',
+    bullets: [
+      'Built high-traffic features in React and Angular for LoopNet and Apartments.com, serving over 100 million monthly active users.',
+      'Created real-time listings management with React and D3.'
+    ]
+  },
+  {
+    title: 'Environmental Systems Research Institute (ESRI)',
+    category: 'Enterprise GIS',
+    href: 'https://www.esri.com',
+    image: esriImage,
+    descriptionSnippet: 'Global market leader in GIS software, location intelligence, and mapping.',
+    bullets: [
+      'Front-end and Web Application development with HTML5, CSS3, Javascript, Angular, KnockoutJS, jQuery',
+      'Created design library that features reusable web components, and icons.'
+    ]
+  },
+  {
+    title: 'DoubleDoor.io',
+    category: 'Real Estate',
+    href: 'https://doubledoor.io/',
+    image: ddImage,
+    bullets: [
+      'Directed the frontend technical strategy, aligning engineering decisions directly with business revenue goals.',
+      'Established Cl/CD workflows, TDD practices, and rigorous code reviews.',
+      'Unified architecture patterns across frontend, backend, and design teams.'
+    ]
+  },
+  {
+    title: 'Inland Empire Health Plan (IEHP)',
+    category: 'Health Care',
+    href: 'https://iehp.org',
+    image: iehpImage,
+    descriptionSnippet: 'Public healthcare plan serving over 1.2 million members.',
+    bullets: [
+      'Migrated legacy Provider Portal to Angular',
+      'Applied WCAG 2.0 standards to member portals, ensuring product accessibility.'
+    ]
+  },
+  {
+    title: 'iHerb',
+    category: 'E-Commerce',
+    href: 'https://www.iherp.com',
+    image: iherbImage,
+    bullets: [
+      'Developed for Desktop, Tablet, iOS, and Android views, jQuery and AJAX, ASP.NET MVC Framework (C#).'
+    ]
+  },
+  {
+    title: 'Loma Linda University Medical Center',
+    category: 'Healthcare',
+    href: 'https://murrieta.lluh.org/',
+    image: lomaImage,
+    bullets: [
+      'Responsive and Pageless Design with Bootstrap and SASS, Wireframes with Bolsamiq, Coffeescript, Expression Engine.'
+    ]
+  }
+];
+
+const secondaryProjects = [
+  {
+    title: 'Partners for Better Health',
+    category: 'Non-profit',
+    href: 'https://p4bhealth.org/',
+    image: pbhImage,
+    bullets: ['Responsive and Pageless Design, Bootstrap and SASS, Expression Engine, Coffeescript.']
+  },
+  {
+    title: 'Bermuda- Dept of Community & Culture',
+    category: 'Government',
+    href: 'https://culture.bm/',
+    image: bermuImage,
+    bullets: ['Full Calendar and Events management platform.']
+  },
+  {
+    title: 'Bermuda National Gallery',
+    category: 'Government',
+    href: 'https://bng.bm/',
+    image: galleryImage,
+    bullets: ['UI Design, Logo Design, HTML5, CSS3, jQuery, Content Management System.']
+  },
+  {
+    title: 'Advent Hope',
+    category: 'Non-profit',
+    href: 'https://advent-hope.org/',
+    image: adventImage,
+    bullets: ['Responsive and Pageless Design, SASS, Copy Writing, HTML5, CSS3, jQuery.']
+  },
+  {
+    title: 'Mt. Rubidoux SDA Church',
+    category: 'Non-profit',
+    href: 'https://www.mtrubidouxsda.org/',
+    image: mtrImage,
+    bullets: ['Responsive Design with Bootstrap, Expression Engine, Calendar and Events.']
+  },
+  {
+    title: 'Kinetic Personnel Group',
+    category: 'Agency',
+    href: 'https://www.kineticpersonnelgroup.com/',
+    image: kineticImage,
+    descriptionSnippet: 'Full service staffing firm specializing in professional staffing solutions.',
+    bullets: ['MojoMotor Engine integration.']
+  },
+  {
+    title: 'SeaExpress App',
+    category: 'Government',
+    href: '#',
+    image: seaImage,
+    bullets: ['Mobile, IU, Project Management.']
+  },
+  {
+    title: 'A.S. Cooper',
+    category: 'E-Commerce',
+    href: '#',
+    image: asImage,
+    bullets: ['User Interface Design, Logo Design, HTML5, CSS3, CMS.']
+  },
+  {
+    title: 'Center on Philanthropy',
+    category: 'Non-profit',
+    href: '#',
+    image: centerImage,
+    bullets: ['UI Design, Logo Design, HTML5, CSS3, jQuery, CMS.']
+  },
+  {
+    title: 'BermyArtist.com',
+    category: 'Social Networking',
+    href: '#',
+    image: bermyImage,
+    descriptionSnippet: 'Social networking platform for Bermuda\'s Artists to showcase portfolios.',
+    bullets: ['UI Design, HTML5, CSS3, jQuery, CMS.']
+  }
+];
 ---
 
 <BaseLayout
@@ -40,544 +205,15 @@ import bermyImage from '../assets/img/webporfolio/bermy.jpg'
             systems for enterprise scale.
         </p>
         <div class='portfolio-container'>
-            <section class='project-card important-project'>
-                <a
-                    href='https://leotechnologies.com/'
-                    target='_blank'
-                    class='project-link-wrapper'
-                >
-                    <h2 class='project-title'>Leo Technologies</h2>
-                    <span class='category'>GovTech</span>
-                </a>
-                <Image src={leoImage} alt='LeoTech' class='header-image' />
-                <div class='content'>
-                    <div class='description'>
-                        <p>
-                            AI investigative platform for high-volume audio and
-                            intelligence audit records.
-                        </p>
-                        <ul>
-                            <li>
-                                Frontend Architect, migrated Ember platform to
-                                React with Typescript
-                            </li>
-                            <li>
-                                Engineered interactive Node-Link and Tree charts
-                                with D3.js for visualizing complex relationships
-                                across disparate case files, aiding
-                                investigators in identifying patterns within
-                                millions of audio records.
-                            </li>
-                            <li>
-                                Designed a custom audio scrobbler engine with
-                                sub-100ms latency for instant interactions
-                                synchronized with real-time AI transcripts,
-                                incorporating temporal indexing for precise
-                                annotation and navigation of high-density audio
-                                data.
-                            </li>
-                            <li>
-                                Engineered a dynamic form engine to streamline
-                                complex investigative workflows, reducing user
-                                error rates by 30% through strict schema
-                                validation and state synchronization.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card important-project'>
-                <a
-                    href='https://www.files.com/'
-                    target='_blank'
-                    class='project-link-wrapper'
-                >
-                    <h2 class='project-title'>Files.com</h2>
-                    <span class='category'>Cloud Storage Platform</span>
-                </a>
-                <Image src={filesImage} alt='Files.com' class='header-image' />
-                <div class='content'>
-                    <div class='description'>
-                        <ul>
-                            <li>
-                                Led mobile development of a secure B2B file
-                                transfer and automation platform for enterprise
-                                clients.
-                            </li>
-                            <li>
-                                Implemented a 'Hybrid First' strategy,
-                                optimizing engineering efficiency by sharing 90%
-                                of business logic between Web and Mobile
-                                (iOS/Android).
-                            </li>
-                            <li>
-                                Developed a global TypeScript component library
-                                to ensure design consistency and accelerate
-                                feature development organization-wide.
-                            </li>
-                            <li>
-                                Wrote platform-agnostic service layers to
-                                abstract API calls, creating a reusable layer
-                                that accelerated frontend development speed.
-                            </li>
-                            <li>
-                                Optimized large-scale file lists (10k+ items)
-                                using virtualization, ensuring the app remained
-                                performant with massive enterprise datasets.
-                            </li>
-                            <li>
-                                Provided mentorship on performance patterns like
-                                memoization and render cycles to elevate team's
-                                engineering standards.
-                            </li>
-                            <li>
-                                Triaged work across team of 5+ Sr. Engineers
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card important-project'>
-                <a
-                    href='https://www.costargroup.com/'
-                    target='_blank'
-                    class='project-link-wrapper'
-                >
-                    <h2 class='project-title'>Costar Group</h2>
-                    <span class='category'>Real Estate</span>
-                </a>
-                <Image
-                    src={loopnetImage}
-                    alt='CoStar Group'
-                    class='header-image'
-                />
-                <div class='content'>
-                    <div class='description'>
-                        <p>
-                            Global leader in commercial real estate information,
-                            analytics, and online marketplaces. Worked across
-                            multiple CoStar Group teams including Loopnet.com,
-                            Apartments.com, CityFeet.com, Costar.com
-                        </p>
-                        <ul>
-                            <li>
-                                Built high-traffic features in React and Angular
-                                for LoopNet and Apartments.com, serving over 100
-                                million monthly active users.
-                            </li>
-                            <li>
-                                Created real-time listings management with React
-                                and D3, ensuring precise state synchronization
-                                for financial-grade data.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card important-project'>
-                <a
-                    href='https://www.esri.com'
-                    target='_blank'
-                    class='project-link-wrapper'
-                >
-                    <h2 class='project-title'>
-                        Environmental Systems Research Institute (ESRI)
-                    </h2>
-                    <span class='category'>Enterprise GIS</span>
-                </a>
-                <Image src={esriImage} alt='ESRI' class='header-image' />
-                <div class='content'>
-                    <div class='description'>
-                        <p>
-                            Global market leader in GIS software, location
-                            intelligence, and mapping.
-                        </p>
-                        <ul>
-                            <li>
-                                Front-end and Web Application development with
-                                HTML5, CSS3, Javascript, Angular, KnockoutJS,
-                                jQuery
-                            </li>
-                            <li>
-                                Created design library that features reusable
-                                web components, and icons with a search feature
-                                handling 100,000+ elements
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card important-project'>
-                <a
-                    href='https://doubledoor.io/'
-                    target='_blank'
-                    class='project-link-wrapper'
-                >
-                    <h2 class='project-title'>DoubleDoor.io</h2>
-                    <span class='category'>Real Estate</span>
-                </a>
-                <Image src={ddImage} alt='DoubleDoor.io' class='header-image' />
-                <div class='content'>
-                    <div class='description'>
-                        <ul>
-                            <li>
-                                Directed the frontend technical strategy,
-                                aligning engineering decisions directly with
-                                business revenue goals in a fast-paced
-                                environment.
-                            </li>
-                            <li>
-                                Established Cl/CD workflows, TDD practices, and
-                                rigorous code reviews, which doubled release
-                                velocity and reduced production regressions.
-                            </li>
-                            <li>
-                                Unified architecture patterns across frontend,
-                                backend, and design teams to streamline the
-                                development of complex transaction features.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card important-project'>
-                <a
-                    href='https://iehp.org'
-                    target='_blank'
-                    class='project-link-wrapper'
-                >
-                    <h2 class='project-title'>
-                        Inland Empire Health Plan (IEHP)
-                    </h2>
-                    <span class='category'>Health Care</span>
-                </a>
-                <Image src={iehpImage} alt='IEHP' class='header-image' />
-                <div class='content'>
-                    <div class='description'>
-                        <p>
-                            Public healthcare plan serving over 1.2 million
-                            members.
-                        </p>
-                        <ul>
-                            <li>Migrated legacy Provider Portal to Angular</li>
-                            <li>
-                                Applied WCAG 2.0 standards to member portals,
-                                ensuring product accessibility and compliance
-                                for a massive user base.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card desktop-only'>
-                <a
-                    href='https://www.iherp.com'
-                    target='_blank'
-                    class='project-link-wrapper'
-                >
-                    <h2 class='project-title'>iHerb</h2>
-                    <span class='category'>E-Commerce</span>
-                </a>
-                <Image src={iherbImage} alt='iHerb' class='header-image' />
-                <div class='content'>
-                    <div class='description'>
-                        <ul>
-                            <li>
-                                Developed for Desktop, Tablet, iOS, and Android
-                                views, jQuery and AJAX, ASP.NET MVC Framework
-                                (C#), IIS, TFS Source Control
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card'>
-                <a
-                    href='https://murrieta.lluh.org/'
-                    target='_blank'
-                    class='project-link-wrapper'
-                >
-                    <h2 class='project-title'>
-                        Loma Linda University Medical Center
-                    </h2>
-                    <span class='category'>Healthcare</span>
-                </a>
-                <Image
-                    src={lomaImage}
-                    alt='Loma Linda University Medical Center'
-                    class='header-image'
-                />
-                <div class='content'>
-                    <div class='description'>
-                        <ul>
-                            <li>
-                                Responsive and Pageless Design with Bootstrap
-                                and SASS, Wireframes with Bolsamiq,
-                                Coffeescript, Expression Engine, Instant Search
-                                Engine (central focus), Full Calendar
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card desktop-only'>
-                <a
-                    href='https://p4bhealth.org/'
-                    target='_blank'
-                    class='project-link-wrapper'
-                >
-                    <h2 class='project-title'>Partners for Better Health</h2>
-                    <span class='category'>Non-profit</span>
-                </a>
-                <Image
-                    src={pbhImage}
-                    alt='Partners for Better Health'
-                    class='header-image'
-                />
-                <div class='content'>
-                    <div class='description'>
-                        <ul>
-                            <li>
-                                Responsive and Pageless Design, Bootstrap and
-                                SASS, Expression Engine, Coffeescript, Payment
-                                Processor Integration, Form/Application
-                                Integration, Email and Call to Action Modal,
-                                Pageless Design for main page, Analytics, SEO
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card desktop-only'>
-                <a
-                    href='https://culture.bm/'
-                    target='_blank'
-                    class='project-link-wrapper'
-                >
-                    <h2 class='project-title'>
-                        Bermuda- Department of Community and Culture
-                    </h2>
-                    <span class='category'>Government</span>
-                </a>
-                <Image
-                    src={bermuImage}
-                    alt='Bermuda- Department of Community and Culture'
-                    class='header-image'
-                />
-                <div class='content'>
-                    <div class='description'>
-                        <ul>
-                            <li>Full Calendar and Events</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card desktop-only'>
-                <a
-                    href='https://bng.bm/'
-                    target='_blank'
-                    class='project-link-wrapper'
-                >
-                    <h2 class='project-title'>Bermuda National Gallery</h2>
-                    <span class='category'>Government</span>
-                </a>
-                <Image
-                    src={galleryImage}
-                    alt='Bermuda National Gallery'
-                    class='header-image'
-                />
-                <div class='content'>
-                    <div class='description'>
-                        <ul>
-                            <li>
-                                UI Design, Logo Design, HTML5, CSS3, jQuery,
-                                Advisory Services, Content Management System
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card desktop-only'>
-                <a
-                    href='https://advent-hope.org/'
-                    target='_blank'
-                    class='project-link-wrapper'
-                >
-                    <h2 class='project-title'>Advent Hope</h2>
-                    <span class='category'>Non-profit</span>
-                </a>
-                <Image
-                    src={adventImage}
-                    alt='Advent Hope'
-                    class='header-image'
-                />
-                <div class='content'>
-                    <div class='description'>
-                        <ul>
-                            <li>
-                                Responsive and Pageless Design, SASS, Copy
-                                Writing, HTML5, CSS3, jQuery, Advisory Services
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card desktop-only'>
-                <a
-                    href='https://www.mtrubidouxsda.org/'
-                    target='_blank'
-                    class='project-link-wrapper'
-                >
-                    <h2 class='project-title'>Mt. Rubidoux SDA Church</h2>
-                    <span class='category'>Non-profit</span>
-                </a>
-                <Image
-                    src={mtrImage}
-                    alt='Mt. Rubidoux SDA Church'
-                    class='header-image'
-                />
-                <div class='content'>
-                    <div class='description'>
-                        <ul>
-                            <li>
-                                Responsive and Pageless Design with Bootstrap
-                                and SASS, Expression Engine, Homepage Carousel,
-                                Calendar and Events, Blog and RSS Feed, etc
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card desktop-only'>
-                <a
-                    href='https://www.kineticpersonnelgroup.com/'
-                    target='_blank'
-                    class='project-link-wrapper'
-                >
-                    <h2 class='project-title'>Kinetic Personnel Group</h2>
-                    <span class='category'>Agency</span>
-                </a>
-                <Image
-                    src={kineticImage}
-                    alt='Kinetic Personnel Group'
-                    class='header-image'
-                />
-                <div class='content'>
-                    <div class='description'>
-                        <p>
-                            Kinetic Personnel Group is a full service staffing
-                            firm, specializing in professional staffing offering
-                            temporary, temporary to hire, and direct placement
-                            solutions.
-                        </p>
-                        <ul>
-                            <li>MojoMotor Engine</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card desktop-only'>
-                <a href='#' target='_blank' class='project-link-wrapper'>
-                    <h2 class='project-title'>SeaExpress App</h2>
-                    <span class='category'>Government</span>
-                </a>
-                <Image
-                    src={seaImage}
-                    alt='SeaExpress App'
-                    class='header-image'
-                />
-                <div class='content'>
-                    <div class='description'>
-                        <ul>
-                            <li>Mobile, IU, Project Management</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card desktop-only'>
-                <a href='#' target='_blank' class='project-link-wrapper'>
-                    <h2 class='project-title'>A.S. Cooper</h2>
-                    <span class='category'>E-Commerce</span>
-                </a>
-                <Image src={asImage} alt='A.S. Cooper' class='header-image' />
-                <div class='content'>
-                    <div class='description'>
-                        <ul>
-                            <li>
-                                User Interface Design, Logo Design, HTML5, CSS3,
-                                jQuery, Advisory Services, Content Management
-                                System
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card desktop-only'>
-                <a href='#' target='_blank' class='project-link-wrapper'>
-                    <h2 class='project-title'>Center on Philanthropy</h2>
-                    <span class='category'>Non-profit</span>
-                </a>
-                <Image
-                    src={centerImage}
-                    alt='Center on Philanthropy'
-                    class='header-image'
-                />
-                <div class='content'>
-                    <div class='description'>
-                        <ul>
-                            <li>
-                                User Interface Design, Logo Design, HTML5, CSS3,
-                                jQuery, Advisory Services, Content Management
-                                System
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class='project-card desktop-only'>
-                <a href='#' target='_blank' class='project-link-wrapper'>
-                    <h2 class='project-title'>BermyArtist.com</h2>
-                    <span class='category'>Social Networking</span>
-                </a>
-                <Image
-                    src={bermyImage}
-                    alt='BermyArtist.com'
-                    class='header-image'
-                />
-                <div class='content'>
-                    <div class='description'>
-                        <p>
-                            BermyArtist.com is a social networking platform that
-                            let's Bermuda's Artists to showcase their
-                            portfolios.
-                        </p>
-                        <ul>
-                            <li>
-                                UI Design, HTML5, CSS3, jQuery, Advisory
-                                Services, Content Management System
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            {featuredProjects.map((project) => (
+                <ProjectCard {...project} isCondensed={false} />
+            ))}
+            
+            <div class="secondary-grid">
+              {secondaryProjects.map((project) => (
+                  <ProjectCard {...project} isCondensed={true} />
+              ))}
+            </div>
         </div>
     </article>
-    <section class='porfolio-wrapper'></section>
 </BaseLayout>

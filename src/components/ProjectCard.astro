@@ -1,0 +1,136 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  title: string;
+  category: string;
+  href: string;
+  image: any;
+  descriptionSnippet?: string;
+  bullets?: string[];
+  isCondensed?: boolean;
+}
+
+const { title, category, href, image, descriptionSnippet, bullets, isCondensed = false } = Astro.props;
+---
+
+<section class={`project-card ${isCondensed ? 'condensed' : 'featured'}`}>
+  {isCondensed ? (
+    <div class="condensed-header">
+      <div class="text-content">
+        <a href={href} target="_blank" class="project-link-wrapper">
+          <h2 class="project-title">{title}</h2>
+          <span class="category">{category}</span>
+        </a>
+        <div class="description">
+          {descriptionSnippet && <p>{descriptionSnippet}</p>}
+          {bullets && bullets.length > 0 && (
+            <ul>
+              {bullets.map(bullet => <li>{bullet}</li>)}
+            </ul>
+          )}
+        </div>
+      </div>
+      <div class="image-content">
+        <Image src={image} alt={title} class="condensed-image" />
+      </div>
+    </div>
+  ) : (
+    <>
+      <a href={href} target="_blank" class="project-link-wrapper">
+        <h2 class="project-title">{title}</h2>
+        <span class="category">{category}</span>
+      </a>
+      <Image src={image} alt={title} class="header-image" />
+      <div class="content">
+        <div class="description">
+          {descriptionSnippet && <p>{descriptionSnippet}</p>}
+          <ul>
+            {bullets?.map(bullet => <li>{bullet}</li>)}
+          </ul>
+        </div>
+      </div>
+    </>
+  )}
+</section>
+
+<style>
+  .project-card {
+    break-inside: avoid-column;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    margin-bottom: 30px;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    background: transparent;
+  }
+
+  /* Featured Styling */
+  .featured .project-link-wrapper {
+    margin-bottom: 8px;
+    border-bottom: 1px solid black;
+    display: block;
+  }
+
+  .condensed {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid black;
+  }
+
+  .condensed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .text-content {
+    flex: 1;
+  }
+
+  .condensed .project-title {
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .condensed .category {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    margin: 5px 0;
+  }
+
+  .condensed .description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #444;
+    margin-top: 8px;
+  }
+
+  .image-content {
+    flex: 0 0 100px;
+  }
+
+  .condensed-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid black;
+    padding: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .condensed-header {
+      gap: 15px;
+    }
+    .image-content {
+      flex: 0 0 80px;
+    }
+    .condensed-image {
+      width: 80px;
+      height: 80px;
+    }
+  }
+</style>
