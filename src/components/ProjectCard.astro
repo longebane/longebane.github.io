@@ -32,7 +32,9 @@ const { title, category, href, image, descriptionSnippet, bullets, isCondensed =
         </div>
       </div>
       <div class="image-content">
-        <Image src={image} alt={title} class="condensed-image" />
+        <a href={href} target="_blank" class="project-image-link">
+          <Image src={image} alt={title} class="condensed-image" />
+        </a>
       </div>
     </div>
   ) : (
@@ -41,7 +43,9 @@ const { title, category, href, image, descriptionSnippet, bullets, isCondensed =
         <h2 class="project-title">{title}</h2>
         <span class="category">{category}</span>
       </a>
-      <Image src={image} alt={title} class="header-image" />
+      <a href={href} target="_blank" class="project-image-link">
+        <Image src={image} alt={title} class="header-image" />
+      </a>
       <div class="content">
         <div class="description">
           {descriptionSnippet && <p>{descriptionSnippet}</p>}
@@ -64,6 +68,11 @@ const { title, category, href, image, descriptionSnippet, bullets, isCondensed =
     border-bottom: 3px double #000; /* Reintroduced the signature NYT double line for card separation */
     padding-bottom: 30px;
     background: transparent;
+  }
+
+  .project-image-link {
+    display: block;
+    text-decoration: none;
   }
 
   /* Featured Styling */
