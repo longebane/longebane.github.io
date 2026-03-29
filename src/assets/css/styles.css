@@ -159,40 +159,61 @@ h1.page-header {
   display: block;
 }
 #filter li a {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 400;
+  font-style: italic;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
-  color: #000;
+  letter-spacing: 2px;
+  color: var(--text-main);
   text-decoration: none;
-  padding: 10px 0;
-  transition: opacity 0.3s ease;
+  padding: 8px 15px;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   white-space: nowrap;
-}
-#filter li a:hover {
-  opacity: 0.6;
-}
-#filter .selected a {
-  border-bottom: 2px solid #000;
-  color: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-#filter a,
-#filter a:visited {
-  text-decoration: none;
-  outline: none;
-  color: var(--accent-link);
+/* Editorial Slash Indicator (left) */
+#filter li a::before {
+  content: "//";
+  color: #6b2d5c;
+  font-style: normal;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
-#filter a:hover,
-#filter a:visited:hover {
-  color: var(--accent-blue);
-  background: rgba(19, 115, 170, 0.1);
+
+/* Editorial Slash Indicator (right) */
+#filter li a::after {
+  content: "//";
+  color: #6b2d5c;
+  font-style: normal;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
-#filter .selected a:hover,
-#filter .selected a:visited:hover {
-  color: #fff;
-  background: var(--accent-blue);
+
+#filter li a:hover,
+#filter .selected a {
+  color: #6b2d5c;
+  letter-spacing: 4px;
+}
+
+#filter li a:hover::before,
+#filter li a:hover::after,
+#filter .selected a::before,
+#filter .selected a::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#filter .selected a {
+  font-weight: 600;
 }
 
 /*----------------------------

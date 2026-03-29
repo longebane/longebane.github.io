@@ -2,23 +2,44 @@
 trigger: always_on
 ---
 
-# Design System & Aesthetics
+# Design System: NY Elite Chic (Modern Editorial)
 
-## Core Aesthetics
+## Core Aesthetic: The "New York Editorial"
 
-- **Rich & Premium:** The UI should feel high-end. Use curated color palettes (HSL), deep shadows, and subtle gradients.
-- **No Browser Defaults:** Use custom typography (Inter, Outfit, etc.) and refined layout spacing.
-- **Dynamic Interaction:** Implement hover states, micro-animations, and smooth transitions to make the site feel "alive."
+This project adheres to a high-end, modern publishing aesthetic inspired by the New York Times and luxury journals (Vogue, The New Yorker). The design focuses on typographic precision, extreme contrast, and sophisticated micro-interactions.
 
-## CSS Standards
+### 1. Color Palette (Editorial Tones)
 
-- **Vanilla CSS First:** Prefer hand-written, optimized CSS over utility frameworks.
-- **Location:** All styles should reside in `src/assets/css/` or within Astro component `<style>` blocks when specific to that component.
-- **Tokens:** Maintain and use CSS variables for colors, spacing, and typography to ensure consistency.
+- **Surface/Ivory (`--bg-color`)**: `#fcfcfc` — The primary canvas.
+- **Ink/Black (`--text-main`)**: `#121212` — For mastheads, bold borders, and dense text.
+- **Editorial Plum (`--accent-plum`)**: `#6b2d5c` — Vibrant focus color for CTAs and interactive highlights.
+- **NY Midnight Blue (`--accent-blue`)**: `#1373aa` — Secondary accent for technical details and 3D depth.
 
-## UX Guardrails
+### 2. Typography (The Voice)
 
-- **Accessibility & Contrast (Critical)**: Always verify WCAG contrast ratios for text on backgrounds. Never assume a token's brightness based on its name (e.g., "accent-link" might be dark blue). Use `--text-main` (white) or high-contrast highlights for text on dark surfaces.
-- **Responsive Integrity**: When using `justify-content: space-between` in headers, always implement a mobile breakpoint (e.g., `flex-direction: column`) to prevent title/category collisions or truncation.
-- **Performance**: Be mindful of large assets in `public/assets/img/`. Use optimized images and lazy-loading.
-- **Aesthetic Integrity**: Do not introduce "generic" UI components that clash with the established visual language.
+- **Editorial Heading**: `"Chomsky"` — Bold serif for page titles.
+- **The Chic Utility**: `"Playfair Display" (Italic)` — Used for navigation, dates, and category tags to ensure a high-end tone.
+- **The Narrative Body**: `"Lora"` — A legible serif for all descriptions and lists.
+- **The Functional Utility**: `"Inter"` — Used sparingly for small UI controls.
+
+### 3. Layout Systems (The Framework)
+
+- **The "Masthead" Rule**: Use `3px double black` or `1px solid black` borders to define sections, mimicking top-of-the-fold publishing layouts.
+- **No Corner Radii**: All interactive elements (cards, buttons, inputs) must have `border-radius: 0px` (square corners).
+- **White Space**: Utilize high-end, generous vertical padding (30px-50px) to ensure elite pacing.
+
+### 4. Interactive & Motion (Elite Dynamics)
+
+To ensure the "Agentic / Modern" feel, use these specific patterns:
+
+- **Typographic Expansion**: On hover, increase `letter-spacing` (3px -> 5px) instead of simple opacity fades.
+- **Stationary Shadow Parallax**: For high-value buttons, the button lifts (`translateY`) while the shadow remains horizontally stationary and expands its vertical offset to simulate a 3D lift from the surface.
+- **Masthead Dots**: For navigation indicators, use a small centered bullet (`•`) above text to avoid line clutter and adhere to a masthead style.
+- **High-Contrast Color Flips**: Transition between Ivory and Black/Plum using smooth ease-outs (`cubic-bezier(0.19, 1, 0.22, 1)`).
+
+### 5. Accessibility Guardrails
+
+- **Contrast**: Always verify that Plum (#6b2d5c) or Black on Ivory exceeds WCAG level AAA.
+- **Responsive Integrity**: headers must implement a mobile breakpoint (`flex-direction: column`) to prevent collision.
+- **Performance**: Optimize all images and use the Astro `<Image />` component for automatic compression.
+- **Aesthetic Integrity**: Do not introduce "generic" UI components (standard buttons, blue underlined links) that clash with the NY Elite language.
