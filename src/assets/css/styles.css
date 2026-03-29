@@ -115,6 +115,7 @@ h1.page-header {
   text-align: center;
   border-bottom: 2px solid black;
   padding-bottom: 10px;
+  text-shadow: 1px 1px 5px #d0d0d0; /* Global Page Header Depth */
 }
 
 @media (max-width: 768px) {
