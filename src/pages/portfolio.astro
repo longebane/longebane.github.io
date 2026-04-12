@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0;url=/">
-    <script>window.location.replace("/");</script>
-    <title>Redirecting to Engineering Portfolio...</title>
-    <style>
-        body { background: #fcfcfc; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .redirect-msg { color: #121212; font-style: italic; }
-    </style>
-</head>
-<body>
-    <div class="redirect-msg">Redirecting to Engineering Portfolio...</div>
-</body>
-</html>
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import EngineeringPortfolio from '../components/EngineeringPortfolio.astro'
+---
+
+<BaseLayout
+    title='Engineering Portfolio | StudioDao: The Works of Long Dao'
+    description='Explore the frontend engineering portfolio of Long Dao, showcasing architectures in React, TypeScript, D3.js, and AI-powered investigative platforms.'
+    bodyClass='web-portfolio'
+    url="https://studiodao.com/"
+>
+    <EngineeringPortfolio />
+</BaseLayout>
