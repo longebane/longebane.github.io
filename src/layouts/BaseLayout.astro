@@ -24,10 +24,10 @@ const isHome = Astro.url.pathname === "/";
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="author" content="Long Dao" />
+    <meta name="author" content="Studio Dao" />
     <meta name="theme-color" content="#13181d" />
     <link rel="canonical" href={url} />
-    <meta name="keywords" content="Long Dao, Studio Dao, LongeBane, Game Music Composer, Soundtrack Design, Senior Frontend Engineer, React Architect, TypeScript Developer, Video Game Scoring, OST Composition, Immortal Defense, Saturated Dreamers" />
+    <meta name="keywords" content="Studio Dao, Redlands Digital Marketing, Redlands Web Development, Local Business Apps, Redlands Technology Services, Long Dao, Digital Infrastructure, Enterprise Web Solutions" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={isHome ? "website" : "article"} />
@@ -46,8 +46,8 @@ const isHome = Astro.url.pathname === "/";
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify({
         "@context": "https://schema.org",
-        "@type": isHome ? "Person" : "Article",
-        "name": "Long Dao",
+        "@type": "Organization",
+        "name": "Studio Dao",
         "url": Astro.site,
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -55,9 +55,9 @@ const isHome = Astro.url.pathname === "/";
         },
         "description": description,
         "image": new URL(image, Astro.site),
-        "author": {
-          "@type": "Person",
-          "name": "Long Dao"
+        "location": {
+          "@type": "Place",
+          "name": "Redlands, CA"
         }
       })}>
     </script>
