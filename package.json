@@ -23,7 +23,7 @@
     "prepare": "vp config"
   },
   "dependencies": {
-    "astro": "^6.1.0",
+    "astro": "^6.1.6",
     "sharp": "^0.33.5",
     "vite": "npm:@voidzero-dev/vite-plus-core@latest"
   },
